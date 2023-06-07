@@ -1,0 +1,15 @@
+#goTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  z-index: 2;
+}
+#goTop a {
+  display: block;
+  width: 100%;
+}
+#goTop a img {
+  width: 100%;
+}

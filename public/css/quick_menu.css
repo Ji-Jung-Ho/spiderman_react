@@ -1,0 +1,97 @@
+#quickMenu {
+  position: absolute;
+  top: 545px;
+  right: 10px;
+  width: 80px;
+  background: #000;
+  z-index: 2;
+}
+#quickMenu .row1 {
+  width: 100%;
+  border: 1px solid #333;
+}
+#quickMenu .row1 a {
+  display: block;
+  width: 100%;
+}
+#quickMenu .row1 a img {
+  width: 100%;
+}
+#quickMenu .row2 {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #333;
+}
+#quickMenu .row2 ul {
+  width: 100%;
+}
+#quickMenu .row2 ul li {
+  width: 100%;
+  border-bottom: 1px solid #333;
+}
+#quickMenu .row2 ul li:last-child {
+  border-bottom: 0;
+}
+#quickMenu .row2 ul li a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 12px;
+}
+#quickMenu .row3 {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #333;
+}
+#quickMenu .row3 .up-box {
+  width: 100%;
+}
+#quickMenu .row3 .up-box a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+#quickMenu .row3 .up-box a img {
+  width: 15px;
+}
+#quickMenu .row3 .up-box h2 {
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+#quickMenu .row3 .view-box {
+  width: 100%;
+  height: 250px;
+}
+#quickMenu .row3 .view-box ul {
+  padding: 10px;
+  width: 100%;
+}
+#quickMenu .row3 .view-box ul li {
+  width: 100%;
+}
+#quickMenu .row3 .view-box ul li .gap {
+  width: 100%;
+  padding: 10px 0;
+}
+#quickMenu .row3 .view-box ul li .gap a {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+#quickMenu .row3 .view-box ul li .gap a img {
+  width: 100%;
+}
+#quickMenu .row3 .down-box {
+  width: 100%;
+}
+#quickMenu .row3 .down-box a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+#quickMenu .row3 .down-box a img {
+  width: 15px;
+}
