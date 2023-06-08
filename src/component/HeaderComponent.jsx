@@ -1,38 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function HeaderComponent ()  {
+export default function HeaderComponent() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
-  const [isOpen, setOpen] = React.useState(false);
-  const [isClose, setClose] = React.useState(false);
-
-  const onClickMeunOpen=()=>{
-    setOpen (isOpen => !isOpen);
+  const onMouseEnter=()=>{
+    setIsHover(true);
   }
+  const onMouseLeave = () => {
+    setIsHover(false);
+  };
+
   return (
     <header id="header">
-      <div className="menu">
-        <button onClick={onClickMeunOpen}>
-          <img src="./img/Hambar.png" alt="" />
-        </button>
-        <ul className= {isOpen ? 'show-menu' : 'hide-menu'}>
-          <button onClick={onClickMeunOpen}>
-            <img src="./img/close.png" alt="" />
-          </button>
-          <li>
-            <h2>Movie</h2>
-            <div className="movie-menu">
-              <ul>
-                <li>SpiderMan</li>
-                <li>Amazing-Spiderman</li>
-                <li>New-Spiderman</li>
-                <li>Miles-Morales</li>
-                <li>Venom</li>
-              </ul>
-            </div>
-          </li>
-          <li>캐릭터 굿즈</li>
-        </ul>
-      </div>
+      <nav className={isMenuOpen ? 'active' : ''}>
+        <a href="#!">
+        <div
+            className={`img-box ${isHover ? 'hovered' : ''}`}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <img
+              src={isHover ? './img/header/spider_black_logo.png' : './img/header/spider-main-logo.png'}
+              alt=""
+            />
+            <span>SpiderMan</span>
+          </div>
+          <div className="img-box">
+            <img src="./img/header/amazing_spider_red_logo.png" alt="" />
+            <span>Amazing-SpiderMan</span>
+          </div>
+          <div className="img-box">
+            <img src="./img/header/tom_spider_red_logo.png" alt="" />
+            <span>New-SpiderMan</span>
+          </div>
+          <div className="img-box">
+            <img src="./img/header/miles_red_logo.png" alt="" />
+            <span>Miles-Morals</span>
+          </div>
+          <div className="img-box">
+            <img src="./img/header/venom_red_logo.png" alt="" />
+            <span>Venom</span>
+          </div>
+        </a>
+        <a href="#!">캐릭터 굿즈</a>
+      </nav>
+
+      <button onClick={() => setIsMenuOpen((isOpen) => !isOpen)}>
+        {isMenuOpen ? (
+          <img src="./img/close.png" alt="close-img" />
+        ) : (
+          <img src="./img/Hambar.png" alt="menubar-img" />
+        )}
+        <span>spiderman</span>
+      </button>
     </header>
   );
-};
+}
