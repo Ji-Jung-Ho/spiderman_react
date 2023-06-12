@@ -4,21 +4,28 @@ import axios from 'axios';
 export default function GoodsComponent () {
 
   const [state, setState] = useState([]);
+  const [scroll, setScrool] = useState(0);
+
+  const onScroll=()=>{  
+    setScrool(window.scrollY || document.documentElement.scrollTop);
+  }
   
   useEffect(()=>{   
     axios({
-      url:'./data/product.json',
+      url:'./data/goods.json',
       method:'GET'
     })
     // 성공
     .then((res)=>{
-      setState(res.data.product)
+      setState(res.data.goods)
       console.log(res.data)
     })
     // 에러
     .catch((err)=>{
       console.log(`AXIOS 실패!${err}`);
     });
+    window.addEventListener("scroll", onScroll);
+    window.scrollTo(0, 0);
 },[]);
 
   const commaRegExp=(z)=>{
@@ -41,7 +48,7 @@ export default function GoodsComponent () {
                 <h2>피규어 및 포스터 상품</h2>
               </div>
               <div className="content">
-                <a href="script:;"><img src="./img/product/mms624s2_mb.jpg" alt="스파이더맨 노웨이홈"/></a>
+                <a href="script:;"><img src="./img/goods/mms624s2_mb.jpg" alt="스파이더맨 노웨이홈"/></a>
               </div>
             </div>
           </div>
@@ -66,7 +73,7 @@ export default function GoodsComponent () {
                             <ul>
                               <li>
                                 <input type="text" id="search" name="search" placeholder="검색어 입력"/>
-                                <a href="script:;"title="search"><img src="<?=$path?>/img/search.png" alt=""/></a>
+                                <a href="script:;"title="search"><img src="/img/search.png" alt=""/></a>
                               </li>
                             </ul>
                           </div>
@@ -123,7 +130,7 @@ export default function GoodsComponent () {
                                 <label>
                                   <input type="checkbox"/>
                                   <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 12C23.5 18.3513 18.3513 23.5 12 23.5C5.64873 23.5 0.5 18.3513 0.5 12C0.5 5.64873 5.64873 0.5 12 0.5C18.3513 0.5 23.5 5.64873 23.5 12Z"></path><path d="M7 12.6667L10.3846 16L18 8.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
-                                  그외 인물
+                                  그외
                                 </label>
                               </li>
                             </ul>
@@ -242,7 +249,7 @@ export default function GoodsComponent () {
                 <div className="order-filter">
                   <span>총 866건</span>
                   <span>
-                    <a href="#!">추천순<img src="./img/product/spiderman-logo.png" alt=""/></a>
+                    <a href="#!">추천순<img src="./img/goods/spiderman-logo.png" alt=""/></a>
                     <i>|</i>
                     <a href="#!">신상품순</a>
                     <i>|</i>
@@ -265,9 +272,9 @@ export default function GoodsComponent () {
                               <div className="img-box">
                                   <img src={item.상품이미지} alt=""/>
                                   <div className="option">
-                                      <a href="#!"><img src="./img/icon_201704041846597800.png" alt="장바구니아이콘"/>장바구니</a>
-                                      <a href="#!"><img src="./img/list_blank1.png" alt="새창으로상품보기아이콘"/>상품보기</a>
-                                      <button className={item.클래스}><img src="./img/heart.png" alt="찜하기"/>관심상품</button>
+                                      <a href="#!"><img src="./img/goods/icon_201704041846597800.png" alt="장바구니아이콘"/>장바구니</a>
+                                      <a href="#!"><img src="./img/goods/list_blank1.png" alt="새창으로상품보기아이콘"/>상품보기</a>
+                                      <button className={item.클래스}><img src="./img/goods/heart.png" alt="찜하기"/>관심상품</button>
                                   </div>
                               </div>
                                 <div className="caption">
@@ -291,13 +298,13 @@ export default function GoodsComponent () {
                   }
                 </ul>
                 <div className="pagination">
-                  <a href="#!"><img src="./img/product/page_first.png" alt=""/></a>
-                  <a href="#!"><img src="./img/product/page_back.png" alt=""/></a>
+                  <a href="#!"><img src="./img/goods/page_first.png" alt=""/></a>
+                  <a href="#!"><img src="./img/goods/page_back.png" alt=""/></a>
                   <a href="#!">1</a>
                   <a href="#!">2</a>
                   <a href="#!">3</a>
-                  <a href="#!"><img src="./img/product/page_next.png" alt=""/></a>
-                  <a href="#!"><img src="./img/product/page_end.png" alt=""/></a>
+                  <a href="#!"><img src="./img/goods/page_next.png" alt=""/></a>
+                  <a href="#!"><img src="./img/goods/page_end.png" alt=""/></a>
                 </div>
               </div>
             </div>

@@ -4,59 +4,151 @@
   z-index: 3;
   width: 100%;
   user-select: none;
-  nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: -150px;
-    height: 150px;
-    transition: all 0.3s;
-    background-color: #333;
-    &.active {
-      margin-top: 0px;
-    }
-    a {
+  .row1 {
+    .row1-container {
+      nav {
       display: flex;
+      justify-content: space-around;
       align-items: center;
-      .img-box {
+      margin-top: -150px;
+      height: 150px;
+      transition: all 0.3s;
+      background-color: #333;
+      &.active {
+        margin-top: 0px;
+      }
+      a {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        margin-left: 50px;
-        font-family: 'Homoarakhn','sans-serif';
-        img {
-          width: 80px;
-          height: 80px;
-          margin-bottom: 20px;
+        .img-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: 'Homoarakhn','sans-serif';
+          img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+          }
+          span {
+            font-size: 20px;
+          }
         }
-        span {
-          font-size: 20px;
+        
+      }
+      }
+    }
+  }
+  .row2 {
+    width: 100%;
+    background-color: #333;
+    .row2-container {
+      width: 100%;
+      height: 100px;
+      max-width: 1450px;
+      margin: 0 auto;
+      display: flex;
+      .menu-btn {
+        width: 500px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        button {
+        display: flex;
+        position: relative;
+        width: 80px;
+        align-items: center;
+        cursor: pointer;
+        border: 0;
+        background:none;
+        img {
+          width: 100%;
+        }
         }
       }
-      
+      .title {
+        width: 500px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+        color: #000;
+        font-family: 'Homoarakhn','sans-serif';
+        text-shadow: 2px 5px 5px rgb(255,0,0);
+          h2 {
+          font-size: 50px;
+          }
+        }
+      }
+      .member {
+        width: 500px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-size: 15px;
+        > li {
+            position: relative;
+          > a {
+            display: block;
+            font-weight: 500;
+            color: #fff;
+          &:nth-child(1).on {
+            color: #f00;
+          }
+          img {
+            position: relative;
+            top: -2px;
+            width: 20px;
+            height: 10px;
+            }
+          }
+          i {
+            color: #fff;
+            margin: 0 10px;
+          }
+          > ul.service-center {
+            display: none;
+            position: absolute;
+            width: 100px;
+            top: 22px;
+            left: -6px;
+            background: #333;
+            border: 1px solid #eee;
+            padding: 5px 0 10px 0;
+            z-index: 5;
+            &::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -1px;
+            width: 100px;
+            height: 20px; 
+            }
+            > li {
+            padding: 5px 9px 0 9px;
+            > a {
+              font-size: 12px;
+              line-height: 140%;
+              color: #fff;
+              &:hover {
+                color: #f47474;
+              }
+              &::after {
+                content: '';
+                width: 1px;
+                height: 10px;
+              }
+              }
+            }
+          }
+          &:hover > ul {
+              display: block;
+          }
+        }
+      }
     }
   }
-  button {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 80px;
-    align-items: center;
-    cursor: pointer;
-    border: 0;
-    background:none;
-    background-color: #333;
-    img {
-      width: 50px;
-    }
-    span {
-      position: absolute;
-      left: 39%;
-      font-size: 50px;
-      color: #000;
-      text-shadow: 2px 5px 5px rgb(255,0,0);
-      font-family: 'Homoarakhn','sans-serif';
-    }
-  }
-  
 }
