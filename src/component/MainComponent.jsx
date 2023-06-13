@@ -24,14 +24,17 @@ export default function MainComponent () {
         <section id="section1">
           <div class="swiper-container">
             <Swiper
-
+              slidesPerView={3}
+              slidesPerGroup={3}
+              navigation={true}
             > 
-            <SwiperSlide><img src="./img/main/sec01/465ba2b955bd02ddb6986099399d5dc3.jpg" alt="" /></SwiperSlide>
-            <SwiperSlide><img src="./img/main/sec01/37f93f9e16f82bb31c31ab5ea4b312fb.jpg" alt="" /></SwiperSlide>
-            <SwiperSlide><img src="./img/main/sec01/1444ef36a54dd43a4269b6de3efd4365.jpg" alt="" /></SwiperSlide>
-            <SwiperSlide><img src="./img/main/sec01/slide1.jpg" alt="" /></SwiperSlide>
-            <SwiperSlide><img src="./img/main/sec01/465ba2b955bd02ddb6986099399d5dc3.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="./img/main/sec01/spiderman.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="./img/main/sec01/amazing_spiderman.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="./img/main/sec01/tom_spiderman.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="./img/main/sec01/miles_morales.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="./img/main/sec01/venom.jpg" alt="" /></SwiperSlide>
             </Swiper>
+            <span>좋아하는 스파이더맨 영화를 선택하세요</span>
           </div>
         </section>
         <section id="section2" class="sec-0206">

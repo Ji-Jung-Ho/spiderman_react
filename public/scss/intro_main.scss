@@ -11,15 +11,13 @@
         height: 100vh;
         background: rgba(255,255,255,0.4);
         .swiper-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 600px;
+          width: calc(1535/3);
+          margin: 0 auto;
           .swiper-slide {
-            width: 100%;
+            width: 10%;
             img {
               width: 100%;
-              height: 450px;
+              height: 800px;
             }
           }
         }
