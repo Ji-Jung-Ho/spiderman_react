@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SignUpComponent() {
   return (
-    <main id="main">
+    <main id="main" className='signup'>
       <section id="signUp">
         <div class="container">
           <div class="title">

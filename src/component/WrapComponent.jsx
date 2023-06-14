@@ -16,8 +16,8 @@ export default function WrapComponent () {
     <div id="wrap">
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
+            <Route index  element={<MainComponent />}/>
             <Route path='/' element={<HeaderComponent />}>
-              <Route index  element={<MainComponent />}/>
               <Route path='/goods' element={<GoodsComponent/>}/>
               <Route path='/spiderman1' element={<Spiderman1Component/>}/>
               <Route path='/spiderman2' element={<Spiderman2Component/>}/>

@@ -1,6 +1,6 @@
 * {margin: 0;padding: 0;vertical-align: middle;font-size: 100%;box-sizing: border-box;}
 html, body {width: 100%;height: 100%;}
-html {overflow-y: scroll;/* scroll-behavior: smooth; */} /* 스무스 스크롤링 */
+html {/* overflow-y: scroll; *//* scroll-behavior: smooth; */} /* 스무스 스크롤링 */
 body {font: normal  14px/1  'Noto Sans KR', '나눔고딕', 'Montserrat','Roboto';color: #fff;background: rgba(255, 255, 255, 1);}
 ul, li {list-style: none;}
 a {color:#fff;text-decoration: none;}
