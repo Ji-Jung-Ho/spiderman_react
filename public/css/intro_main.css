@@ -27,34 +27,51 @@
   width: 100%;
   height: 700px;
 }
-#main #section1 .swiper-container .swiper .swiper-wrapper .swiper-slide .movie-btn {
+#main #section1 .swiper-container .swiper .swiper-wrapper .swiper-slide .slide-content {
+  width: 100%;
   position: absolute;
-  bottom: 30px;
-  right: 50px;
-  border: 0;
-  background: none;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+}
+#main #section1 .swiper-container .swiper .swiper-wrapper .swiper-slide .slide-content .movie-info h2 {
+  font-size: 27px;
+  font-weight: bold;
+  font-family: "Homoarakhn", "sans-serif";
+  line-height: 110%;
+}
+#main #section1 .swiper-container .swiper .swiper-wrapper .swiper-slide .slide-content .movie-info p {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.65;
+  line-height: 150%;
+}
+#main #section1 .swiper-container .swiper .swiper-wrapper .swiper-slide .movie-btn {
+  border: none;
+  background: 0;
   cursor: pointer;
+  padding: 10px 0;
 }
 #main #section1 .swiper-container .swiper .swiper-wrapper .swiper-slide .movie-btn span {
-  display: block;
-  width: 250px;
+  color: #fff;
   font-size: 20px;
-  font-family: "Homoarakhn", "sans-serif";
 }
-#main #section1 .swiper-container button {
+#main #section1 .swiper-container > button {
   border: 0;
   background: none;
 }
-#main #section1 .swiper-container button img {
+#main #section1 .swiper-container > button img {
   width: 50px;
   height: 50px;
 }
-#main #section1 .swiper-container button.swiper-prev-btn {
+#main #section1 .swiper-container > button.swiper-prev-btn {
   position: absolute;
   top: 50%;
   left: 0;
 }
-#main #section1 .swiper-container button.swiper-next-btn {
+#main #section1 .swiper-container > button.swiper-next-btn {
   position: absolute;
   top: 50%;
   right: 0;
