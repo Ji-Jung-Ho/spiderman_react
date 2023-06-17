@@ -33,7 +33,7 @@ export default function MainComponent () {
               }}
             > 
               <SwiperSlide>
-                <img src="./img/main/sec01/sam-spiderman3.PNG" alt="" />
+                <img src="./img/main/sam-spiderman3.PNG" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>spider-man</h2>
@@ -47,12 +47,13 @@ export default function MainComponent () {
                   <Link to='/spiderman1'>
                     <button className='movie-btn'>
                       <span>More-Movie</span>
+                      <img src="./img/main/link-arrow.png" alt="" />
                     </button>
                   </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/main/sec01/amazing-spiderman-main.jpg" alt="" />
+                <img src="./img/main/amazing-spiderman-main.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>The Amazing Spider-Man</h2>
@@ -66,12 +67,13 @@ export default function MainComponent () {
                   <Link to='/spiderman2'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
+                    <img src="./img/main/link-arrow.png" alt="" />
                   </button>
                   </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/main/sec01/tom-spicerman-photo.jpg" alt="" />
+                <img src="./img/main/tom-spicerman-photo.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>Spider-Man: Homecoming</h2>
@@ -85,12 +87,13 @@ export default function MainComponent () {
                   <Link to='/spiderman3'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
+                    <img src="./img/main/link-arrow.png" alt="" />
                   </button>
                   </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/main/sec01/miles.jpg" alt="" />
+                <img src="./img/main/miles.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>Spider-Man <br /> : Into the Spider-Verse</h2>
@@ -104,12 +107,13 @@ export default function MainComponent () {
                   <Link to='/spiderman4'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
+                    <img src="./img/main/link-arrow.png" alt="" />
                   </button>
                   </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/main/sec01/venom.jpg" alt="" />
+                <img src="./img/main/venom.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>The Venom</h2>
@@ -123,16 +127,17 @@ export default function MainComponent () {
                   <Link to='/venom'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
+                    <img src="./img/main/link-arrow.png" alt="" />
                   </button>
                   </Link>
                 </div>
               </SwiperSlide>
             </Swiper>
             <button className="swiper-prev-btn">
-              <img src="./img/main/sec01/prev-btn.png" alt="" />
+              <img src="./img/main/prev-btn.png" alt="" />
             </button>
             <button className="swiper-next-btn">
-              <img src="./img/main/sec01/prev-btn.png" alt="" />
+              <img src="./img/main/prev-btn.png" alt="" />
             </button>
             <div className="swiper-pagination"></div>
           </div>

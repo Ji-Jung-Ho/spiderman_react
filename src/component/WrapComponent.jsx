@@ -9,27 +9,34 @@ import Spiderman3Component from './spidermanComponent/Spiderman3Component';
 import Spiderman4Component from './spidermanComponent/Spiderman4Component';
 import VenomComponent from './spidermanComponent/VenomComponent';
 import SignUpComponent from './memberComponent/SignUpComponent';
+import FooterComponent from './FooterComponent';
 
 export default function WrapComponent () {
 
   return (
     <div id="wrap">
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Routes>
-            <Route index  element={<MainComponent />}/>
-            <Route path='/' element={<HeaderComponent />}>
-              <Route path='/goods' element={<GoodsComponent/>}/>
-              <Route path='/spiderman1' element={<Spiderman1Component/>}/>
-              <Route path='/spiderman2' element={<Spiderman2Component/>}/>
-              <Route path='/spiderman3' element={<Spiderman3Component/>}/>
-              <Route path='/spiderman4' element={<Spiderman4Component/>}/>
-              <Route path='/venom' element={<VenomComponent/>}/>
-              <Route path='/signup' element={<SignUpComponent/>}/>
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      {/* <HeaderComponent></HeaderComponent>
-      <MainComponent></MainComponent> */}
-    </div>
-  );
-};
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<MainComponent />}></Route>
+        <Route path="/goods" element={<HeaderFooterLayout component={<GoodsComponent />} />} />
+        <Route path="/spiderman1" element={<HeaderFooterLayout component={<Spiderman1Component />} />} />
+        <Route path="/spiderman2" element={<HeaderFooterLayout component={<Spiderman2Component />} />} />
+        <Route path="/spiderman3" element={<HeaderFooterLayout component={<Spiderman3Component />} />} />
+        <Route path="/spiderman4" element={<HeaderFooterLayout component={<Spiderman4Component />} />} />
+        <Route path="/venom" element={<HeaderFooterLayout component={<VenomComponent />} />} />
+        <Route path="/signup" element={<HeaderFooterLayout component={<SignUpComponent />} />} />
+      </Routes>
+    </BrowserRouter>
+  </div>
+);
+}
+
+function HeaderFooterLayout({ component: Component }) {
+return (
+  <>
+    <HeaderComponent />
+    {Component}
+    <FooterComponent />
+  </>
+);
+}

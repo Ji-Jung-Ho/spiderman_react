@@ -144,12 +144,12 @@ export default function HeaderComponent() {
               </Link>
             </div>
             <ul className="member">
-              <li><Link to="/signup" class="on">SignUp</Link></li>
+              <li><Link to="/signup" className="on">SignUp</Link></li>
               <li><i>|</i></li>
               <li><a href="#!">SignIn</a></li>
               <li><i>|</i></li>
               <li><a href="#!">고객센터<img src="./img/header/down-arrow.png" alt=""/></a>
-                <ul class="service-center">
+                <ul className="service-center">
                   <li><a href="#!">공지사항</a></li>
                   <li><a href="#!">자주하는 질문</a></li>
                   <li><a href="#!">1:1 문의</a></li>
