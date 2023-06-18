@@ -55,9 +55,9 @@ export default function HeaderComponent() {
   return (
     <>
       <header id="header">
-        <div className="row1">
+        <div className={isMenuOpen ? 'row1 active' : 'row1'}>
           <div className="row1-container">
-            <nav className={isMenuOpen ? 'active' : ''}>
+            <nav>
               <Link to="spiderman1">
                 <div
                   className={`img-box ${isHover1 ? 'hovered' : ''}`}
@@ -140,7 +140,7 @@ export default function HeaderComponent() {
             </div>
             <div className="title">
               <Link to="/">
-                <h2>spiderman</h2>
+                <img src="./img/header/spiderman_logo.png" alt="" />
               </Link>
             </div>
             <ul className="member">

@@ -33,7 +33,7 @@ export default function MainComponent () {
               }}
             > 
               <SwiperSlide>
-                <img src="./img/main/sam-spiderman3.PNG" alt="" />
+                <img src="./img/main/spiderman-main.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>spider-man</h2>
@@ -73,16 +73,16 @@ export default function MainComponent () {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/main/tom-spicerman-photo.jpg" alt="" />
+                <img src="./img/main/new-spiderman-main.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>Spider-Man: Homecoming</h2>
                     <p>
-                      Starring : Tobey Maguire
+                      Starring : Tom Holland
                       <br/>
-                      Director : Sam Raimi
+                      Director : Jon Watts
                     </p>
-                    <p>After being bitten by a genetically-modified spider, a shy teenager gains spider-like abilities that he uses to fight injustice as a masked superhero and face a vengeful enemy.</p>
+                    <p>Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego Spider-Man, and finds himself on the trail of a new menace prowling the skies of New York City.</p>
                   </div>
                   <Link to='/spiderman3'>
                   <button className='movie-btn'>
@@ -93,14 +93,14 @@ export default function MainComponent () {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/main/miles.jpg" alt="" />
+                <img src="./img/main/miles-main.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>Spider-Man <br /> : Into the Spider-Verse</h2>
                     <p>
                       Starring : Jake Johnson (Miles Morales)
                       <br/>
-                      Director : Sam Raimi
+                      Director : Bob Persichetti, Peter Ramsey, Rodney Rothman
                     </p>
                     <p>Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.</p>
                   </div>
@@ -113,7 +113,7 @@ export default function MainComponent () {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/main/venom.jpg" alt="" />
+                <img src="./img/main/venom-main.jpg" alt="" />
                 <div className='slide-content'>
                   <div className="movie-info">
                     <h2>The Venom</h2>
@@ -127,6 +127,26 @@ export default function MainComponent () {
                   <Link to='/venom'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
+                    <img src="./img/main/link-arrow.png" alt="" />
+                  </button>
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="./img/main/goods.jpg" alt="" />
+                <div className='slide-content'>
+                  <div className="movie-info">
+                    <h2>Spider-Man Goods</h2>
+                    <p>
+                      Starring : All Spider-Man, Venom
+                      <br/>
+                      Director : Ji-Jung-Ho
+                    </p>
+                    <p>All Spider-Man and Venom figures, various spiderman movie posters are available for purchase.</p>
+                  </div>
+                  <Link to='/goods'>
+                  <button className='movie-btn goods-btn'>
+                    <span>More-Goods</span>
                     <img src="./img/main/link-arrow.png" alt="" />
                   </button>
                   </Link>
