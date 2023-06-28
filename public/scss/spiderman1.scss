@@ -36,8 +36,8 @@
     min-height: 410px;
     max-height: 640px;
     position: relative;
-    background: url(../img/spiderman-1/spider-man_lob_mas_dsk_01.jpg) no-repeat 50% 50%;
-    background-size: cover;
+    background: url(../img/spiderman-1/spider-man_lob_mas_dsk_01.jpg) no-repeat 50% 50% fixed;
+    background-size: contain;
     &::after {
       content: "";
       position: absolute;
@@ -53,12 +53,44 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
-      .title {
-        width: 550px;
-        position: relative;
+      position: relative;
+      .main-title-img {
+        width: 650px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         z-index: 1;
         img {
           width: 100%;
+        }
+        .awards {
+          width: 750px;
+          display: flex;
+          justify-content: space-around;
+          .awards-list {
+            position: relative;
+            img {
+              width: 200px;
+              color: #917151;
+            }
+            .awards-title {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 15%;
+              left: 0;
+              padding: 10px;
+              h2 {
+                font-size: 14px;
+                text-align: center;
+                line-height: 150%;
+                &.add-padding {
+                  padding-top: 10px;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -77,7 +109,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        padding: 0 0 10px 20px;
+        padding: 30px 0 30px 20px;
         h2 {
           font-size: 26px;
           font-weight: 800;
@@ -92,7 +124,7 @@
           transform: rotate(-45deg) skewX(45deg);
           width: 20px;
           left: 35px;
-          top: 67px;
+          top: 73px;
           transform-origin: left bottom;
         }
         &::after {
@@ -104,21 +136,27 @@
           transform: rotate(-45deg) skewX(45deg);
           width: 20px;
           left: 73px;
-          bottom: 74px;
+          bottom: 70px;
           transform-origin: right top;
         }
       }
       .trailer-content {
         width: 100%;
-        background: #151515;
+        // background: #151515;
         .sub-title {
+          position: relative;
           width: 100%;
-          padding: 70px 0;
-          ul {
+          padding: 20px 0;
+          display: flex;
+          align-items: center;
+          > ul {
+            width: 100%;
+            position: sticky;
+            top: 0;
             display: flex;
             justify-content: space-around;
-            li {
-              background-color: #151515;
+            align-items: center;
+            > li {
               button {
                 border: none;
                 background: 0;
@@ -128,13 +166,46 @@
                   font-size: 40px;
                   color: #fff;
                   font-family: 'Homoarakhn','sans-serif';
-                  &:hover {
-                    color: #f00;
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0px;
+                    right: 0px;
+                    height: 2px;
+                    opacity: 0;
+                    background: #fff;
+                    transform: scaleX(0);
+                    transition: all 0.3s ease 0s;
                   }
-                  &.spider-man-1,
-                  &.spider-man-2,
-                  &.spider-man-3 {
-                    color: #f00;
+                  &:hover {
+                    color: #b42222;
+                    &::after {
+                      content: "";
+                      position: absolute;
+                      bottom: -1px;
+                      left: 0px;
+                      right: 0px;
+                      height: 2px;
+                      opacity: 1;
+                      background: #fff;
+                      transform: scaleX(1);
+                      transition: all 0.3s ease 0s;
+                    }
+                  }
+                  &.active {
+                    &::after {
+                      content: "";
+                      position: absolute;
+                      bottom: -1px;
+                      left: 0px;
+                      right: 0px;
+                      height: 2px;
+                      opacity: 1;
+                      background: #fff;
+                      transform: scaleX(1);
+                      transition: all 0.3s ease 0s;
+                    }
                   }
                 }
               }
@@ -145,6 +216,7 @@
           width: 1200px;
           margin: 0 auto;
           padding-bottom: 80px;
+          transition: all 0.3s ease-in-out;
           .trailer-box {
             padding-bottom: 80px;
             position: relative;
@@ -165,19 +237,21 @@
           }
           &.show-menu {
             display: block;
-            transition: all 1s;
+            transition: all 0.5s;
+            opacity: 1;
           }
           &.hide-menu {
             display: none;
-            transition: all 1s;
+            transition: all 0.5s;
+            opacity: 0;
           }
           .movie-intro {
             width: 100%;
             position: relative;
             padding: 40px 20px;
-            background-color: #151515;
             color: #fff;
             font-family: 'RobotoCondensed', 'sans-serif';
+            border-bottom: 1px solid #fff;
             .title {
               width: 100%;
               padding-bottom: 50px;
@@ -221,10 +295,10 @@
               }
             }
             .movie-info {
-              padding: 60px 0 0 0;
+              padding: 40px 0 0 0;
               ul {
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 align-items: center;
                 width: 800px;
                 li {
@@ -237,6 +311,7 @@
                         display: block;
                         width: 170px;
                         font-weight: bold;
+                        padding-top: 10px;
                       }
                     }
                   }
@@ -256,24 +331,16 @@
                 height: 100%;
               }
             }
-            &::after {
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 1px;
-              background: #fff;
-            }
           }
           .movie-review {
             width: 100%;
             position: relative;
             padding: 40px 20px;
             font-family: 'RobotoCondensed', 'sans-serif';
-            .title {
+            border-bottom: 1px solid #fff;
+            .review-title {
               width: 100%;
-              margin-bottom: 55px;
+              padding-bottom: 55px;
               &::before {
                 background-color: #c6a972;
                 content: "";
@@ -306,28 +373,64 @@
             }
             .review-box {
               width: 100%;
-              > ul {
+              height: 400px; 
+              position: relative;
+              user-select: none; 
+              .review-container {
+                position: absolute; 
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
                 display: flex;
                 justify-content: space-around;
-                color: #000;
-                li {
-                  width: 300px;
+                align-items: center;
+                .review-list {
                   padding: 20px;
-                  height: 300px;
-                  background: #fff;
+                  background: oldlace;
+                  width: 350px;
+                  height: 350px;
+                  position: relative;
+                  &::before {
+                    content: '';
+                    background: url(../img/etc-img/spider_red_logo.png);
+                    background-size: contain;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 50px;
+                  }
                   .review {
-                    padding-bottom: 20px;
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    height: 100%;
+                    padding-top: 20px;
+                    color: #000;
                     p {
                       font-size: 20px;
                       line-height: 150%;
+                      font-style: italic;
+                      &.review-travers {
+                        padding-top: 30px;
+                      }
+                      &.review-enzi {
+                        padding-top: 60px;
+                      }
                     }
-                  }
-                  .reviewer {
-                    span {}
+                    span {
+                      font-size: 15px;
+                      text-decoration: underline;
+                      text-underline-offset: 5px;
+                    }
                   }
                 }
               }
             }
+            
+            
             
           }
         }

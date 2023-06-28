@@ -46,8 +46,28 @@ export default function Spiderman1Component() {
       </section>
       <section className="section2">
         <div className="sec2-container">
-          <div className="title">
+          <div className="main-title-img">
             <img src="./img/spiderman-1/spider-man_lob_log_def_01.png" alt="" />
+            <div className="awards">
+              <div className="awards-list">
+                <img src="./img/spiderman-1/award_symbol.svg" alt="" />
+                <div className="awards-title">
+                  <h2>Oscar Academy Award <br /> Best Original Score Nominations</h2>
+                </div>
+              </div>
+              <div className="awards-list">
+                <img src="./img/spiderman-1/award_symbol.svg" alt="" />
+                <div className="awards-title">
+                  <h2 className='add-padding'>MTV Movie Awards <br /> Best Action Sequence</h2>
+                </div>
+              </div>
+              <div className="awards-list">
+                <img src="./img/spiderman-1/award_symbol.svg" alt="" />
+                <div className="awards-title">
+                  <h2>BAFTA Awards <br /> Best Original Score Nominations</h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -61,22 +81,22 @@ export default function Spiderman1Component() {
               <ul>
                 <li>
                   <button className="movie-choice" onClick={onClickSpiderMan1Toggle}>
-                    <span className={`sub-title ${isSpiderMan1 ? 'spider-man-1' : ''}`}>Spider-Man-1</span>
+                    <span className={`sub-title ${isSpiderMan1 ? 'active' : ''}`}>Spider-Man-1</span>
                   </button>
                 </li>
                 <li>
                   <button className="movie-choice" onClick={onClickSpiderMan2Toggle}>
-                    <span className={`sub-title ${isSpiderMan2 ? 'spider-man-2' : ''}`}>Spider-Man-2</span>
+                    <span className={`sub-title ${isSpiderMan2 ? 'active' : ''}`}>Spider-Man-2</span>
                   </button>
                 </li>
                 <li>
                   <button className="movie-choice" onClick={onClickSpiderMan3Toggle}>
-                    <span className={`sub-title ${isSpiderMan3 ? 'spider-man-3' : ''}`}>Spider-Man-3</span>
+                    <span className={`sub-title ${isSpiderMan3 ? 'active' : ''}`}>Spider-Man-3</span>
                   </button>
                 </li>
               </ul>
             </div>
-            <div className={isSpiderMan1 ? 'show-menu trailer-container' : 'hide-menu trailer-container'}>
+            <div className={`trailer-container ${isSpiderMan1 ? 'show-menu' : 'hide-menu'}`}>
               <div className="trailer-box">
                 <iframe
                   src="https://www.youtube.com/embed/WMxTe3eouQc"
@@ -125,36 +145,45 @@ export default function Spiderman1Component() {
                 </div>
               </div>
               <div className="movie-review">
-                <div className="title">
+                <div className="review-title">
                   <h2>review</h2>
                 </div>
                 <div className="review-box">
-                  <ul>
-                    <li>
+                  <ul className='review-container'>
+                    <li className='review-list'>
                       <div className="review">
-                        <p>
+                        <p className='review-travers'>
                           Maguire and Dunst keep Spider-Man on a high with their sweet-sexy yearning, spinning a web of dazzle and delicacy that might just restore the good name of movie escapism.
                         </p>
-                      </div>
-                      <div className="reviewer">
                         <span>Rolling Stone - Peter Travers</span>
                       </div>
                     </li>
-                    <li>
+                    <li className='review-list'>
+                      <div className="review">
+                        <p className='review-enzi'>
+                          Everything feels more real and urgent, it actually feels more human than some live-action films we get to see.
+                        </p>
+                        <span>WXIX-TV (Cincinnati, OH) - TT STERN-ENZI</span>
+                      </div>
+                    </li>
+                    <li className='review-list'>
                       <div className="review">
                         <p>
-                          Spider-Man, while hardly immune to these vices, is, like Mr. Maguire, disarmingly likable, and touching in unexpected ways.
+                          There's a particular upside-down, half-masked kiss that instantly becomes one of movie history's more memorable smooches. It's the kiss to send any teenaged boy on a spinning high, as well as launching the new age of arachnophilia.
                         </p>
-                      </div>
-                      <div className="reviewer">
-                        <span>The New York TimesDana Stevens</span>
+                        <span>The Globe and Mail (Toronto) - Liam Lacey</span>
                       </div>
                     </li>
                   </ul>
                 </div>
               </div>
+              <div className="rating">
+                <div className="rating-title">
+                  <h2>rating</h2>
+                </div>
+              </div>
             </div>
-            <div className={isSpiderMan2 ? 'show-menu trailer-container' : 'hide-menu trailer-container'}>
+            <div className={`trailer-container ${isSpiderMan2 ? 'show-menu' : 'hide-menu'}`}>
               <div className="trailer-box">
                 <iframe
                   src="https://www.youtube.com/embed/B1R2d6eEaC4"
@@ -229,7 +258,7 @@ export default function Spiderman1Component() {
                 </div>
               </div>
             </div>
-            <div className={isSpiderMan3 ? 'show-menu trailer-container' : 'hide-menu trailer-container'}>
+            <div className={`trailer-container ${isSpiderMan3 ? 'show-menu' : 'hide-menu'}`}>
               <div className="trailer-box">
                 <iframe
                   src="https://www.youtube.com/embed/QzSkaWmjIpY"
