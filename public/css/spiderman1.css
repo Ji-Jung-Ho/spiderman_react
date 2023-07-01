@@ -35,127 +35,15 @@
 }
 #main.spiderman-movie-1 .section2 {
   width: 100%;
-  height: 60vh;
-  min-height: 410px;
-  max-height: 640px;
-  position: relative;
-  background: url(../img/spiderman-1/spider-man_lob_mas_dsk_01.jpg) no-repeat 50% 50% fixed;
-  background-size: contain;
 }
-#main.spiderman-movie-1 .section2::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0, transparent);
-}
-#main.spiderman-movie-1 .section2 .sec2-container {
-  width: 1400px;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img {
-  width: 650px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  z-index: 1;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img img {
-  width: 100%;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img .awards {
-  width: 750px;
-  display: flex;
-  justify-content: space-around;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img .awards .awards-list {
-  position: relative;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img .awards .awards-list img {
-  width: 200px;
-  color: #917151;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img .awards .awards-list .awards-title {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 15%;
-  left: 0;
-  padding: 10px;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img .awards .awards-list .awards-title h2 {
-  font-size: 14px;
-  text-align: center;
-  line-height: 150%;
-}
-#main.spiderman-movie-1 .section2 .sec2-container .main-title-img .awards .awards-list .awards-title h2.add-padding {
-  padding-top: 10px;
-}
-#main.spiderman-movie-1 .section3 {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#main.spiderman-movie-1 .section3 .sec3-container {
-  width: 1500px;
-  margin: 0 auto;
-  padding: 30px 0;
-}
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-title {
-  width: 100%;
-  height: 78px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 30px 0 30px 20px;
-}
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-title h2 {
-  font-size: 26px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-title::before {
-  background-color: #c6a972;
-  content: "";
-  display: block;
-  height: 2px;
-  position: absolute;
-  transform: rotate(-45deg) skewX(45deg);
-  width: 20px;
-  left: 35px;
-  top: 73px;
-  transform-origin: left bottom;
-}
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-title::after {
-  background-color: #c6a972;
-  content: "";
-  display: block;
-  height: 2px;
-  position: absolute;
-  transform: rotate(-45deg) skewX(45deg);
-  width: 20px;
-  left: 73px;
-  bottom: 70px;
-  transform-origin: right top;
-}
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content {
-  width: 100%;
-}
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title {
+#main.spiderman-movie-1 .section2 .sub-title {
   position: relative;
   width: 100%;
   padding: 20px 0;
   display: flex;
   align-items: center;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title > ul {
+#main.spiderman-movie-1 .section2 .sub-title > ul {
   width: 100%;
   position: sticky;
   top: 0;
@@ -163,18 +51,18 @@
   justify-content: space-around;
   align-items: center;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title > ul > li button {
+#main.spiderman-movie-1 .section2 .sub-title > ul > li button {
   border: none;
   background: 0;
   cursor: pointer;
   margin: 0 8px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title > ul > li button span {
+#main.spiderman-movie-1 .section2 .sub-title > ul > li button span {
   font-size: 40px;
   color: #fff;
   font-family: "Homoarakhn", "sans-serif";
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title > ul > li button span::after {
+#main.spiderman-movie-1 .section2 .sub-title > ul > li button span::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -186,10 +74,10 @@
   transform: scaleX(0);
   transition: all 0.3s ease 0s;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title > ul > li button span:hover {
+#main.spiderman-movie-1 .section2 .sub-title > ul > li button span:hover {
   color: #b42222;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title > ul > li button span:hover::after {
+#main.spiderman-movie-1 .section2 .sub-title > ul > li button span:hover::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -201,7 +89,7 @@
   transform: scaleX(1);
   transition: all 0.3s ease 0s;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .sub-title > ul > li button span.active::after {
+#main.spiderman-movie-1 .section2 .sub-title > ul > li button span.active::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -213,22 +101,147 @@
   transform: scaleX(1);
   transition: all 0.3s ease 0s;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container {
+#main.spiderman-movie-1 .section3 {
+  width: 100%;
+  height: 100vh;
+  min-height: 410px;
+  max-height: 640px;
+  position: relative;
+  background: url(../img/spiderman-1/spiderman1-main-img.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+#main.spiderman-movie-1 .section3.spiderman2 {
+  background: url(../img/spiderman-1/spiderman2-main-img.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+#main.spiderman-movie-1 .section3.spiderman3 {
+  background: url(../img/spiderman-1/spiderman3-main-img.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+#main.spiderman-movie-1 .section3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0, transparent);
+}
+#main.spiderman-movie-1 .section3 .sec2-container {
+  width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img {
+  width: 650px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img img {
+  width: 100%;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img .awards {
+  width: 750px;
+  display: flex;
+  justify-content: space-around;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img .awards .awards-list {
+  position: relative;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img .awards .awards-list img {
+  width: 200px;
+  color: #917151;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img .awards .awards-list .awards-title {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  padding: 10px;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img .awards .awards-list .awards-title h2 {
+  font-size: 14px;
+  text-align: center;
+  line-height: 150%;
+}
+#main.spiderman-movie-1 .section3 .sec2-container .main-title-img .awards .awards-list .awards-title h2.add-padding {
+  padding-top: 10px;
+}
+#main.spiderman-movie-1 .section4 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#main.spiderman-movie-1 .section4 .sec3-container {
+  width: 1500px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-title {
+  width: 100%;
+  height: 78px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 30px 0 30px 20px;
+}
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-title h2 {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-title::before {
+  background-color: #c6a972;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  transform: rotate(-45deg) skewX(45deg);
+  width: 20px;
+  left: 35px;
+  top: 73px;
+  transform-origin: left bottom;
+}
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-title::after {
+  background-color: #c6a972;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  transform: rotate(-45deg) skewX(45deg);
+  width: 20px;
+  left: 73px;
+  bottom: 70px;
+  transform-origin: right top;
+}
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content {
+  width: 100%;
+  padding-top: 60px;
+}
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container {
   width: 1200px;
   margin: 0 auto;
   padding-bottom: 80px;
   transition: all 0.3s ease-in-out;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .trailer-box {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .trailer-box {
   padding-bottom: 80px;
   position: relative;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .trailer-box iframe {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .trailer-box iframe {
   width: 1200px;
   height: 700px;
   border: 0;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .trailer-box::after {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .trailer-box::after {
   content: "";
   position: absolute;
   bottom: 40px;
@@ -237,17 +250,17 @@
   height: 1px;
   background: #fff;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container.show-menu {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container.show-menu {
   display: block;
   transition: all 0.5s;
   opacity: 1;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container.hide-menu {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container.hide-menu {
   display: none;
   transition: all 0.5s;
   opacity: 0;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro {
   width: 100%;
   position: relative;
   padding: 40px 20px;
@@ -255,16 +268,16 @@
   font-family: "RobotoCondensed", "sans-serif";
   border-bottom: 1px solid #fff;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .title {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .title {
   width: 100%;
   padding-bottom: 50px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .title h2 {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .title h2 {
   font-size: 26px;
   font-weight: 800;
   text-transform: uppercase;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .title::before {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .title::before {
   background-color: #c6a972;
   content: "";
   display: block;
@@ -276,7 +289,7 @@
   top: 35px;
   transform-origin: left bottom;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .title::after {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .title::after {
   background-color: #c6a972;
   content: "";
   display: block;
@@ -288,40 +301,40 @@
   top: 70px;
   transform-origin: right top;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-story {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-story {
   width: 800px;
   padding: 25px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-story p {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-story p {
   font-size: 16px;
   line-height: 150%;
   color: #fff;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info {
   padding: 40px 0 0 0;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 800px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li {
   text-transform: uppercase;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li .detail-info {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li .detail-info {
   text-align: center;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li .detail-info p {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li .detail-info p {
   line-height: 150%;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li .detail-info p span {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-info ul li .detail-info p span {
   display: block;
   width: 170px;
   font-weight: bold;
   padding-top: 10px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-poster {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-poster {
   width: 280px;
   height: 380px;
   float: right;
@@ -330,22 +343,22 @@
   right: 30px;
   padding: 20px 0;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-intro .movie-poster img {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-intro .movie-poster img {
   width: 100%;
   height: 100%;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review {
   width: 100%;
   position: relative;
   padding: 40px 20px;
   font-family: "RobotoCondensed", "sans-serif";
   border-bottom: 1px solid #fff;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-title {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-title {
   width: 100%;
   padding-bottom: 55px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-title::before {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-title::before {
   background-color: #c6a972;
   content: "";
   display: block;
@@ -357,7 +370,7 @@
   top: 35px;
   transform-origin: left bottom;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-title::after {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-title::after {
   background-color: #c6a972;
   content: "";
   display: block;
@@ -369,12 +382,12 @@
   top: 70px;
   transform-origin: right top;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-title h2 {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-title h2 {
   font-size: 26px;
   font-weight: 800;
   text-transform: uppercase;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box {
   width: 100%;
   height: 400px;
   position: relative;
@@ -382,7 +395,7 @@
      -moz-user-select: none;
           user-select: none;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -392,14 +405,14 @@
   justify-content: space-around;
   align-items: center;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list {
   padding: 20px;
   background: oldlace;
   width: 350px;
   height: 350px;
   position: relative;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list::before {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list::before {
   content: "";
   background: url(../img/etc-img/spider_red_logo.png);
   background-size: contain;
@@ -409,7 +422,7 @@
   width: 50px;
   height: 50px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -418,18 +431,18 @@
   padding-top: 20px;
   color: #000;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review p {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review p {
   font-size: 20px;
   line-height: 150%;
   font-style: italic;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review p.review-travers {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review p.review-travers {
   padding-top: 30px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review p.review-enzi {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review p.review-enzi {
   padding-top: 60px;
 }
-#main.spiderman-movie-1 .section3 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review span {
+#main.spiderman-movie-1 .section4 .sec3-container .trailer-content .trailer-container .movie-review .review-box .review-container .review-list .review span {
   font-size: 15px;
   text-decoration: underline;
   text-underline-offset: 5px;

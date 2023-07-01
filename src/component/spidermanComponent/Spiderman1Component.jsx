@@ -44,10 +44,31 @@ export default function Spiderman1Component() {
           </Link>
         </div>
       </section>
-      <section className="section2">
+      <section className='section2'>
+        <div className='sub-title'>
+          <ul>
+            <li>
+              <button className="movie-choice" onClick={onClickSpiderMan1Toggle}>
+                <span className={`sub-title ${isSpiderMan1 ? 'active' : ''}`}>Spider-Man-1</span>
+              </button>
+            </li>
+            <li>
+              <button className="movie-choice" onClick={onClickSpiderMan2Toggle}>
+                <span className={`sub-title ${isSpiderMan2 ? 'active' : ''}`}>Spider-Man-2</span>
+              </button>
+            </li>
+            <li>
+              <button className="movie-choice" onClick={onClickSpiderMan3Toggle}>
+                <span className={`sub-title ${isSpiderMan3 ? 'active' : ''}`}>Spider-Man-3</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className={`section3 ${isSpiderMan2 ? 'spiderman2' : isSpiderMan3 ? 'spiderman3' : ''}`}>
         <div className="sec2-container">
           <div className="main-title-img">
-            <img src="./img/spiderman-1/spider-man_lob_log_def_01.png" alt="" />
+            <img src={`./img/spiderman-1/spider-man${isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_lob_log_def_01.png`} alt="" />
             <div className="awards">
               <div className="awards-list">
                 <img src="./img/spiderman-1/award_symbol.svg" alt="" />
@@ -71,31 +92,13 @@ export default function Spiderman1Component() {
           </div>
         </div>
       </section>
-      <section className="section3">
+      <section className="section4">
         <div className="sec3-container">
           <div className="trailer-title">
             <h2>official tailer</h2>
           </div>
           <div className="trailer-content">
-            <div className='sub-title'>
-              <ul>
-                <li>
-                  <button className="movie-choice" onClick={onClickSpiderMan1Toggle}>
-                    <span className={`sub-title ${isSpiderMan1 ? 'active' : ''}`}>Spider-Man-1</span>
-                  </button>
-                </li>
-                <li>
-                  <button className="movie-choice" onClick={onClickSpiderMan2Toggle}>
-                    <span className={`sub-title ${isSpiderMan2 ? 'active' : ''}`}>Spider-Man-2</span>
-                  </button>
-                </li>
-                <li>
-                  <button className="movie-choice" onClick={onClickSpiderMan3Toggle}>
-                    <span className={`sub-title ${isSpiderMan3 ? 'active' : ''}`}>Spider-Man-3</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
+            
             <div className={`trailer-container ${isSpiderMan1 ? 'show-menu' : 'hide-menu'}`}>
               <div className="trailer-box">
                 <iframe
