@@ -65,7 +65,7 @@ export default function Spiderman1Component() {
           </ul>
         </div>
       </section>
-      <section className={`section3 ${isSpiderMan2 ? 'spiderman2' : isSpiderMan3 ? 'spiderman3' : ''}`}>
+      <section className={`section3 ${isSpiderMan1 ? 'spiderman1' : isSpiderMan2 ? 'spiderman2' : isSpiderMan3 ? 'spiderman3' : ''}`}>
         <div className="sec2-container">
           <div className="main-title-img">
             <img src={`./img/spiderman-1/spider-man${isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_lob_log_def_01.png`} alt="" />
@@ -93,12 +93,11 @@ export default function Spiderman1Component() {
         </div>
       </section>
       <section className="section4">
-        <div className="sec3-container">
+        <div className="sec4-container">
           <div className="trailer-title">
             <h2>official tailer</h2>
           </div>
           <div className="trailer-content">
-            
             <div className={`trailer-container ${isSpiderMan1 ? 'show-menu' : 'hide-menu'}`}>
               <div className="trailer-box">
                 <iframe
@@ -178,11 +177,6 @@ export default function Spiderman1Component() {
                       </div>
                     </li>
                   </ul>
-                </div>
-              </div>
-              <div className="rating">
-                <div className="rating-title">
-                  <h2>rating</h2>
                 </div>
               </div>
             </div>
@@ -310,6 +304,54 @@ export default function Spiderman1Component() {
                 </div>
               </div>
             </div>
+            
+          </div>
+        </div>
+      </section>
+      <section className='section5'>
+        <div className="sec5-container">
+          <div className="related-movie-title">
+            <h2>RELATED MOVIES</h2>
+          </div>
+          <div className="related-content">
+            <ul>
+              <li>
+                <a href="#!">
+                  <img src="./img/spiderman-1/theamazingspider-man_lob_crd_01.jpg" alt="" />
+                  <div className="card-info">
+                    <p className='card-name'>The Amazing Spider-Man</p>
+                    <p className='production-year'>2012</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="./img/spiderman-1/venom_lob_crd_01.jpg" alt="" />
+                  <div className="card-info">
+                    <p className='card-name'>The Venom</p>
+                    <p className='production-year'>2012</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="./img/spiderman-1/venom_lob_crd_01.jpg" alt="" />
+                  <div className="card-info">
+                    <p className='card-name'>The Venom</p>
+                    <p className='production-year'>2012</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="./img/spiderman-1/venom_lob_crd_01.jpg" alt="" />
+                  <div className="card-info">
+                    <p className='card-name'>The Venom</p>
+                    <p className='production-year'>2012</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
