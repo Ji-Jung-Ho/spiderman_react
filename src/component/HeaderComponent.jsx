@@ -52,13 +52,17 @@ export default function HeaderComponent() {
     setIsHover5(false);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       <header id="header">
         <div className={isMenuOpen ? 'row1 active' : 'row1'}>
           <div className="row1-container">
             <nav>
-              <Link to="spiderman1">
+              <Link to="/sam" onClick={closeMenu}>
                 <div
                   className={`img-box ${isHover1 ? 'hovered' : ''}`}
                   onMouseEnter={onMouseEnter1}
@@ -71,7 +75,7 @@ export default function HeaderComponent() {
                   <span>SpiderMan</span>
                 </div>
               </Link>
-                <Link to='spiderman2'>
+                <Link to='/amazing' onClick={closeMenu}>
                   <div className={`img-box ${isHover2 ? 'hovered' : ''}`}
                     onMouseEnter={onMouseEnter2}
                     onMouseLeave={onMouseLeave}
@@ -83,7 +87,7 @@ export default function HeaderComponent() {
                     <span>Amazing-SpiderMan</span>
                   </div>
                 </Link>
-                <Link to='spiderman3'>
+                <Link to='/tom' onClick={closeMenu}>
                   <div className={`img-box ${isHover3 ? 'hovered' : ''}`}
                     onMouseEnter={onMouseEnter3}
                     onMouseLeave={onMouseLeave}
@@ -95,7 +99,7 @@ export default function HeaderComponent() {
                     <span>New-SpiderMan</span>
                   </div>
                 </Link>
-                <Link to='spiderman4'>
+                <Link to='/miles' onClick={closeMenu}>
                   <div className={`img-box ${isHover4 ? 'hovered' : ''}`}
                     onMouseEnter={onMouseEnter4}
                     onMouseLeave={onMouseLeave}
@@ -107,7 +111,7 @@ export default function HeaderComponent() {
                     <span>Miles-Morals</span>
                   </div>
                 </Link>
-                <Link to='venom'>
+                <Link to='/venom' onClick={closeMenu}>
                   <div className={`img-box ${isHover5 ? 'hovered' : ''}`}
                     onMouseEnter={onMouseEnter5}
                     onMouseLeave={onMouseLeave}
@@ -118,7 +122,7 @@ export default function HeaderComponent() {
                     <span>Venom</span>
                   </div>
                 </Link>
-              <Link to='/goods'>
+              <Link to='/goods' onClick={closeMenu}>
               <div className="img-box">
                   <img src="./img/header/HD-wallpaper-spiderman-cool-marvel-sony-spider-spider-man-far-from-home-spiderman-homecoming-spidy-venom.jpg" alt="" />
                   <span>Goods</span>

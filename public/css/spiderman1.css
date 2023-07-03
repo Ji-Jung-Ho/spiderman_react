@@ -159,12 +159,12 @@
   position: relative;
 }
 #main.spiderman-movie-1 .section4 .sec4-container {
-  width: 1500px;
+  width: 1200px;
   margin: 0 auto;
   padding: 50px 0;
 }
 #main.spiderman-movie-1 .section4 .sec4-container .trailer-title {
-  width: 1450px;
+  width: 100%;
   height: 78px;
   position: relative;
   display: flex;
@@ -414,11 +414,11 @@
   height: 500px;
 }
 #main.spiderman-movie-1 .section5 .sec5-container {
-  width: 1500px;
+  width: 1200px;
   margin: 0 auto;
 }
 #main.spiderman-movie-1 .section5 .sec5-container .related-movie-title {
-  width: 1450px;
+  width: 100%;
   height: 78px;
   position: relative;
   display: flex;
@@ -460,10 +460,14 @@
 }
 #main.spiderman-movie-1 .section5 .sec5-container .related-content ul li {
   width: 183px;
-  margin: 10px;
+  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s;
+}
+#main.spiderman-movie-1 .section5 .sec5-container .related-content ul li:hover {
+  transform: translateY(-5px);
 }
 #main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a {
   display: block;
@@ -471,8 +475,8 @@
   height: 272px;
   box-shadow: 0 7px 17px -8px rgba(0, 0, 0, 0.8);
 }
-#main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a:hover {
-  transform: translateY(-5px);
+#main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a:hover .card-name {
+  color: #e62429;
   transition: all 0.3s;
 }
 #main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a img {
@@ -480,17 +484,15 @@
 }
 #main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a .card-info {
   width: 100%;
-  padding: 10px 0;
+  padding-top: 18px;
+  overflow: hidden;
 }
 #main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a .card-info p.card-name {
   font-size: 14px;
-  color: #fff;
-}
-#main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a .card-info p.card-name:hover {
-  color: #f00;
+  padding-bottom: 5px;
 }
 #main.spiderman-movie-1 .section5 .sec5-container .related-content ul li a .card-info p.production-year {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 12px;
+  color: #767676;
   margin: 10px 0;
 }

@@ -19,10 +19,10 @@ export default function WrapComponent () {
       <Routes>
         <Route path="/" element={<MainComponent />}></Route>
         <Route path="/goods" element={<HeaderFooterLayout component={<GoodsComponent />} />} />
-        <Route path="/spiderman1" element={<HeaderFooterLayout component={<Spiderman1Component />} />} />
-        <Route path="/spiderman2" element={<HeaderFooterLayout component={<Spiderman2Component />} />} />
-        <Route path="/spiderman3" element={<HeaderFooterLayout component={<Spiderman3Component />} />} />
-        <Route path="/spiderman4" element={<HeaderFooterLayout component={<Spiderman4Component />} />} />
+        <Route path="/sam" element={<HeaderFooterLayout component={<Spiderman1Component />} />} />
+        <Route path="/amazing" element={<HeaderFooterLayout component={<Spiderman2Component />} />} />
+        <Route path="/tom" element={<HeaderFooterLayout component={<Spiderman3Component />} />} />
+        <Route path="/miles" element={<HeaderFooterLayout component={<Spiderman4Component />} />} />
         <Route path="/venom" element={<HeaderFooterLayout component={<VenomComponent />} />} />
         <Route path="/signup" element={<HeaderFooterLayout component={<SignUpComponent />} />} />
       </Routes>

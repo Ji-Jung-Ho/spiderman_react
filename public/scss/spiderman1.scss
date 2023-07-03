@@ -180,12 +180,12 @@
     position: relative;
   
     .sec4-container {
-      width: 1500px;
+      width: 1200px;
       margin: 0 auto;
       padding: 50px 0;
   
       .trailer-title {
-        width: 1450px;
+        width: 100%;
         height: 78px;
         position: relative;
         display: flex;
@@ -271,7 +271,6 @@
             color: #fff;
             font-family: 'RobotoCondensed', 'sans-serif';
             border-bottom: 1px solid #fff;
-  
             .title {
               width: 100%;
               padding-bottom: 50px;
@@ -480,10 +479,10 @@
     padding: 10px 0 40px;
     height: 500px;
     .sec5-container {
-      width: 1500px;
+      width: 1200px;
       margin: 0 auto;
       .related-movie-title {
-        width: 1450px;
+        width: 100%;
         height: 78px;
         position: relative;
         display: flex;
@@ -527,43 +526,44 @@
         ul {
           display: flex;
           flex-wrap: wrap;
+        
           li {
             width: 183px;
-            margin: 10px;
-            display: flex; 
+            margin: 5px;
+            display: flex;
             justify-content: center;
             align-items: center;
-  
+            transition: all 0.3s;
+        
+            &:hover {
+              transform: translateY(-5px);
+            }
             a {
               display: block;
               width: 183px;
               height: 272px;
-              box-shadow: 0 7px 17px -8px rgba(0,0,0,.8);
-              &:hover {
-                transform: translateY(-5px);
-                transition: all 0.3s;
+              box-shadow: 0 7px 17px -8px rgba(0, 0, 0, .8);
+              &:hover .card-name {
+                color: #e62429;
+               transition: all 0.3s;
               }
               img {
                 width: 100%;
               }
-  
+        
               .card-info {
                 width: 100%;
-                padding: 10px 0;
-  
+                padding-top: 18px;
+                overflow: hidden;
                 p {
-                  
                   &.card-name {
                     font-size: 14px;
-                    color: #fff;
-                    &:hover {
-                      color: #f00;
-                    }
+                    padding-bottom: 5px;
                   }
-                  
+        
                   &.production-year {
-                    font-size: 16px;
-                    font-weight: bold;
+                    font-size: 12px;
+                    color: #767676;
                     margin: 10px 0;
                   }
                 }
@@ -571,6 +571,7 @@
             }
           }
         }
+        
       }
     }
   }

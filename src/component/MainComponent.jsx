@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import React from 'react';
 import {Link}  from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,7 +43,7 @@ export default function MainComponent () {
                     </p>
                     <p>After being bitten by a genetically-modified spider, a shy teenager gains spider-like abilities that he uses to fight injustice as a masked superhero and face a vengeful enemy.</p>
                     </div>
-                  <Link to='/spiderman1'>
+                  <Link to='/sam'>
                     <button className='movie-btn'>
                       <span>More-Movie</span>
                       <img src="./img/main/link-arrow.png" alt="" />
@@ -64,7 +63,7 @@ export default function MainComponent () {
                     </p>
                     <p>After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to save the city from the machinations of a mysterious reptilian foe.</p>
                   </div>
-                  <Link to='/spiderman2'>
+                  <Link to='/amazing'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
                     <img src="./img/main/link-arrow.png" alt="" />
@@ -84,7 +83,7 @@ export default function MainComponent () {
                     </p>
                     <p>Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego Spider-Man, and finds himself on the trail of a new menace prowling the skies of New York City.</p>
                   </div>
-                  <Link to='/spiderman3'>
+                  <Link to='/tom'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
                     <img src="./img/main/link-arrow.png" alt="" />
@@ -104,7 +103,7 @@ export default function MainComponent () {
                     </p>
                     <p>Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.</p>
                   </div>
-                  <Link to='/spiderman4'>
+                  <Link to='/miles'>
                   <button className='movie-btn'>
                     <span>More-Movie</span>
                     <img src="./img/main/link-arrow.png" alt="" />

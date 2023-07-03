@@ -68,7 +68,7 @@ export default function Spiderman1Component() {
       <section className={`section3 ${isSpiderMan1 ? 'spiderman1' : isSpiderMan2 ? 'spiderman2' : isSpiderMan3 ? 'spiderman3' : ''}`}>
         <div className="sec2-container">
           <div className="main-title-img">
-            <img src={`./img/spiderman-1/spider-man${isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_lob_log_def_01.png`} alt="" />
+            <img src={`./img/spiderman-1/spider-man${isSpiderMan1 ? '1' : isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
             <div className="awards">
               <div className="awards-list">
                 <img src="./img/spiderman-1/award_symbol.svg" alt="" />
@@ -316,40 +316,40 @@ export default function Spiderman1Component() {
           <div className="related-content">
             <ul>
               <li>
-                <a href="#!">
-                  <img src="./img/spiderman-1/theamazingspider-man_lob_crd_01.jpg" alt="" />
+                <Link to="#!">
+                  <img src="./img/spiderman-1/theamazingspiderman_card.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
                     <p className='production-year'>2012</p>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#!">
-                  <img src="./img/spiderman-1/venom_lob_crd_01.jpg" alt="" />
+                <Link to="#!">
+                  <img src="./img/spiderman-1/spider-manhomecoming_card.jpg" alt="" />
                   <div className="card-info">
-                    <p className='card-name'>The Venom</p>
+                    <p className='card-name'>Spider-Man: Homecoming</p>
                     <p className='production-year'>2012</p>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#!">
-                  <img src="./img/spiderman-1/venom_lob_crd_01.jpg" alt="" />
+                <Link to="#!">
+                  <img src="./img/spiderman-1/intothespiderverse_card.jpg" alt="" />
                   <div className="card-info">
-                    <p className='card-name'>The Venom</p>
+                    <p className='card-name'>into the spider-verse</p>
                     <p className='production-year'>2012</p>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#!">
-                  <img src="./img/spiderman-1/venom_lob_crd_01.jpg" alt="" />
+                <Link to="#!">
+                  <img src="./img/spiderman-1/venom_card.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2018</p>
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
