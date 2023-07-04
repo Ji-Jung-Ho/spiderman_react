@@ -136,9 +136,9 @@ export default function HeaderComponent() {
             <div className="menu-btn">
               <button onClick={() => setIsMenuOpen((isOpen) => !isOpen)}>
                 {isMenuOpen ? (
-                  <img src="./img/close.png" alt="close-img" />
+                  <img src="./img/header/close.png" alt="close-img" />
                 ) : (
-                  <img src="./img/header/home-btn.png" alt="menu-img" />
+                  <img src="./img/header/Hambar.png" alt="menu-img" />
                 )}
               </button>
             </div>
