@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
-import './css/amazing_spiderman.css'
 
 export default function Spiderman2Component () {
   const [isAmazingSpiderMan1, setIsAmazingSpiderMan1] = useState(true);
@@ -76,9 +75,8 @@ export default function Spiderman2Component () {
                 <iframe 
                 src="https://www.youtube.com/embed/y0VTJPTI_u8" 
                 title="어메이징 스파이더맨_메인 예고편" 
-                frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen
+                allowFullScreen
                 >
                 </iframe>
               </div>
@@ -89,7 +87,7 @@ export default function Spiderman2Component () {
               src="https://www.youtube.com/embed/f11ZLEpwCZM" 
               title="[어메이징 스파이더맨2] 본 예고편 (2014.04.23 대개봉)" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen
+              allowFullScreen
               >
               </iframe>
               </div>
@@ -100,7 +98,7 @@ export default function Spiderman2Component () {
       <section className='section5'>
         <div className="sec5-container">
           <div className="background-img">
-            <img src={`./img/spiderman_movie_img/spider-man${isAmazingSpiderMan1 ? '1' : isAmazingSpiderMan2 ? '2' : ''}_logo.png`} alt="" />
+            <img src={`./img/spiderman_movie_img/amazing_spider_man${isAmazingSpiderMan1 ? '1' : isAmazingSpiderMan2 ? '2' : ''}_logo.png`} alt="" />
           </div>
         </div>
       </section>
@@ -129,7 +127,7 @@ export default function Spiderman2Component () {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman1.jpg" alt="" />
+                <img src="./img/spiderman_movie_img/theamazingspiderman_card.jpg" alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -144,6 +142,7 @@ export default function Spiderman2Component () {
                         Maguire and Dunst keep Spider-Man on a high with their sweet-sexy yearning, spinning a web of dazzle and delicacy that might just restore the good name of movie escapism.
                       </p>
                       <span>Rolling Stone - Peter Travers</span>
+                      <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
@@ -152,6 +151,7 @@ export default function Spiderman2Component () {
                         Everything feels more real and urgent, it actually feels more human than some live-action films we get to see.
                       </p>
                       <span>WXIX-TV (Cincinnati, OH) - TT STERN-ENZI</span>
+                      <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
@@ -160,6 +160,7 @@ export default function Spiderman2Component () {
                         There's a particular upside-down, half-masked kiss that instantly becomes one of movie history's more memorable smooches. It's the kiss to send any teenaged boy on a spinning high, as well as launching the new age of arachnophilia.
                       </p>
                       <span>The Globe and Mail (Toronto) - Liam Lacey</span>
+                      <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                 </ul>
@@ -198,12 +199,13 @@ export default function Spiderman2Component () {
               </div>
               <div className="review-box">
                 <ul className='review-container'>
-                  <li className='review-list'>
+                  <li className={'review-list'}>
                     <div className="review">
                       <p className='review-spider2'>
                         Amazingly, it's not all the visual splendor or killer action sequences that elevate Spider-Man 2 above its predecessor and almost every superhero movie that has come before.
                       </p>
                       <span>Newsweek</span>
+                      <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
@@ -212,6 +214,7 @@ export default function Spiderman2Component () {
                       With special effects so convincing you don't even think about them, a head-case hero and a three-dimensional villain who is his equal, socko Spider-Man 2 has something for everyone.
                       </p>
                       <span>USA TodayMike - Clark</span>
+                      <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
@@ -220,6 +223,7 @@ export default function Spiderman2Component () {
                         It's refreshing to witness a superhero with doubts. Maguire and Dunst again display the depth of talent they bring to these roles by injecting such everydayness into larger-than-life characters.
                       </p>
                       <span>The Hollywood Reporter - Kirk Honeycutt</span>
+                      <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                 </ul>
@@ -239,7 +243,7 @@ export default function Spiderman2Component () {
                 <Link to="/amazing">
                   <img src="./img/spiderman_movie_img/theamazingspiderman_card.jpg" alt="" />
                   <div className="card-info">
-                    <p className='card-name'>The Amazing Spider-Man</p>
+                    <p className='card-name'>Spider-Man: Trilogy</p>
                     <p className='production-year'>2012</p>
                   </div>
                 </Link>

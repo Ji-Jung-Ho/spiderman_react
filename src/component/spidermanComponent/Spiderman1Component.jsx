@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './css/sam_spiderman.css'
 
 export default function Spiderman1Component() {
   const [isSpiderMan1, setIsSpiderMan1] = useState(true);
@@ -41,6 +40,10 @@ export default function Spiderman1Component() {
         'https://www.disneyplus.com/ko-kr/movies/spider-man-3/4GJkhwLlLW4D',
       label: 'Go To Spider-Man3 Movie in disney+',
     },
+  };
+
+  const onClickLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -190,26 +193,29 @@ export default function Spiderman1Component() {
                 <ul className='review-container'>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-1'>
+                      <p>
                         Maguire and Dunst keep Spider-Man on a high with their sweet-sexy yearning, spinning a web of dazzle and delicacy that might just restore the good name of movie escapism.
                       </p>
                       <span>Rolling Stone - Peter Travers</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-2'>
+                      <p>
                         Everything feels more real and urgent, it actually feels more human than some live-action films we get to see.
                       </p>
                       <span>WXIX-TV (Cincinnati, OH) - TT STERN-ENZI</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-3'>
-                        There's a particular upside-down, half-masked kiss that instantly becomes one of movie history's more memorable smooches. It's the kiss to send any teenaged boy on a spinning high, as well as launching the new age of arachnophilia.
+                      <p>
+                      Iconic, Electrifying, Classy, Vibrant, and Emotionally Stimulating, Spider-Man Represents the Gold Standard in Superhero Blockbusters
                       </p>
                       <span>The Globe and Mail (Toronto) - Liam Lacey</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                 </ul>
@@ -250,26 +256,29 @@ export default function Spiderman1Component() {
                 <ul className='review-container'>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-spider2'>
+                      <p>
                         Amazingly, it's not all the visual splendor or killer action sequences that elevate Spider-Man 2 above its predecessor and almost every superhero movie that has come before.
                       </p>
                       <span>Newsweek</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-spider2'>
+                      <p>
                       With special effects so convincing you don't even think about them, a head-case hero and a three-dimensional villain who is his equal, socko Spider-Man 2 has something for everyone.
                       </p>
                       <span>USA TodayMike - Clark</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-spider2'>
+                      <p>
                         It's refreshing to witness a superhero with doubts. Maguire and Dunst again display the depth of talent they bring to these roles by injecting such everydayness into larger-than-life characters.
                       </p>
                       <span>The Hollywood Reporter - Kirk Honeycutt</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                 </ul>
@@ -338,26 +347,29 @@ export default function Spiderman1Component() {
                 <ul className='review-container'>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-spider2'>
+                      <p>
                         Amazingly, it's not all the visual splendor or killer action sequences that elevate Spider-Man 2 above its predecessor and almost every superhero movie that has come before.
                       </p>
                       <span>Newsweek</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-spider2'>
+                      <p>
                       With special effects so convincing you don't even think about them, a head-case hero and a three-dimensional villain who is his equal, socko Spider-Man 2 has something for everyone.
                       </p>
                       <span>USA TodayMike - Clark</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
-                      <p className='review-spider2'>
+                      <p>
                         It's refreshing to witness a superhero with doubts. Maguire and Dunst again display the depth of talent they bring to these roles by injecting such everydayness into larger-than-life characters.
                       </p>
                       <span>The Hollywood Reporter - Kirk Honeycutt</span>
+                      <img src="./img/etc-img/spider_red_logo.png" alt="" />
                     </div>
                   </li>
                 </ul>
@@ -374,7 +386,7 @@ export default function Spiderman1Component() {
           <div className="related-content">
             <ul>
               <li>
-                <Link to="/amazing">
+                <Link to="/amazing" onClick={onClickLinkClick}>
                   <img src="./img/spiderman_movie_img/theamazingspiderman_card.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
@@ -383,7 +395,7 @@ export default function Spiderman1Component() {
                 </Link>
               </li>
               <li>
-                <Link to="/tom">
+                <Link to="/tom" onClick={onClickLinkClick}>
                   <img src="./img/spiderman_movie_img/spider-manhomecoming_card.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Homecoming</p>
@@ -392,7 +404,7 @@ export default function Spiderman1Component() {
                 </Link>
               </li>
               <li>
-                <Link to="/miles">
+                <Link to="/miles" onClick={onClickLinkClick}>
                   <img src="./img/spiderman_movie_img/intothespiderverse_card.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
@@ -401,7 +413,7 @@ export default function Spiderman1Component() {
                 </Link>
               </li>
               <li>
-                <Link to="/venom">
+                <Link to="/venom" onClick={onClickLinkClick}>
                   <img src="./img/spiderman_movie_img/venom_card.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
