@@ -245,7 +245,7 @@ export default function Spiderman1Component() {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman1.jpg" alt="" />
+                <img src="./img/spiderman_movie_img/spiderman2.png" alt="" />
               </div>
             </div>
             <div className="movie-review">

@@ -110,20 +110,20 @@ export default function Spiderman2Component () {
                 <h2>overview</h2>
               </div>
               <div className="movie-story">
-                <p>Average teenager Peter Parker is transformed into an extraordinary superhero after he is accidentally bitten by a radioactive spider. When his beloved uncle is savagely murdered during a robbery, young Peter vows to use his powers to avenge his death. Deeming himself "Spider-Man," he sets about ridding the streets of crime, bringing him into conflict with malevolent super-villain "Green Goblin."</p>
+                <p>After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to save the city from the machinations of a mysterious reptilian foe.</p>
               </div>
               <div className="movie-info">
                 <div className="movie-info-container">
                   <div className="label">director</div>
-                  <div className='content'>sam raimi</div>
+                  <div className='content'>Marc Webb</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">cast</div>
-                  <div className='content'>Tobey Maguire, Kirsten Dunst and Willem Dafoe</div>
+                  <div className='content'>Andrew Garfield and Emma Stone</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>May 3, 2002</div>
+                  <div className='content'>July 3, 2012</div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -139,27 +139,27 @@ export default function Spiderman2Component () {
                   <li className='review-list'>
                     <div className="review">
                       <p className='review-1'>
-                        Maguire and Dunst keep Spider-Man on a high with their sweet-sexy yearning, spinning a web of dazzle and delicacy that might just restore the good name of movie escapism.
+                        This is a more thoughtful film, and its action scenes are easier to follow in space and time. If we didn't really need to be told Spidey's origin story again, at least it's done with more detail and provides better reasons for why Peter Parker throws himself into his superhero role.
                       </p>
-                      <span>Rolling Stone - Peter Travers</span>
+                      <span>Chicago Sun-Times - Roger Ebert</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
                       <p className='review-2'>
-                        Everything feels more real and urgent, it actually feels more human than some live-action films we get to see.
+                        It's the successul synthesis of the two – action and emotion – that means this Spider-Man is as enjoyable as it is impressive: Webb's control of mood and texture is near faultless as his film switches from teenage sulks to exhilarating airborne pyrotechnics.
                       </p>
-                      <span>WXIX-TV (Cincinnati, OH) - TT STERN-ENZI</span>
+                      <span>The Guardian - Andrew Pulver</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
                       <p className='review-3'>
-                        There's a particular upside-down, half-masked kiss that instantly becomes one of movie history's more memorable smooches. It's the kiss to send any teenaged boy on a spinning high, as well as launching the new age of arachnophilia.
+                        What's most amazing in The Amazing Spider-Man turns out to be not the shared sensations of blockbuster wow! the picture elicits, but rather the shared satisfactions of intimate awww.
                       </p>
-                      <span>The Globe and Mail (Toronto) - Liam Lacey</span>
+                      <span>Entertainment Weekly - Lisa Schwarzbaum</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
@@ -178,19 +178,19 @@ export default function Spiderman2Component () {
               <div className="movie-info">
                 <div className="movie-info-container">
                   <div className="label">director</div>
-                  <div className='content'>sam raimi</div>
+                  <div className='content'>Marc Webb</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">cast</div>
-                  <div className='content'>Tobey Maguire, Kirsten Dunst and Alfred Molina</div>
+                  <div className='content'>Andrew Garfield, Emma Stone, Dane DeHaan, Jamie Foxx, Colme Pau, Felicity Jones</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>June 30, 2004</div>
+                  <div className='content'>June 30, 2014</div>
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman1.jpg" alt="" />
+                <img src="./img/spiderman_movie_img/theamazingspiderman2_card.jpg" alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -241,7 +241,7 @@ export default function Spiderman2Component () {
             <ul>
               <li>
                 <Link to="/amazing">
-                  <img src="./img/spiderman_movie_img/theamazingspiderman_card.jpg" alt="" />
+                  <img src="./img/spiderman_movie_img/spiderman1.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
                     <p className='production-year'>2012</p>
