@@ -110,7 +110,9 @@ export default function Spiderman2Component () {
                 <h2>overview</h2>
               </div>
               <div className="movie-story">
-                <p>After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to save the city from the machinations of a mysterious reptilian foe.</p>
+                <p>
+                  Abandoned by his parents and raised by an aunt and uncle, teenager Peter Parker (Andrew Garfield), AKA Spider-Man, is trying to sort out who he is and exactly what his feelings are for his first crush, Gwen Stacy (Emma Stone). When Peter finds a mysterious briefcase that was his father's, he pursues a quest to solve his parents' disappearance. His search takes him to Oscorp and the lab of Dr. Curt Connors (Rhys Ifans), setting him on a collision course with Connors' alter ego, the Lizard.
+                </p>
               </div>
               <div className="movie-info">
                 <div className="movie-info-container">
@@ -139,18 +141,18 @@ export default function Spiderman2Component () {
                   <li className='review-list'>
                     <div className="review">
                       <p className='review-1'>
-                        This is a more thoughtful film, and its action scenes are easier to follow in space and time. If we didn't really need to be told Spidey's origin story again, at least it's done with more detail and provides better reasons for why Peter Parker throws himself into his superhero role.
+                        Not just a reboot - it's a rejuvenation. From the first image of sensory awakening to the final acceptance of adult responsibility, it pulses with the warm blood of a very human hero.
                       </p>
-                      <span>Chicago Sun-Times - Roger Ebert</span>
+                      <span>ST. LOUIS POST-DISPATCH - Joe Williams</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
                       <p className='review-2'>
-                        It's the successul synthesis of the two – action and emotion – that means this Spider-Man is as enjoyable as it is impressive: Webb's control of mood and texture is near faultless as his film switches from teenage sulks to exhilarating airborne pyrotechnics.
+                        As a new chapter in the superpowered arachnid saga, it stands on its own quite nicely, focusing more on human emotions than on a panoply of special effects.
                       </p>
-                      <span>The Guardian - Andrew Pulver</span>
+                      <span>USA Today - Claudia Puig</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
@@ -173,7 +175,9 @@ export default function Spiderman2Component () {
                 <h2>overview</h2>
               </div>
               <div className="movie-story">
-              <p>In “Spider-Man 2,” Tobey Maguire returns as the mild-mannered Peter Parker, who is juggling the delicate balance of his dual life as college student and a superhuman crime fighter. Peter's life becomes even more complicated when he confronts a new nemesis, the brilliant Otto Octavius who has been reincarnated as the maniacal and multi-tentacled "Doc Ock." When Doc Ock kidnaps MJ, Spider-Man must swing back into action as the adventure reaches new heights of unprecedented excitement.</p>
+              <p>
+                Confident in his powers as Spider-Man, Peter Parker (Andrew Garfield) embraces his new role as a hero and spends time with Gwen Stacy (Emma Stone) in between protecting New York from criminals. However, his greatest battle yet is about to begin. With the emergence of Electro (Jamie Foxx), Peter must confront an enemy far more powerful than he is. And when his old friend Harry Osborn (Dane DeHaan) returns, Peter comes to realize that all his enemies have one thing in common: Oscorp.
+              </p>
               </div>
               <div className="movie-info">
                 <div className="movie-info-container">
@@ -202,27 +206,27 @@ export default function Spiderman2Component () {
                   <li className={'review-list'}>
                     <div className="review">
                       <p className='review-spider2'>
-                        Amazingly, it's not all the visual splendor or killer action sequences that elevate Spider-Man 2 above its predecessor and almost every superhero movie that has come before.
+                        There are two types of superhero movies: the ones that brood and the ones that swing. The Amazing Spider-Man 2 is proudly the latter, filled with high-energy action.
                       </p>
-                      <span>Newsweek</span>
+                      <span>New York Daily News - Joe Neumaier</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
                       <p className='review-spider2'>
-                      With special effects so convincing you don't even think about them, a head-case hero and a three-dimensional villain who is his equal, socko Spider-Man 2 has something for everyone.
+                        There is still Spider-Man's personal turmoil, crises of romance and loyalty, that Webb occasionally holds a few beats too long. Yet the performances ring true, with arresting chemistry where it counts.
                       </p>
-                      <span>USA TodayMike - Clark</span>
+                      <span>Tampa Bay Times - Steve Persall</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
                     <div className="review">
                       <p className='review-spider2'>
-                        It's refreshing to witness a superhero with doubts. Maguire and Dunst again display the depth of talent they bring to these roles by injecting such everydayness into larger-than-life characters.
+                        One heck of a fun film -- and the most enjoyable and rewarding superhero movie I've seen in a while. Read full
                       </p>
-                      <span>The Hollywood Reporter - Kirk Honeycutt</span>
+                      <span>New Orleans Times - PicayuneMike ScottApr</span>
                       <img src="./img/etc-img/amazing_spider_red_logo.png" alt="" />
                     </div>
                   </li>
