@@ -52,8 +52,10 @@ export default function HeaderComponent() {
     setIsHover5(false);
   };
 
+  // nav Link 클릭 시 메뉴 자동 닫기 / 화면 최상단 이동
   const closeMenu = () => {
     setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

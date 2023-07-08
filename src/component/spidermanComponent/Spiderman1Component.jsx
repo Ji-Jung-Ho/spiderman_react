@@ -87,7 +87,7 @@ export default function Spiderman1Component() {
       <section className={`section3 ${isSpiderMan1 ? 'spiderman1' : isSpiderMan2 ? 'spiderman2' : isSpiderMan3 ? 'spiderman3' : ''}`}>
         <div className="sec3-container">
           <div className="main-title-img">
-            <img src={`./img/spiderman_movie_img/spider-man${isSpiderMan1 ? '1' : isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
+            <img src={`./img/spiderman_movie_img/sam_spider_man_${isSpiderMan1 ? '1' : isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
             {/* <div className='awards'>
               <div className="awards-list">
                 <img src="./img/etc-img/spider_red_logo.png" alt="" />
@@ -153,7 +153,7 @@ export default function Spiderman1Component() {
       <section className='section5'>
         <div className="sec5-container">
           <div className="background-img">
-            <img src={`./img/spiderman_movie_img/spider-man${isSpiderMan1 ? '1' : isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
+            <img src={`./img/spiderman_movie_img/sam_spider_man_${isSpiderMan1 ? '1' : isSpiderMan2 ? '2' : isSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
           </div>
         </div>
       </section>
@@ -184,7 +184,7 @@ export default function Spiderman1Component() {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman1.jpg" alt="" />
+                <img src="./img/spiderman_movie_img/sam_spider_man_1.jpg" alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -249,7 +249,7 @@ export default function Spiderman1Component() {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman2.png" alt="" />
+                <img src="./img/spiderman_movie_img/sam_spider_man_2.png" alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -340,7 +340,7 @@ export default function Spiderman1Component() {
                 </ul> */}
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman3.jpg" alt="" />
+                <img src="./img/spiderman_movie_img/sam_spider_man_3.jpg" alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -391,7 +391,7 @@ export default function Spiderman1Component() {
             <ul>
               <li>
                 <Link to="/amazing" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/theamazingspiderman_card.jpg" alt="" />
+                  <img src="./img/spiderman_movie_img/amazing_spider_man_1.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
                     <p className='production-year'>2012</p>
@@ -400,7 +400,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/spider-manhomecoming_card.jpg" alt="" />
+                  <img src="./img/spiderman_movie_img/tom_spider_man_1.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Homecoming</p>
                     <p className='production-year'>2012</p>
@@ -409,7 +409,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/miles" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/intothespiderverse_card.jpg" alt="" />
+                  <img src="./img/spiderman_movie_img/into_the_spider_verse.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
                     <p className='production-year'>2012</p>
@@ -418,7 +418,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/venom" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/venom_card.jpg" alt="" />
+                  <img src="./img/spiderman_movie_img/venom_1.jpg" alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
                     <p className='production-year'>2018</p>
