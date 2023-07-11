@@ -15,6 +15,9 @@ export default function Spiderman2Component () {
     setIsAmazingSpiderMan2(true);
   };
 
+  const amazing = "./img/spiderman_movie_img/amazing";
+  const imgSrc = "./img/spiderman_movie_img"
+
   const amazingLink = {
     amazing1_Disney: {
       url:
@@ -60,7 +63,7 @@ export default function Spiderman2Component () {
       <section className={`section3 ${isAmazingSpiderMan1 ? 'amazing-spiderman1' : isAmazingSpiderMan2 ? 'amazing-spiderman2' : ''}`}>
         <div className="sec3-container">
           <div className="main-title-img">
-            <img src={`./img/spiderman_movie_img/amazing_spider_man${isAmazingSpiderMan1 ? '1' : isAmazingSpiderMan2 ? '2' : ''}_logo.png`} alt="" />
+            <img src={`${amazing}/amazing_spider_man_${isAmazingSpiderMan1 ? '1' : isAmazingSpiderMan2 ? '2' : ''}_logo.png`} alt="" />
           </div>
         </div>
       </section>
@@ -98,7 +101,7 @@ export default function Spiderman2Component () {
       <section className='section5'>
         <div className="sec5-container">
           <div className="background-img">
-            <img src={`./img/spiderman_movie_img/amazing_spider_man${isAmazingSpiderMan1 ? '1' : isAmazingSpiderMan2 ? '2' : ''}_logo.png`} alt="" />
+            <img src={`${amazing}/amazing_spider_man_${isAmazingSpiderMan1 ? '1' : isAmazingSpiderMan2 ? '2' : ''}_logo.png`} alt="" />
           </div>
         </div>
       </section>
@@ -129,7 +132,7 @@ export default function Spiderman2Component () {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/theamazingspiderman_card.jpg" alt="" />
+                <img src={`${amazing}/amazing_spider_man_1_poster.jpg`} alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -194,7 +197,7 @@ export default function Spiderman2Component () {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/theamazingspiderman2_card.jpg" alt="" />
+                <img src={`${amazing}/amazing_spider_man_2_poster.jpg`} alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -245,7 +248,7 @@ export default function Spiderman2Component () {
             <ul>
               <li>
                 <Link to="/amazing">
-                  <img src="./img/spiderman_movie_img/spiderman1.jpg" alt="" />
+                  <img src={`${imgSrc}/sam-spiderman/sam_spider_man_3_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
                     <p className='production-year'>2012</p>
@@ -254,7 +257,7 @@ export default function Spiderman2Component () {
               </li>
               <li>
                 <Link to="/tom">
-                  <img src="./img/spiderman_movie_img/spider-manhomecoming_card.jpg" alt="" />
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Homecoming</p>
                     <p className='production-year'>2012</p>
@@ -263,7 +266,7 @@ export default function Spiderman2Component () {
               </li>
               <li>
                 <Link to="/miles">
-                  <img src="./img/spiderman_movie_img/intothespiderverse_card.jpg" alt="" />
+                  <img src={`${imgSrc}/miles/miles_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
                     <p className='production-year'>2012</p>
@@ -272,7 +275,7 @@ export default function Spiderman2Component () {
               </li>
               <li>
                 <Link to="/venom">
-                  <img src="./img/spiderman_movie_img/venom_card.jpg" alt="" />
+                  <img src={`${imgSrc}/venom/venom_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
                     <p className='production-year'>2018</p>

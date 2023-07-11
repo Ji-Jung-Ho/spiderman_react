@@ -95,35 +95,43 @@
   position: relative;
 }
 #main.spiderman-movie-1 .section3.spiderman1 {
-  background: url(../img/spiderman_movie_img/sam_spider_man_1_main_img.jpg) no-repeat 50% 50%;
+  background: url(../img/spiderman_movie_img/sam-spiderman/sam_spider_man_1_main_bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3.spiderman2 {
-  background: url(../img/spiderman_movie_img/sam_spider_man_2_main_img.jpg) no-repeat 50% 50%;
+  background: url(../img/spiderman_movie_img/sam-spiderman/sam_spider_man_2_main_bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3.spiderman3 {
-  background: url(../img/spiderman_movie_img/sam_spider_man_3_main_img.jpg) no-repeat 50% 50%;
+  background: url(../img/spiderman_movie_img/sam-spiderman/sam_spider_man_3_main_bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3.amazing-spiderman1 {
-  background: url(../img/spiderman_movie_img/amazing_spider_man_1_main_img.jpg) no-repeat 50% 50%;
+  background: url(../img/spiderman_movie_img/amazing/amazing_spider_man_1_main_bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3.amazing-spiderman2 {
-  background: url(../img/spiderman_movie_img/amazing_spider_man_2_main_img.jpg) no-repeat 50% 50%;
+  background: url(../img/spiderman_movie_img/amazing/amazing_spider_man_2_main_bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3.tom-spiderman1 {
-  background: url(../img/spiderman_movie_img/tom_spider_man_1_main_img.jpg);
+  background: url(../img/spiderman_movie_img/tom-spiderman/tom_spider_man_1_main_bg.jpg);
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3.tom-spiderman2 {
-  background: url(../img/spiderman_movie_img/tom_spider_man_2_main_img.jpg);
+  background: url(../img/spiderman_movie_img/tom-spiderman/tom_spider_man_2_main_bg.jpg);
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3.tom-spiderman3 {
-  background: url(../img/spiderman_movie_img/tom_spider_man_3_main_img.jpg);
+  background: url(../img/spiderman_movie_img/tom-spiderman/tom_spider_man_3_main_bg.jpg);
+  background-size: cover;
+}
+#main.spiderman-movie-1 .section3.miles-1 {
+  background: url(../img/spiderman_movie_img/miles/miles_1_main_bg.jpg) no-repeat center left;
+  background-size: cover;
+}
+#main.spiderman-movie-1 .section3.miles-2 {
+  background: url(../img/spiderman_movie_img/miles/miles_2_main_bg.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #main.spiderman-movie-1 .section3::after {
@@ -212,7 +220,7 @@
 }
 #main.spiderman-movie-1 .section4 .sec4-container .trailer-content .trailer-container .trailer-box iframe {
   width: 1200px;
-  height: 700px;
+  height: 80vh;
   border: 0;
 }
 #main.spiderman-movie-1 .section4 .sec4-container .trailer-content .trailer-container .trailer-box::after {
@@ -247,6 +255,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#main.spiderman-movie-1 .section5 .sec5-container .background-img img.miles {
+  width: 600px;
+  position: relative;
+  top: -10%;
 }
 #main.spiderman-movie-1 .section6 {
   width: 100%;
@@ -530,6 +543,7 @@
 }
 #main.spiderman-movie-1 .section7 .sec7-container .related-content ul li a img {
   width: 100%;
+  height: 271px;
 }
 #main.spiderman-movie-1 .section7 .sec7-container .related-content ul li a .card-info {
   width: 100%;

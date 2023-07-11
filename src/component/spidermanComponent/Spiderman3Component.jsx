@@ -37,6 +37,9 @@ export default function Spiderman1Component() {
     },
   };
 
+  const tomSrc = "./img/spiderman_movie_img/tom-spiderman"
+  const imgSrc = "./img/spiderman_movie_img"
+
   const onClickLinkClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -82,27 +85,7 @@ export default function Spiderman1Component() {
       <section className={`section3 ${isTomSpiderMan1 ? 'tom-spiderman1' : isTomSpiderMan2 ? 'tom-spiderman2' : isTomSpiderMan3 ? 'tom-spiderman3' : ''}`}>
         <div className="sec3-container">
           <div className="main-title-img">
-            <img src={`./img/spiderman_movie_img/tom_spider_man${isTomSpiderMan1 ? '1' : isTomSpiderMan2 ? '2' : isTomSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
-            {/* <div className='awards'>
-              <div className="awards-list">
-                <img src="./img/etc-img/spider_red_logo.png" alt="" />
-                <div className="awards-title">
-                  <h2>Festival <br /> Winner</h2>
-                </div>
-              </div>
-              <div className="awards-list">
-                <img src="./img/etc-img/spider_red_logo.png" alt="" />
-                <div className="awards-title">
-                  <h2>Best <br /> Director</h2>
-                </div>
-              </div>
-              <div className="awards-list">
-                <img src="./img/etc-img/spider_red_logo.png" alt="" />
-                <div className="awards-title">
-                  <h2>Official <br /> Selection</h2>
-                </div>
-              </div>
-            </div> */}
+            <img src={`${tomSrc}/tom_spider_man_${isTomSpiderMan1 ? '1' : isTomSpiderMan2 ? '2' : isTomSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
           </div>
         </div>
       </section>
@@ -148,7 +131,7 @@ export default function Spiderman1Component() {
       <section className='section5'>
         <div className="sec5-container">
           <div className="background-img">
-            <img src={`./img/spiderman_movie_img/tom_spider_man${isTomSpiderMan1 ? '1' : isTomSpiderMan2 ? '2' : isTomSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
+            <img src={`${tomSrc}/tom_spider_man_${isTomSpiderMan1 ? '1' : isTomSpiderMan2 ? '2' : isTomSpiderMan3 ? '3' : ''}_logo.png`} alt="" />
           </div>
         </div>
       </section>
@@ -179,7 +162,7 @@ export default function Spiderman1Component() {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/tom_spiderman1.jpg" alt="" />
+                <img src={`${tomSrc}/tom_spider_man_1_poster.jpg`} alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -244,7 +227,7 @@ export default function Spiderman1Component() {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman2.png" alt="" />
+                <img src={`${tomSrc}/tom_spider_man_2_poster.jpg`} alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -307,35 +290,9 @@ export default function Spiderman1Component() {
                   <div className="label">release date</div>
                   <div className='content'>May 4, 2007</div>
                 </div>
-                {/* <ul>
-                  <li>
-                    <div className="detail-info">
-                      <p>
-                        director
-                      </p>
-                        <span>Sam Raimi</span>
-                    </div>
-                  </li>
-                  <li>
-                  <div className="detail-info">
-                      <p>
-                        cast
-                      </p>
-                        <span>Tobey Maguire, Kirsten Dunst, Thomas Haden Church, Topher Grace and James Franco</span>
-                    </div>
-                  </li>
-                  <li>
-                  <div className="detail-info">
-                      <p>
-                        release date
-                      </p>
-                        <span>May 4, 2007</span>
-                    </div>
-                  </li>
-                </ul> */}
               </div>
               <div className="movie-poster">
-                <img src="./img/spiderman_movie_img/spiderman3.jpg" alt="" />
+                <img src={`${tomSrc}/tom_spider_man_3_poster.jpg`} alt="" />
               </div>
             </div>
             <div className="movie-review">
@@ -386,7 +343,16 @@ export default function Spiderman1Component() {
             <ul>
               <li>
                 <Link to="/amazing" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/theamazingspiderman_card.jpg" alt="" />
+                  <img src={`${imgSrc}/sam-spiderman/sam_spider_man_2_poster.png`} alt="" />
+                  <div className="card-info">
+                    <p className='card-name'>Spider-Man: Trilogy</p>
+                    <p className='production-year'>2012</p>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link to="/tom" onClick={onClickLinkClick}>
+                  <img src={`${imgSrc}/amazing/amazing_spider_man_2_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
                     <p className='production-year'>2012</p>
@@ -394,26 +360,17 @@ export default function Spiderman1Component() {
                 </Link>
               </li>
               <li>
-                <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/spider-manhomecoming_card.jpg" alt="" />
-                  <div className="card-info">
-                    <p className='card-name'>Spider-Man: Homecoming</p>
-                    <p className='production-year'>2012</p>
-                  </div>
-                </Link>
-              </li>
-              <li>
                 <Link to="/miles" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/intothespiderverse_card.jpg" alt="" />
+                  <img src={`${imgSrc}/miles/miles_2_card.jpg`} alt="" />
                   <div className="card-info">
-                    <p className='card-name'>into the spider-verse</p>
+                    <p className='card-name'>milse-morales</p>
                     <p className='production-year'>2012</p>
                   </div>
                 </Link>
               </li>
               <li>
                 <Link to="/venom" onClick={onClickLinkClick}>
-                  <img src="./img/spiderman_movie_img/venom_card.jpg" alt="" />
+                  <img src={`${imgSrc}/venom/venom_2_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
                     <p className='production-year'>2018</p>
