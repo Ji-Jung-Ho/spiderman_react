@@ -360,7 +360,7 @@ export default function Spiderman1Component() {
                   <img src={`${imgSrc}/tom-spiderman/tom_spider_man_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Homecoming</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2017</p>
                   </div>
                 </Link>
               </li>
@@ -369,7 +369,7 @@ export default function Spiderman1Component() {
                   <img src={`${imgSrc}/miles/miles_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2018</p>
                   </div>
                 </Link>
               </li>

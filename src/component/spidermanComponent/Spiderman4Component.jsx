@@ -26,6 +26,10 @@ export default function Spiderman4Component () {
     },
   };
 
+  const onClickLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <main id="main" className="spiderman-movie-1">
       <section className={`section1 ${isMiles1 ? 'sec1-show' : 'sec1-hide'}`}>
@@ -240,16 +244,16 @@ export default function Spiderman4Component () {
           <div className="related-content">
             <ul>
               <li>
-                <Link to="/amazing">
+                <Link to="/amazing" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/sam-spiderman/sam_spider_man_3_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2007</p>
                   </div>
                 </Link>
               </li>
               <li>
-                <Link to="/tom">
+                <Link to="/tom" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/amazing/amazing_spider_man_1_poster.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
@@ -258,16 +262,16 @@ export default function Spiderman4Component () {
                 </Link>
               </li>
               <li>
-                <Link to="/miles">
+                <Link to="/miles" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>spiderman: Far-From-Home</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2019</p>
                   </div>
                 </Link>
               </li>
               <li>
-                <Link to="/venom">
+                <Link to="/venom" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/venom/venom_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
