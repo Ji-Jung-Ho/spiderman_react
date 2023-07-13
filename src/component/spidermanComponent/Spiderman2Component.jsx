@@ -31,6 +31,10 @@ export default function Spiderman2Component () {
     },
   };
 
+  const onClickLinkClick = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <main id="main" className="spiderman-movie-1">
       <section className="section1">
@@ -86,13 +90,13 @@ export default function Spiderman2Component () {
             </div>
             <div className={`trailer-container ${isAmazingSpiderMan2 ? 'show-trailer' : 'hide-trailer'}`}>
               <div className="trailer-box">
-              <iframe 
-              src="https://www.youtube.com/embed/f11ZLEpwCZM" 
-              title="[어메이징 스파이더맨2] 본 예고편 (2014.04.23 대개봉)" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowFullScreen
-              >
-              </iframe>
+                <iframe 
+                src="https://www.youtube.com/embed/f11ZLEpwCZM" 
+                title="[어메이징 스파이더맨2] 본 예고편 (2014.04.23 대개봉)" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+                >
+                </iframe>
               </div>
             </div>
           </div>
@@ -139,11 +143,11 @@ export default function Spiderman2Component () {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-1'>
+                    <div className="review-box">
+                      <p className='review'>
                         Not just a reboot - it's a rejuvenation. From the first image of sensory awakening to the final acceptance of adult responsibility, it pulses with the warm blood of a very human hero.
                       </p>
                       <span>ST. LOUIS POST-DISPATCH - Joe Williams</span>
@@ -151,8 +155,8 @@ export default function Spiderman2Component () {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-2'>
+                    <div className="review-box">
+                      <p className='review'>
                         As a new chapter in the superpowered arachnid saga, it stands on its own quite nicely, focusing more on human emotions than on a panoply of special effects.
                       </p>
                       <span>USA Today - Claudia Puig</span>
@@ -160,8 +164,8 @@ export default function Spiderman2Component () {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-3'>
+                    <div className="review-box">
+                      <p className='review'>
                         What's most amazing in The Amazing Spider-Man turns out to be not the shared sensations of blockbuster wow! the picture elicits, but rather the shared satisfactions of intimate awww.
                       </p>
                       <span>Entertainment Weekly - Lisa Schwarzbaum</span>
@@ -204,11 +208,11 @@ export default function Spiderman2Component () {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className={'review-list'}>
-                    <div className="review">
-                      <p className='review-spider2'>
+                    <div className="review-box">
+                      <p className='review'>
                         There are two types of superhero movies: the ones that brood and the ones that swing. The Amazing Spider-Man 2 is proudly the latter, filled with high-energy action.
                       </p>
                       <span>New York Daily News - Joe Neumaier</span>
@@ -216,8 +220,8 @@ export default function Spiderman2Component () {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-spider2'>
+                    <div className="review-box">
+                      <p className='review'>
                         There is still Spider-Man's personal turmoil, crises of romance and loyalty, that Webb occasionally holds a few beats too long. Yet the performances ring true, with arresting chemistry where it counts.
                       </p>
                       <span>Tampa Bay Times - Steve Persall</span>
@@ -225,8 +229,8 @@ export default function Spiderman2Component () {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-spider2'>
+                    <div className="review-box">
+                      <p className='review'>
                         One heck of a fun film -- and the most enjoyable and rewarding superhero movie I've seen in a while. Read full
                       </p>
                       <span>New Orleans Times - PicayuneMike ScottApr</span>
@@ -247,7 +251,7 @@ export default function Spiderman2Component () {
           <div className="related-content">
             <ul>
               <li>
-                <Link to="/amazing">
+                <Link to="/sam" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/sam-spiderman/sam_spider_man_3_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
@@ -256,8 +260,8 @@ export default function Spiderman2Component () {
                 </Link>
               </li>
               <li>
-                <Link to="/tom">
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card.jpg`} alt="" />
+                <Link to="/tom" onClick={onClickLinkClick}>
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Homecoming</p>
                     <p className='production-year'>2012</p>
@@ -265,7 +269,7 @@ export default function Spiderman2Component () {
                 </Link>
               </li>
               <li>
-                <Link to="/miles">
+                <Link to="/miles" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/miles/miles_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
@@ -274,7 +278,7 @@ export default function Spiderman2Component () {
                 </Link>
               </li>
               <li>
-                <Link to="/venom">
+                <Link to="/venom" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/venom/venom_1_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>

@@ -47,13 +47,13 @@ export default function Spiderman4Component () {
           <ul>
             <li>
               <button className="movie-choice" onClick={onClickAmazing1Toggle}>
-                <span className={`sub-title ${isVenom1 ? 'active' : ''}`}>Venom1</span>
+                <span className={`sub-title ${isVenom1 ? 'active' : ''}`}>The Venom-1</span>
               </button>
             </li>
             <li><i>|</i></li>
             <li>
               <button className="movie-choice" onClick={onClickAmazing2Toggle}>
-                <span className={`sub-title ${isVenom2 ? 'active' : ''}`}>Venom2</span>
+                <span className={`sub-title ${isVenom2 ? 'active' : ''}`}>The Venom-2</span>
               </button>
             </li>
           </ul>
@@ -125,7 +125,7 @@ export default function Spiderman4Component () {
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>Oct 5, 2018</div>
+                  <div className='content'><span>Oct 5, 2018</span></div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -136,11 +136,11 @@ export default function Spiderman4Component () {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-1'>
+                    <div className="review-box">
+                      <p className='review'>
                         The action is dumb, the plot is weak, and the story is pitiful. Venom is a bad movie, yet surprisingly I still loved the hell out of it.
                       </p>
                       <span>FILM THREAT - Anthony Ray Bench</span>
@@ -148,8 +148,8 @@ export default function Spiderman4Component () {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-2 venom-review'>
+                    <div className="review-box">
+                      <p className='review venom1-review'>
                         good movie. good fun. Tom Hardy is in every scene.
                       </p>
                       <span>User - ThomDerd</span>
@@ -157,8 +157,8 @@ export default function Spiderman4Component () {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-3 venom-review'>
+                    <div className="review-box">
+                      <p className='review venom1-review'>
                         A bizarre yet entertaining adventure.
                       </p>
                       <span>User - Anurag-Shetty</span>
@@ -176,21 +176,21 @@ export default function Spiderman4Component () {
               </div>
               <div className="movie-story">
               <p>
-                Confident in his powers as Spider-Man, Peter Parker (Andrew Garfield) embraces his new role as a hero and spends time with Gwen Stacy (Emma Stone) in between protecting New York from criminals. However, his greatest battle yet is about to begin. With the emergence of Electro (Jamie Foxx), Peter must confront an enemy far more powerful than he is. And when his old friend Harry Osborn (Dane DeHaan) returns, Peter comes to realize that all his enemies have one thing in common: Oscorp.
+                While Eddie Brock and Venom try to navigate their thorny relationship, a new threat rises from serial killer Cletus Kasady and a new alien symbiote.
               </p>
               </div>
               <div className="movie-info">
                 <div className="movie-info-container">
                   <div className="label">director</div>
-                  <div className='content'>Marc Webb</div>
+                  <div className='content'>Andy Serkis</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">cast</div>
-                  <div className='content'>Andrew Garfield, Emma Stone, Dane DeHaan, Jamie Foxx, Colme Pau, Felicity Jones</div>
+                  <div className='content'>Tom Hardy, Woody Harrelson, Michelle Williams</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>June 30, 2014</div>
+                  <div className='content'><span>Oct 1, 2021</span></div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -201,32 +201,32 @@ export default function Spiderman4Component () {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className={'review-list'}>
-                    <div className="review">
-                      <p className='review-spider2'>
-                        There are two types of superhero movies: the ones that brood and the ones that swing. The Amazing Spider-Man 2 is proudly the latter, filled with high-energy action.
+                    <div className="review-box">
+                      <p className='review'>
+                        Incredible film! I feel like it's hard to do a venom story with symbiotes and carnage without having Spider-Man but they are nailing it and I am loving it I hope we get more venom content.
                       </p>
-                      <span>New York Daily News - Joe Neumaier</span>
+                      <span>User Review - james-hockey98</span>
                       <img src="./img/etc-img/venom_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-spider2'>
-                        There is still Spider-Man's personal turmoil, crises of romance and loyalty, that Webb occasionally holds a few beats too long. Yet the performances ring true, with arresting chemistry where it counts.
+                    <div className="review-box">
+                      <p className='review venom2-review'>
+                        It was very good. Carnage looked super scary and the ending was just super-tastic I'm hoping for a venom 3.
                       </p>
-                      <span>Tampa Bay Times - Steve Persall</span>
+                      <span>User Review - aideniscool-77263</span>
                       <img src="./img/etc-img/venom_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-spider2'>
-                        One heck of a fun film -- and the most enjoyable and rewarding superhero movie I've seen in a while. Read full
+                    <div className="review-box">
+                      <p className='review'>
+                        Super amazing fantastic mind blowing. Both the venom movies are good but this one is best it has much fun and many good aspects that you can't miss go and watch.
                       </p>
-                      <span>New Orleans Times - PicayuneMike ScottApr</span>
+                      <span>User Review - marusanikishankittu</span>
                       <img src="./img/etc-img/venom_red_logo.png" alt="" />
                     </div>
                   </li>

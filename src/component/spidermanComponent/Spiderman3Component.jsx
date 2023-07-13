@@ -101,7 +101,7 @@ export default function Spiderman1Component() {
               src="https://www.youtube.com/embed/LjgFtASzrBA" 
               title="[스파이더맨: 홈커밍] 2차 예고편" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen
+              allowFullscreen
               ></iframe>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function Spiderman1Component() {
               src="https://www.youtube.com/embed/N9EbPfhLP7U?list=PLX1HOVtn6MKXLTXkONfqO_-cKYFS2L6ve" 
               title="[스파이더맨: 파 프롬 홈] 파이널 예고편"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen
+              allowFullscreen
               ></iframe>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function Spiderman1Component() {
               src="https://www.youtube.com/embed/yFZh-Wqi7RI" 
               title="[스파이더맨: 노 웨이 홈] 2차예고편"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen
+              allowFullscreen
               ></iframe>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function Spiderman1Component() {
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>May 3, 2002</div>
+                  <div className='content'><span>May 3, 2002</span></div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -169,11 +169,11 @@ export default function Spiderman1Component() {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p  className='review'>
                         Maguire and Dunst keep Spider-Man on a high with their sweet-sexy yearning, spinning a web of dazzle and delicacy that might just restore the good name of movie escapism.
                       </p>
                       <span>Rolling Stone - Peter Travers</span>
@@ -181,8 +181,8 @@ export default function Spiderman1Component() {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p  className='review'>
                         Everything feels more real and urgent, it actually feels more human than some live-action films we get to see.
                       </p>
                       <span>WXIX-TV (Cincinnati, OH) - TT STERN-ENZI</span>
@@ -190,8 +190,8 @@ export default function Spiderman1Component() {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p  className='review'>
                       Iconic, Electrifying, Classy, Vibrant, and Emotionally Stimulating, Spider-Man Represents the Gold Standard in Superhero Blockbusters
                       </p>
                       <span>The Globe and Mail (Toronto) - Liam Lacey</span>
@@ -223,7 +223,7 @@ export default function Spiderman1Component() {
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>June 30, 2004</div>
+                  <div className='content'><span>June 30, 2004</span></div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -234,11 +234,11 @@ export default function Spiderman1Component() {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p className='review'>
                         Amazingly, it's not all the visual splendor or killer action sequences that elevate Spider-Man 2 above its predecessor and almost every superhero movie that has come before.
                       </p>
                       <span>Newsweek</span>
@@ -246,8 +246,8 @@ export default function Spiderman1Component() {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p className='review'>
                       With special effects so convincing you don't even think about them, a head-case hero and a three-dimensional villain who is his equal, socko Spider-Man 2 has something for everyone.
                       </p>
                       <span>USA TodayMike - Clark</span>
@@ -255,8 +255,8 @@ export default function Spiderman1Component() {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p className='review'>
                         It's refreshing to witness a superhero with doubts. Maguire and Dunst again display the depth of talent they bring to these roles by injecting such everydayness into larger-than-life characters.
                       </p>
                       <span>The Hollywood Reporter - Kirk Honeycutt</span>
@@ -288,7 +288,7 @@ export default function Spiderman1Component() {
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>May 4, 2007</div>
+                  <div className='content'><span>May 4, 2007</span></div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -299,11 +299,11 @@ export default function Spiderman1Component() {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p className='review'>
                         Amazingly, it's not all the visual splendor or killer action sequences that elevate Spider-Man 2 above its predecessor and almost every superhero movie that has come before.
                       </p>
                       <span>Newsweek</span>
@@ -311,8 +311,8 @@ export default function Spiderman1Component() {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p className='review'>
                       With special effects so convincing you don't even think about them, a head-case hero and a three-dimensional villain who is his equal, socko Spider-Man 2 has something for everyone.
                       </p>
                       <span>USA TodayMike - Clark</span>
@@ -320,8 +320,8 @@ export default function Spiderman1Component() {
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p>
+                    <div className="review-box">
+                      <p className='review'>
                         It's refreshing to witness a superhero with doubts. Maguire and Dunst again display the depth of talent they bring to these roles by injecting such everydayness into larger-than-life characters.
                       </p>
                       <span>The Hollywood Reporter - Kirk Honeycutt</span>

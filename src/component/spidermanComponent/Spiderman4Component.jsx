@@ -111,21 +111,21 @@ export default function Spiderman4Component () {
               </div>
               <div className="movie-story">
                 <p>
-                  Abandoned by his parents and raised by an aunt and uncle, teenager Peter Parker (Andrew Garfield), AKA Spider-Man, is trying to sort out who he is and exactly what his feelings are for his first crush, Gwen Stacy (Emma Stone). When Peter finds a mysterious briefcase that was his father's, he pursues a quest to solve his parents' disappearance. His search takes him to Oscorp and the lab of Dr. Curt Connors (Rhys Ifans), setting him on a collision course with Connors' alter ego, the Lizard.
+                  Bitten by a radioactive spider in the subway, Brooklyn teenager Miles Morales suddenly develops mysterious powers that transform him into the one and only Spider-Man. When he meets Peter Parker, he soon realizes that there are many others who share his special, high-flying talents. Miles must now use his newfound skills to battle the evil Kingpin, a hulking madman who can open portals to other universes and pull different versions of Spider-Man into our world.
                 </p>
               </div>
               <div className="movie-info">
                 <div className="movie-info-container">
                   <div className="label">director</div>
-                  <div className='content'>Marc Webb</div>
+                  <div className='content'>Bob Persichetti, Peter Ramsey, Rodney Rothman</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">cast</div>
-                  <div className='content'>Andrew Garfield and Emma Stone</div>
+                  <div className='content'>Shameik Moore, Jake Johnson, Hailee Steinfeld</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>July 3, 2012</div>
+                  <div className='content'><span>Dec 14, 2018</span></div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -136,32 +136,32 @@ export default function Spiderman4Component () {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-1'>
-                        Not just a reboot - it's a rejuvenation. From the first image of sensory awakening to the final acceptance of adult responsibility, it pulses with the warm blood of a very human hero.
+                    <div className="review-box">
+                      <p className='review'>
+                        It’s incredibly thrilling to watch, impressively emotional throughout, and easily the best Spider-Man movie since “Spider-Man 2.”
                       </p>
-                      <span>ST. LOUIS POST-DISPATCH - Joe Williams</span>
+                      <span>TheWrapWilliam - Bibbiani</span>
                       <img src="./img/etc-img/miles_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-2'>
-                        As a new chapter in the superpowered arachnid saga, it stands on its own quite nicely, focusing more on human emotions than on a panoply of special effects.
+                    <div className="review-box">
+                      <p className='review'>
+                        It’s a slightly insane, hilariously daring and often touching mashup of everything that makes super-flicks so darn popular with the introduction of a Spider-Man who's ready-made for today’s generation of kids.
                       </p>
-                      <span>USA Today - Claudia Puig</span>
+                      <span>USA Today - Brian Truitt</span>
                       <img src="./img/etc-img/miles_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-3'>
-                        What's most amazing in The Amazing Spider-Man turns out to be not the shared sensations of blockbuster wow! the picture elicits, but rather the shared satisfactions of intimate awww.
+                    <div className="review-box">
+                      <p className='review'>
+                        A confident blend of comic-book élan and stirring sentiment, Spider-Man: Into The Spider-Verse finds fresh ways to tell the familiar story of everyone’s favourite web-slinger.
                       </p>
-                      <span>Entertainment Weekly - Lisa Schwarzbaum</span>
+                      <span>Screen Daily - Tim Grierson</span>
                       <img src="./img/etc-img/miles_red_logo.png" alt="" />
                     </div>
                   </li>
@@ -176,21 +176,29 @@ export default function Spiderman4Component () {
               </div>
               <div className="movie-story">
               <p>
-                Confident in his powers as Spider-Man, Peter Parker (Andrew Garfield) embraces his new role as a hero and spends time with Gwen Stacy (Emma Stone) in between protecting New York from criminals. However, his greatest battle yet is about to begin. With the emergence of Electro (Jamie Foxx), Peter must confront an enemy far more powerful than he is. And when his old friend Harry Osborn (Dane DeHaan) returns, Peter comes to realize that all his enemies have one thing in common: Oscorp.
+              Spider-Man VS Spider-Man?! <br/><br/>
+
+              'Miles Morales' became the new Spider-Man after going through several growing pains.<br/>
+              In front of him, Spider Woman 'Gwen' from another parallel world appears again.<br/><br/>
+
+              We meet Spider-Man in the multiverse of all dimensions,<br/>
+              Confidence in order collides and an unexpected crack occurs...<br/><br/>
+
+              The world of the multiverse beyond imagination is open!
               </p>
               </div>
               <div className="movie-info">
                 <div className="movie-info-container">
                   <div className="label">director</div>
-                  <div className='content'>Marc Webb</div>
+                  <div className='content'>Joaquim Dos, SantosKemp Powers, Justin K. Thompson</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">cast</div>
-                  <div className='content'>Andrew Garfield, Emma Stone, Dane DeHaan, Jamie Foxx, Colme Pau, Felicity Jones</div>
+                  <div className='content'>Shameik Moore, Hailee Steinfeld, Brian Tyree Henry</div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'>June 30, 2014</div>
+                  <div className='content'><span>Jun 2, 2023</span></div>
                 </div>
               </div>
               <div className="movie-poster">
@@ -201,32 +209,32 @@ export default function Spiderman4Component () {
               <div className="review-title">
                 <h2>review</h2>
               </div>
-              <div className="review-box">
+              <div className="review-content">
                 <ul className='review-container'>
                   <li className={'review-list'}>
-                    <div className="review">
-                      <p className='review-spider2'>
-                        There are two types of superhero movies: the ones that brood and the ones that swing. The Amazing Spider-Man 2 is proudly the latter, filled with high-energy action.
+                    <div className="review-box">
+                      <p className='review'>
+                        It is a smart, thrilling piece of work that reminded me of other great part twos like “The Dark Knight” and “The Empire Strikes Back."
                       </p>
-                      <span>New York Daily News - Joe Neumaier</span>
+                      <span>RogerEbert.com - Brian Tallerico</span>
                       <img src="./img/etc-img/miles_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-spider2'>
-                        There is still Spider-Man's personal turmoil, crises of romance and loyalty, that Webb occasionally holds a few beats too long. Yet the performances ring true, with arresting chemistry where it counts.
+                    <div className="review-box">
+                      <p className='review'>
+                        Visually astonishing, emotionally daring, this spectacular sequel has enough wit, imagination and thrills to fill several worlds. But prepare to be left hanging till the sequel hits screens.
                       </p>
-                      <span>Tampa Bay Times - Steve Persall</span>
+                      <span>Total Film - Jordan Farley</span>
                       <img src="./img/etc-img/miles_red_logo.png" alt="" />
                     </div>
                   </li>
                   <li className='review-list'>
-                    <div className="review">
-                      <p className='review-spider2'>
-                        One heck of a fun film -- and the most enjoyable and rewarding superhero movie I've seen in a while. Read full
+                    <div className="review-box">
+                      <p className='review miles2-review'>
+                        Spider-Man: Across the Spider-Verse is phenomenal from start to finish, raising the stakes, emotion and heart with beautiful artistic animation.
                       </p>
-                      <span>New Orleans Times - PicayuneMike ScottApr</span>
+                      <span>Screen RantMolly Freeman</span>
                       <img src="./img/etc-img/miles_red_logo.png" alt="" />
                     </div>
                   </li>
@@ -244,7 +252,7 @@ export default function Spiderman4Component () {
           <div className="related-content">
             <ul>
               <li>
-                <Link to="/amazing" onClick={onClickLinkClick}>
+                <Link to="/sam" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/sam-spiderman/sam_spider_man_3_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
@@ -253,7 +261,7 @@ export default function Spiderman4Component () {
                 </Link>
               </li>
               <li>
-                <Link to="/tom" onClick={onClickLinkClick}>
+                <Link to="/amazing" onClick={onClickLinkClick}>
                   <img src={`${imgSrc}/amazing/amazing_spider_man_1_poster.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
@@ -262,20 +270,20 @@ export default function Spiderman4Component () {
                 </Link>
               </li>
               <li>
-                <Link to="/miles" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card.jpg`} alt="" />
+                <Link to="/tom" onClick={onClickLinkClick}>
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_3_card.jpg`} alt="" />
                   <div className="card-info">
-                    <p className='card-name'>spiderman: Far-From-Home</p>
-                    <p className='production-year'>2019</p>
+                    <p className='card-name'>spiderman: No-Way-Home</p>
+                    <p className='production-year'>2021</p>
                   </div>
                 </Link>
               </li>
               <li>
                 <Link to="/venom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/venom/venom_1_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/venom/venom_2_card.jpg`} alt="" />
                   <div className="card-info">
-                    <p className='card-name'>The Venom</p>
-                    <p className='production-year'>2018</p>
+                    <p className='card-name'>The Venom: LET THERE BE CARNAGE </p>
+                    <p className='production-year'>2021</p>
                   </div>
                 </Link>
               </li>
