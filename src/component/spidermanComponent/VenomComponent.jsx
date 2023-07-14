@@ -254,7 +254,7 @@ export default function Spiderman4Component () {
               </li>
               <li>
                 <Link to="/amazing" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/amazing/amazing_spider_man_1_poster.jpg`} alt="" />
+                  <img src={`${imgSrc}/amazing/amazing_spider_man_1_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
                     <p className='production-year'>2012</p>
@@ -263,7 +263,7 @@ export default function Spiderman4Component () {
               </li>
               <li>
                 <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>spiderman: Far-From-Home</p>
                     <p className='production-year'>2019</p>
@@ -272,7 +272,7 @@ export default function Spiderman4Component () {
               </li>
               <li>
                 <Link to="/miles" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/miles/miles_2_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/miles/miles_2_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Across The Spider-Verse</p>
                     <p className='production-year'>2023</p>

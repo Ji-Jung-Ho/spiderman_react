@@ -252,7 +252,7 @@ export default function Spiderman2Component () {
             <ul>
               <li>
                 <Link to="/sam" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/sam-spiderman/sam_spider_man_3_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/sam-spiderman/sam_spider_man_2_poster.png`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
                     <p className='production-year'>2012</p>
@@ -261,16 +261,16 @@ export default function Spiderman2Component () {
               </li>
               <li>
                 <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_1_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card_2.jpg`} alt="" />
                   <div className="card-info">
-                    <p className='card-name'>Spider-Man: Homecoming</p>
+                    <p className='card-name'>Spider-Man: Far From Home</p>
                     <p className='production-year'>2012</p>
                   </div>
                 </Link>
               </li>
               <li>
                 <Link to="/miles" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/miles/miles_1_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/miles/miles_1_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
                     <p className='production-year'>2012</p>
@@ -279,7 +279,7 @@ export default function Spiderman2Component () {
               </li>
               <li>
                 <Link to="/venom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/venom/venom_1_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/venom/venom_1_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
                     <p className='production-year'>2018</p>

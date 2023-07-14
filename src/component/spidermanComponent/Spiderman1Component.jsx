@@ -357,7 +357,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_1_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_1_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Homecoming</p>
                     <p className='production-year'>2017</p>
@@ -366,7 +366,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/miles" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/miles/miles_1_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/miles/miles_1_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
                     <p className='production-year'>2018</p>
@@ -375,7 +375,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/venom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/venom/venom_1_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/venom/venom_1_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
                     <p className='production-year'>2018</p>

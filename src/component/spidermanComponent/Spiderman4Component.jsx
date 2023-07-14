@@ -253,7 +253,7 @@ export default function Spiderman4Component () {
             <ul>
               <li>
                 <Link to="/sam" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/sam-spiderman/sam_spider_man_3_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/sam-spiderman/sam_spider_man_1_poster.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
                     <p className='production-year'>2007</p>
@@ -262,16 +262,16 @@ export default function Spiderman4Component () {
               </li>
               <li>
                 <Link to="/amazing" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/amazing/amazing_spider_man_1_poster.jpg`} alt="" />
+                  <img src={`${imgSrc}/amazing/amazing_spider_man_2_card_2.jpg`} alt="" />
                   <div className="card-info">
-                    <p className='card-name'>The Amazing Spider-Man</p>
+                    <p className='card-name'>The Amazing Spider-Man-2</p>
                     <p className='production-year'>2012</p>
                   </div>
                 </Link>
               </li>
               <li>
                 <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_3_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_3_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>spiderman: No-Way-Home</p>
                     <p className='production-year'>2021</p>
@@ -280,7 +280,7 @@ export default function Spiderman4Component () {
               </li>
               <li>
                 <Link to="/venom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/venom/venom_2_card.jpg`} alt="" />
+                  <img src={`${imgSrc}/venom/venom_2_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom: LET THERE BE CARNAGE </p>
                     <p className='production-year'>2021</p>

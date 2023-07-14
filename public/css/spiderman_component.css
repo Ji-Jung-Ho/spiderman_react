@@ -470,6 +470,15 @@
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-review .review-content .review-container .review-list .review-box .review.miles2-review {
   padding-top: 80px;
 }
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-review .review-content .review-container .review-list .review-box .review.tom2-review {
+  padding-top: 100px;
+}
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-review .review-content .review-container .review-list .review-box .review.tom3-review2 {
+  padding-top: 80px;
+}
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-review .review-content .review-container .review-list .review-box .review.tom3-review3 {
+  padding-top: 120px;
+}
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-review .review-content .review-container .review-list .review-box span {
   font-size: 15px;
   text-decoration: underline;
