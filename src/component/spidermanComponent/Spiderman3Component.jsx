@@ -346,7 +346,7 @@ export default function Spiderman1Component() {
                   <img src={`${imgSrc}/sam-spiderman/sam_spider_man_3_card.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2007</p>
                   </div>
                 </Link>
               </li>
@@ -364,7 +364,7 @@ export default function Spiderman1Component() {
                   <img src={`${imgSrc}/miles/miles_2_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Into The Spider-Verse</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2018</p>
                   </div>
                 </Link>
               </li>
@@ -373,7 +373,7 @@ export default function Spiderman1Component() {
                   <img src={`${imgSrc}/venom/venom_2_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom-2</p>
-                    <p className='production-year'>2018</p>
+                    <p className='production-year'>2021</p>
                   </div>
                 </Link>
               </li>

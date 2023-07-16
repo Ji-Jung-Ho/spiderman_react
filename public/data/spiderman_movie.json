@@ -1,0 +1,8 @@
+{
+  "샘스파":[
+    {"이미지": "spiderman_character.jpg", "캐릭터이름1":"spider-man", "캐릭터이름2":"perter-parker", "배우이름":"tobey maguire"},
+    {"이미지": "mary-jane-watson_character.jpg", "캐릭터이름1":"mary-jane-watson", "배우이름":"kirsten dunst"},
+    {"이미지": "green-goblin_character.jpg", "캐릭터이름1":"green-goblin", "캐릭터이름2":"Norman Osborn", "배우이름":"willem dafoe"},
+    {"이미지": "harry-osborn_character.jpg", "캐릭터이름1":"harry-osborn", "배우이름":"James Franco"}
+  ]
+}

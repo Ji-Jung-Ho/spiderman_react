@@ -255,7 +255,7 @@ export default function Spiderman2Component () {
                   <img src={`${imgSrc}/sam-spiderman/sam_spider_man_2_poster.png`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2004</p>
                   </div>
                 </Link>
               </li>
@@ -264,7 +264,7 @@ export default function Spiderman2Component () {
                   <img src={`${imgSrc}/tom-spiderman/tom_spider_man_2_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Far From Home</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2019</p>
                   </div>
                 </Link>
               </li>
@@ -273,7 +273,7 @@ export default function Spiderman2Component () {
                   <img src={`${imgSrc}/miles/miles_1_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2018</p>
                   </div>
                 </Link>
               </li>

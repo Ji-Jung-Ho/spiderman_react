@@ -256,7 +256,7 @@ export default function Spiderman4Component () {
                   <img src={`${imgSrc}/sam-spiderman/sam_spider_man_1_poster.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Trilogy</p>
-                    <p className='production-year'>2007</p>
+                    <p className='production-year'>2002</p>
                   </div>
                 </Link>
               </li>
@@ -265,13 +265,13 @@ export default function Spiderman4Component () {
                   <img src={`${imgSrc}/amazing/amazing_spider_man_2_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man-2</p>
-                    <p className='production-year'>2012</p>
+                    <p className='production-year'>2014</p>
                   </div>
                 </Link>
               </li>
               <li>
                 <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_3_card_1.jpg`} alt="" />
+                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_3_card_2.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>spiderman: No-Way-Home</p>
                     <p className='production-year'>2021</p>

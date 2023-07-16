@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 export default function Spiderman1Component() {
   const [isSpiderMan1, setIsSpiderMan1] = useState(true);
   const [isSpiderMan2, setIsSpiderMan2] = useState(false);
   const [isSpiderMan3, setIsSpiderMan3] = useState(false);
+  const [movieChar, setMovieChar] = useState([]);
+  
+  useEffect(() => {
+    axios({
+      url: './data/spiderman_movie.json',
+      method: 'GET'
+    })
+      .then((res) => {
+        setMovieChar(res.data.spiderman_movie);
+        console.log(res.data.spiderman_movie)
+      })
+      .catch((err) => {
+        console.log('AXIOS 실패', err);
+      });
+  }, []);
 
   const onClickSpiderMan1Toggle = () => {
     setIsSpiderMan1(true);
@@ -168,6 +184,83 @@ export default function Spiderman1Component() {
               </div>
               <div className="movie-poster">
                 <img src={`${samSrc}/sam_spider_man_1_poster.jpg`} alt="" />
+              </div>
+            </div>
+            <div className="character">
+              <div className="character-title">
+                <h2>Character</h2>
+              </div>
+              <div className="character-content">
+              {
+                movieChar && movieChar.map((item, idx) => {
+                  return (
+                    <ul key={idx}> {/* ul 요소를 추가하고 key 속성으로 고유한 식별자를 제공 */}
+                      <li>
+                        <a href="#!">
+                          <div className="img-box">
+                            <img src={`./img/spiderman_movie_img/sam-spiderman/${item.이미지}`} alt="" />
+                          </div>
+                          <div className="caption-box">
+                            <ul>
+                              <li><span className='character-name-1'>{item.캐릭터이름1}</span></li>
+                              <li><span className='character-name-2'>{item.캐릭터이름2}</span></li>
+                              <li><span className='acter'>{item.배우이름}</span></li>
+                            </ul>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  );
+                })
+              }
+                {/* <ul>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/mary-jane-watson_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/green-goblin_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/harry-osborn_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                </ul> */}
               </div>
             </div>
             <div className="movie-review">

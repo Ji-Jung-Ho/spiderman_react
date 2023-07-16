@@ -337,14 +337,12 @@
           .title {
             width: 100%;
             padding-bottom: 50px;
-
             h2 {
               font-size: 26px;
               font-weight: 800;
               color: #151515;
               text-transform: uppercase;
             }
-
             &::before,
             &::after {
               background-color: #c6a972;
@@ -355,13 +353,11 @@
               transform: rotate(-45deg) skewX(45deg);
               width: 20px;
             }
-
             &::before {
               left: 65px;
               top: 35px;
               transform-origin: left bottom;
             }
-
             &::after {
               left: 15px;
               top: 70px;
@@ -416,6 +412,143 @@
             img {
               width: 100%;
               height: 100%;
+            }
+          }
+        }
+        .character {
+          width: 100%;
+          position: relative;
+          padding: 40px 20px;
+          .character-title {
+            width: 100%;
+            padding-bottom: 50px;
+            h2 {
+              font-size: 26px;
+              font-weight: 800;
+              color: #151515;
+              text-transform: uppercase;
+              &::before,
+              &::after {
+                background-color: #c6a972;
+                content: "";
+                display: block;
+                height: 2px;
+                position: absolute;
+                transform: rotate(-45deg) skewX(45deg);
+                width: 20px;
+              }
+              &::before {
+                left: 65px;
+                top: 35px;
+                transform-origin: left bottom;
+              }
+              &::after {
+                left: 15px;
+                top: 70px;
+                transform-origin: right top;
+              }
+            }
+          }
+          .character-content {
+            display: flex;
+            ul {
+              width: 100%;
+              li {
+                background: #000;
+                width: 205px;
+                a {
+                  position: relative;
+                  &:hover {
+                    .caption-box::before {
+                      opacity: 1;
+                      transform: scaleY(1);
+                    }
+                  }
+                  &::after {
+                    border-color: transparent #eee transparent transparent;
+                    border-style: solid;
+                    border-width: 12px 12px 0 0;
+                    bottom: 0;
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: auto;
+                    z-index: 40;
+                  }
+                  .img-box {
+                    height: 210px;
+                    position: relative;
+                    &::after {
+                      height: 4px;
+                      content: "";
+                      background-color: #e62429;
+                      width: 100%;
+                      position: absolute;
+                      left: 0;
+                      bottom: 0;
+                    }
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      
+                    }
+                  }
+                  .caption-box {
+                    position: relative;
+                    width: 100%;
+                    height: 145px;
+                    padding: 10px 10px 10px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    &::before {
+                      background: #e62429;
+                      top: 0;
+                      content: "";
+                      height: 100%;
+                      left: 0;
+                      position: absolute;
+                      transition-timing-function: cubic-bezier(.75, 0, .125, 1);
+                      transition: transform .3s, opacity .3s; // transform과 opacity에 transition 적용
+                      width: 100%;
+                      opacity: 0;
+                      transform-origin: top center; // 기준점을 아래쪽 중앙으로 설정
+                      transform: scaleY(0); // 초기에는 펼쳐진 상태가 아니므로 높이를 0으로 설정
+                    }
+                    ul {
+                      width: 100%;
+                      height: 100%;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-around;
+                      > li {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        flex-direction: column;
+                        span {
+                          position: relative;
+                          z-index: 1;
+                          text-transform: uppercase;
+                          &.character-name-1 {
+                            font-size: 16px;
+                            font-family: 'Homoarakhn', sans-serif;
+                          }
+                          *.character-name-2 {
+                            font-size: 14px;
+                            font-family: 'RobotoCondensed';
+                          }
+                          &.acter {
+                            font-size: 12px;
+                            font-family: 'RobotoCondensed';
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

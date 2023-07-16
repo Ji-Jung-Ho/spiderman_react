@@ -19,7 +19,7 @@ export default function FooterComponent () {
             <img src="./img/footer/tom-logo.jpg" alt=""/>
             <span>new-spiderman</span>
           </Link>
-          <Link to="https://www.smartresize.com/ko/search?q=%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%8D%94%EB%A7%A8" target="_blank">
+          <Link to="https://namu.wiki/w/%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%8D%94%EB%A7%A8:%20%EB%89%B4%20%EC%9C%A0%EB%8B%88%EB%B2%84%EC%8A%A4" target="_blank">
             <img src="./img/footer/miles-logo.jpg" alt=""/>
             <span>miles-morales</span>
           </Link>

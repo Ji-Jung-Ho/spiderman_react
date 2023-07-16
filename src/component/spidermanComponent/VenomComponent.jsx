@@ -254,10 +254,10 @@ export default function Spiderman4Component () {
               </li>
               <li>
                 <Link to="/amazing" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/amazing/amazing_spider_man_1_card_2.jpg`} alt="" />
+                  <img src={`${imgSrc}/amazing/amazing_spider_man_2_card_1.jpg`} alt="" />
                   <div className="card-info">
-                    <p className='card-name'>The Amazing Spider-Man</p>
-                    <p className='production-year'>2012</p>
+                    <p className='card-name'>The Amazing Spider-Man-2</p>
+                    <p className='production-year'>2014</p>
                   </div>
                 </Link>
               </li>
