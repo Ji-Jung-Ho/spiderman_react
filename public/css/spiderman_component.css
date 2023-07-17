@@ -426,6 +426,8 @@
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content ul {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content ul li {
   background: #000;
@@ -509,7 +511,7 @@
   text-transform: uppercase;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content ul li a .caption-box ul > li span.character-name-1 {
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Homoarakhn", sans-serif;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content ul li a .caption-box ul > li span *.character-name-2 {

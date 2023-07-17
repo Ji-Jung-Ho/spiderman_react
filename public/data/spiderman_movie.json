@@ -1,7 +1,19 @@
 {
-  "샘스파":[
+  "샘스파1":[
+    {"클래스":"spiderman" ,"이미지": "spiderman1_spiderman_character.jpg", "캐릭터이름1":"spider-man", "캐릭터이름2":"perter-parker", "배우이름":"tobey maguire"},
+    {"클래스":"mj" ,"이미지": "spiderman1_mary-jane-watson_character.jpg", "캐릭터이름1":"mary-jane", "배우이름":"kirsten dunst"},
+    {"클래스":"goblin" ,"이미지": "spiderman1_norman-osborn_character.jpg", "호버이미지": "spiderman1_green-goblin_character.jpg", "캐릭터이름1":"green-goblin", "캐릭터이름2":"Norman Osborn", "배우이름":"willem dafoe"},
+    {"클래스":"harry" ,"이미지": "spiderman1_harry-osborn_character.jpg", "캐릭터이름1":"harry-osborn", "배우이름":"James Franco"}
+  ],
+  "샘스파2":[
     {"이미지": "spiderman_character.jpg", "캐릭터이름1":"spider-man", "캐릭터이름2":"perter-parker", "배우이름":"tobey maguire"},
-    {"이미지": "mary-jane-watson_character.jpg", "캐릭터이름1":"mary-jane-watson", "배우이름":"kirsten dunst"},
+    {"이미지": "mary-jane-watson_character.jpg", "캐릭터이름1":"mary-jane", "배우이름":"kirsten dunst"},
+    {"이미지": "green-goblin_character.jpg", "캐릭터이름1":"green-goblin", "캐릭터이름2":"Norman Osborn", "배우이름":"willem dafoe"},
+    {"이미지": "spiderman2_harry-osborn_character.jpg", "캐릭터이름1":"harry-osborn", "배우이름":"James Franco"}
+  ],
+  "샘스파3":[
+    {"이미지": "spiderman_character.jpg", "캐릭터이름1":"spider-man", "캐릭터이름2":"perter-parker", "배우이름":"tobey maguire"},
+    {"이미지": "mary-jane-watson_character.jpg", "캐릭터이름1":"mary-jane", "배우이름":"kirsten dunst"},
     {"이미지": "green-goblin_character.jpg", "캐릭터이름1":"green-goblin", "캐릭터이름2":"Norman Osborn", "배우이름":"willem dafoe"},
     {"이미지": "harry-osborn_character.jpg", "캐릭터이름1":"harry-osborn", "배우이름":"James Franco"}
   ]

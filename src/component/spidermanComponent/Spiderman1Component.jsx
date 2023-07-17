@@ -2,26 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 
-export default function Spiderman1Component() {
+export default function Spiderman1Component({샘스파}) {
   const [isSpiderMan1, setIsSpiderMan1] = useState(true);
   const [isSpiderMan2, setIsSpiderMan2] = useState(false);
   const [isSpiderMan3, setIsSpiderMan3] = useState(false);
-  const [movieChar, setMovieChar] = useState([]);
-  
-  useEffect(() => {
-    axios({
-      url: './data/spiderman_movie.json',
-      method: 'GET'
-    })
-      .then((res) => {
-        setMovieChar(res.data.spiderman_movie);
-        console.log(res.data.spiderman_movie)
-      })
-      .catch((err) => {
-        console.log('AXIOS 실패', err);
-      });
-  }, []);
+  const [isSpidermanHovered, setIsSpidermanHovered] = useState(false);
+  const [isGoblinHovered, setIsGoblinHovered] = useState(false);
 
+  const onSpidermanHoverEnter = () => {
+    setIsSpidermanHovered(true);
+  };
+
+  const onSpidermanHoverLeave = () => {
+    setIsSpidermanHovered(false);
+  };
+
+  const onGoblinHoverEnter = () => {
+    setIsGoblinHovered(true);
+  };
+
+  const onGoblinHoverLeave = () => {
+    setIsGoblinHovered(false);
+  };
+  
   const onClickSpiderMan1Toggle = () => {
     setIsSpiderMan1(true);
     setIsSpiderMan2(false);
@@ -58,8 +61,8 @@ export default function Spiderman1Component() {
     },
   };
 
-  const samSrc = "./img/spiderman_movie_img/sam-spiderman"
-  const imgSrc = "./img/spiderman_movie_img";
+  const samSrc = "./img/spiderman_movie_img/sam-spiderman/"
+  const imgSrc = "./img/spiderman_movie_img/";
 
   const onClickLinkClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -191,76 +194,60 @@ export default function Spiderman1Component() {
                 <h2>Character</h2>
               </div>
               <div className="character-content">
-              {
-                movieChar && movieChar.map((item, idx) => {
-                  return (
-                    <ul key={idx}> {/* ul 요소를 추가하고 key 속성으로 고유한 식별자를 제공 */}
-                      <li>
-                        <a href="#!">
-                          <div className="img-box">
-                            <img src={`./img/spiderman_movie_img/sam-spiderman/${item.이미지}`} alt="" />
-                          </div>
-                          <div className="caption-box">
-                            <ul>
-                              <li><span className='character-name-1'>{item.캐릭터이름1}</span></li>
-                              <li><span className='character-name-2'>{item.캐릭터이름2}</span></li>
-                              <li><span className='acter'>{item.배우이름}</span></li>
-                            </ul>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  );
-                })
-              }
-                {/* <ul>
-                  <li>
+                <ul>
+                  <li className={isSpidermanHovered  ? 'spiderman' : 'peter-parker'} onMouseEnter={onSpidermanHoverEnter} onMouseLeave={onSpidermanHoverLeave}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src="./img/spiderman_movie_img/sam-spiderman/mary-jane-watson_character.jpg" alt="" />
+                        <img src={isSpidermanHovered  ? `${samSrc}spiderman1_spiderman_character.jpg` : `${samSrc}spiderman1_peter-parker_character.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul>
-                          <li><span className='character-name-1'>spider-man</span></li>
-                          <li><span className='character-name-2'>peter-parker</span></li>
-                          <li><span className='acter'>Tobey Maguire</span></li>
+                          <li><span className='character-name-1'>{isSpidermanHovered  ? 'spider-man' : 'peter-parker'}</span></li>
+                          <li><span className='actor'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_mary-jane-watson_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>mary-jane</span></li>
+                          <li><span className='acter'>kirsten dunst</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li className={isGoblinHovered  ? 'green-goblin' : 'norman-osborn'} onMouseEnter={onGoblinHoverEnter} onMouseLeave={onGoblinHoverLeave}>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src={isGoblinHovered  ? `${samSrc}spiderman1_green-goblin_character.jpg` : `${samSrc}spiderman1_norman-osborn_character.jpg`} alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>{isGoblinHovered  ? 'green-goblin' : 'norman-osborn'}</span></li>
+                          <li><span className='actor'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_harry-osborn_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>harry-osborn</span></li>
+                          <li><span className='acter'>James Franco</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
                 </ul>
-                <ul>
-                  <li>
-                    <a href="#!">
-                      <div className="img-box">
-                        <img src="./img/spiderman_movie_img/sam-spiderman/green-goblin_character.jpg" alt="" />
-                      </div>
-                      <div className="caption-box">
-                        <ul>
-                          <li><span className='character-name-1'>spider-man</span></li>
-                          <li><span className='character-name-2'>peter-parker</span></li>
-                          <li><span className='acter'>Tobey Maguire</span></li>
-                        </ul>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <a href="#!">
-                      <div className="img-box">
-                        <img src="./img/spiderman_movie_img/sam-spiderman/harry-osborn_character.jpg" alt="" />
-                      </div>
-                      <div className="caption-box">
-                        <ul>
-                          <li><span className='character-name-1'>spider-man</span></li>
-                          <li><span className='character-name-2'>peter-parker</span></li>
-                          <li><span className='acter'>Tobey Maguire</span></li>
-                        </ul>
-                      </div>
-                    </a>
-                  </li>
-                </ul> */}
               </div>
             </div>
             <div className="movie-review">
@@ -328,6 +315,71 @@ export default function Spiderman1Component() {
                 <img src={`${samSrc}/sam_spider_man_2_poster.png`} alt="" />
               </div>
             </div>
+            <div className="character">
+              <div className="character-title">
+                <h2>Character</h2>
+              </div>
+              <div className="character-content">
+                <ul>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_spiderman_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_mary-jane-watson_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box goblin">
+                        <img className='goblin' src="./img/spiderman_movie_img/sam-spiderman/spiderman1_norman-osborn_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_harry-osborn_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div className="movie-review">
               <div className="review-title">
                 <h2>review</h2>
@@ -393,6 +445,71 @@ export default function Spiderman1Component() {
                 <img src={`${samSrc}/sam_spider_man_3_poster.jpg`} alt="" />
               </div>
             </div>
+            <div className="character">
+              <div className="character-title">
+                <h2>Character</h2>
+              </div>
+              <div className="character-content">
+                <ul>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_spiderman_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_mary-jane-watson_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box goblin">
+                        <img className='goblin' src="./img/spiderman_movie_img/sam-spiderman/spiderman1_norman-osborn_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src="./img/spiderman_movie_img/sam-spiderman/spiderman1_harry-osborn_character.jpg" alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul>
+                          <li><span className='character-name-1'>spider-man</span></li>
+                          <li><span className='character-name-2'>peter-parker</span></li>
+                          <li><span className='acter'>Tobey Maguire</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div className="movie-review">
               <div className="review-title">
                 <h2>review</h2>
@@ -441,7 +558,7 @@ export default function Spiderman1Component() {
             <ul>
               <li>
                 <Link to="/amazing" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/amazing/amazing_spider_man_1_poster.jpg`} alt="" />
+                  <img src={`${imgSrc}amazing/amazing_spider_man_1_poster.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Amazing Spider-Man</p>
                     <p className='production-year'>2012</p>
@@ -450,7 +567,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/tom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/tom-spiderman/tom_spider_man_1_card_1.jpg`} alt="" />
+                  <img src={`${imgSrc}tom-spiderman/tom_spider_man_1_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>Spider-Man: Homecoming</p>
                     <p className='production-year'>2017</p>
@@ -459,7 +576,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/miles" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/miles/miles_1_card_1.jpg`} alt="" />
+                  <img src={`${imgSrc}miles/miles_1_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>into the spider-verse</p>
                     <p className='production-year'>2018</p>
@@ -468,7 +585,7 @@ export default function Spiderman1Component() {
               </li>
               <li>
                 <Link to="/venom" onClick={onClickLinkClick}>
-                  <img src={`${imgSrc}/venom/venom_1_card_1.jpg`} alt="" />
+                  <img src={`${imgSrc}venom/venom_1_card_1.jpg`} alt="" />
                   <div className="card-info">
                     <p className='card-name'>The Venom</p>
                     <p className='production-year'>2018</p>

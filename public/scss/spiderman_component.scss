@@ -453,6 +453,8 @@
             display: flex;
             ul {
               width: 100%;
+              display: flex;
+              justify-content: space-between;
               li {
                 background: #000;
                 width: 205px;
@@ -478,6 +480,7 @@
                   .img-box {
                     height: 210px;
                     position: relative;
+                  
                     &::after {
                       height: 4px;
                       content: "";
@@ -487,12 +490,16 @@
                       left: 0;
                       bottom: 0;
                     }
+                  
+                    
+                    
+                  
                     img {
                       width: 100%;
                       height: 100%;
-                      
                     }
                   }
+                  
                   .caption-box {
                     position: relative;
                     width: 100%;
@@ -532,7 +539,7 @@
                           z-index: 1;
                           text-transform: uppercase;
                           &.character-name-1 {
-                            font-size: 16px;
+                            font-size: 15px;
                             font-family: 'Homoarakhn', sans-serif;
                           }
                           *.character-name-2 {
