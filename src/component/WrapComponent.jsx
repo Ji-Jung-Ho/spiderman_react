@@ -3,11 +3,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainComponent from './MainComponent';
 import HeaderComponent from './HeaderComponent';
 import GoodsComponent from './goodsComponent/GoodsComponent';
-import Spiderman1Component from './spidermanComponent/Spiderman1Component';
-import Spiderman2Component from './spidermanComponent/Spiderman2Component';
-import Spiderman3Component from './spidermanComponent/Spiderman3Component';
-import Spiderman4Component from './spidermanComponent/Spiderman4Component';
-import VenomComponent from './spidermanComponent/VenomComponent';
+import Spiderman1Component from './spidermanComponent/sam-spiderman/Spiderman1Component';
+import Spiderman2Component from './spidermanComponent/amazing-spiderman/Spiderman2Component';
+import Spiderman3Component from './spidermanComponent/tom-spiderman/Spiderman3Component';
+import Spiderman4Component from './spidermanComponent/miles/MilesComponent';
+import VenomComponent from './spidermanComponent/venom/VenomComponent';
 import SignUpComponent from './memberComponent/SignUpComponent';
 import FooterComponent from './FooterComponent';
 
