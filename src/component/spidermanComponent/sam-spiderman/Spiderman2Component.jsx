@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export default function Spiderman1Component () {
+export default function Spiderman2Component () {
   const [isSpidermanHovered, setIsSpidermanHovered] = useState(false);
   const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
 
@@ -20,8 +20,8 @@ export default function Spiderman1Component () {
     }
   };
 
-  const spiderman1ImgSrc = "./img/spiderman_movie_img/sam-spiderman/spiderman_1/"
-  const commonImgSrc = "./img/spiderman_movie_img/sam-spiderman/"
+  const spiderman2ImgSrc = "./img/spiderman_movie_img/sam-spiderman/spiderman_2/";
+  const commonImgSrc = "./img/spiderman_movie_img/sam-spiderman/";
 
   return (
     <>
@@ -34,8 +34,8 @@ export default function Spiderman1Component () {
             <div className='trailer-container'>
               <div className="trailer-box">
                 <iframe
-                  src="https://www.youtube.com/embed/WMxTe3eouQc"
-                  title="스파이더맨 -- 예고편"
+                  src="https://www.youtube.com/embed/B1R2d6eEaC4"
+                  title="스파이더맨 2 -- 예고편"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
@@ -47,7 +47,7 @@ export default function Spiderman1Component () {
       <section className='section5'>
         <div className="sec5-container">
           <div className="background-img">
-            <img src={`${commonImgSrc}/sam_spider_man_1_logo.png`} alt="" />
+            <img src={`${commonImgSrc}/sam_spider_man_2_logo.png`} alt="" />
           </div>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function Spiderman1Component () {
                 </div>
               </div>
               <div className="movie-poster">
-                <img src={`${commonImgSrc}/sam_spider_man_1_poster.jpg`} alt="" />
+                <img src={`${commonImgSrc}sam_spider_man_2_poster.png`} alt="" />
               </div>
             </div>
             <div className="character">
@@ -92,7 +92,7 @@ export default function Spiderman1Component () {
                     onMouseLeave={() => onHoverLeave('spiderman')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isSpidermanHovered  ? `${spiderman1ImgSrc}spiderman1_spiderman.jpg` : `${spiderman1ImgSrc}spiderman1_peter-parker.jpg`} alt="" />
+                        <img src={isSpidermanHovered  ? `${spiderman2ImgSrc}spiderman2_spiderman.jpg` : `${spiderman2ImgSrc}spiderman2_peter-parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
@@ -105,7 +105,7 @@ export default function Spiderman1Component () {
                   <li>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${spiderman1ImgSrc}spiderman1_mary-jane-watson.jpg`} alt="" />
+                        <img src={`${spiderman2ImgSrc}spiderman2_mary-jane-watson.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
@@ -121,7 +121,7 @@ export default function Spiderman1Component () {
                   >
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVillain1Hovered  ? `${spiderman1ImgSrc}spiderman1_green-goblin.jpg` : `${spiderman1ImgSrc}spiderman1_norman-osborn.jpg`} alt="" />
+                        <img src={isVillain1Hovered  ? `${spiderman2ImgSrc}spiderman2_dr.otto.jpg` : `${spiderman2ImgSrc}spiderman2_octavius.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
@@ -134,7 +134,7 @@ export default function Spiderman1Component () {
                   <li>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${spiderman1ImgSrc}spiderman1_harry-osborn.jpg`} alt="" />
+                        <img src={`${spiderman2ImgSrc}spiderman2_harry-osborn.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>

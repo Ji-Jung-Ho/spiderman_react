@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 
-export default function Spiderman4Component () {
+export default function MilesComponent () {
   const [isMiles1, setIsMiles1] = useState(true);
   const [isMiles2, setIsMiles2] = useState(false);
 
