@@ -4,7 +4,7 @@ import Spiderman1Component from './Spiderman1Component';
 import Spiderman2Component from './Spiderman2Component';
 import Spiderman3Component from './Spiderman3Component';
 
-export default function SpiderManMainComponent() {
+export default function SamSpiderManMainComponent() {
   const [isSpiderMan1, setIsSpiderMan1] = useState(true);
   const [isSpiderMan2, setIsSpiderMan2] = useState(false);
   const [isSpiderMan3, setIsSpiderMan3] = useState(false);

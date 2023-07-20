@@ -443,17 +443,29 @@
             width: 100%;
             height: 355px;
             position: relative;
+            &.nowayhome {
+              height: 710px;
+            }
             .character-ul {
               width: 100%;
               display: flex;
-              justify-content: space-between;
+              justify-content: flex-start;
               position: absolute;
+              &.nowayhome {
+                justify-content: flex-start;
+              }
               li {
                 background: #000;
                 width: 250px;
                 overflow: hidden;
-                &.spiderman3 {
-                  width: 210px;
+                margin-right: 2px;
+                &.spiderman3,
+                &.homecoming,
+                &.farfromhome {
+                  width: 230px;
+                }
+                &.nowayhome {
+                  width: 230px;
                 }
                 &:hover .img-box img {
                   transform: scale(1.1);
@@ -537,22 +549,163 @@
                           z-index: 1;
                           text-transform: uppercase;
                           text-decoration: underline;
-                          text-underline-offset: 7px;
+                          font-weight: bold;
                           &.character-name {
                             font-size: 17px;
-                            font-family: 'Homoarakhn', sans-serif;
-                          }
-                          &.spiderman3-character-name {
-                            font-size: 15px;
+                            color: #fff;
                             font-family: 'Homoarakhn', sans-serif;
                           }
                           &.acter {
                             font-size: 15px;
-                            font-family: 'RobotoCondensed';
+                            color: #999;
+                            font-family: 'RobotoCondensed, sans-serif';
                           }
-                          &.spiderman3-acter {
-                            font-size: 14px;
-                            font-family: 'RobotoCondensed';
+                          &.spiderman3,
+                          &.homecoming,
+                          &.farfromhome,
+                          &.nowayhome {
+                            &-character-name {
+                              font-size: 16px;
+                              color: #fff;
+                              font-family: 'Homoarakhn', sans-serif;
+                            }
+                            &-acter {
+                              font-size: 14px;
+                              color: #999;
+                              font-family: 'RobotoCondensed, sans-serif';
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .villain {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              position: absolute;
+              bottom: -35px;
+              li {
+                background: #000;
+                width: 250px;
+                overflow: hidden;
+                &.spiderman3,
+                &.homecoming,
+                &.farfromhome,
+                &.nowayhome {
+                  width: 230px;
+                }
+                &:hover .img-box img {
+                  transform: scale(1.1);
+                  transition: all 0.5s;
+                }
+                a {
+                  position: relative;
+                  &:hover {
+                    .caption-box::before {
+                      opacity: 1;
+                      transform: scaleY(1.1);
+                    }
+                  }
+                  &::after {
+                    border-color: transparent #eee transparent transparent;
+                    border-style: solid;
+                    border-width: 12px 12px 0 0;
+                    bottom: 0;
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: auto;
+                    z-index: 40;
+                  }
+                  .img-box {
+                    height: 210px;
+                    position: relative;
+                  
+                    &::after {
+                      height: 4px;
+                      content: "";
+                      background-color: #e62429;
+                      width: 100%;
+                      position: absolute;
+                      left: 0;
+                      bottom: 0;
+                    }
+                    img {
+                      width: 100%;
+                      height: 100%;
+                    }
+                  }
+                  
+                  .caption-box {
+                    position: relative;
+                    width: 100%;
+                    height: 145px;
+                    padding: 10px 10px 10px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    &::before {
+                      background: #e62429;
+                      top: 0;
+                      content: "";
+                      height: 100%;
+                      left: 0;
+                      position: absolute;
+                      transition-timing-function: cubic-bezier(.75, 0, .125, 1);
+                      transition: transform .5s, opacity .1s; // transform과 opacity에 transition 적용
+                      width: 100%;
+                      opacity: 0;
+                      transform-origin: top center; // 기준점을 아래쪽 중앙으로 설정
+                      transform: scaleY(0); // 초기에는 펼쳐진 상태가 아니므로 높이를 0으로 설정
+                    }
+                    
+                    .caption-ul {
+                      width: 100%;
+                      height: 100%;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-around;
+                      li {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        flex-direction: column;
+                        span {
+                          position: relative;
+                          z-index: 1;
+                          text-transform: uppercase;
+                          text-decoration: underline;
+                          font-weight: bold;
+                          &.character-name {
+                            font-size: 17px;
+                            color: #fff;
+                            font-family: 'Homoarakhn', sans-serif;
+                          }
+                          &.acter {
+                            font-size: 15px;
+                            color: #999;
+                            font-family: 'RobotoCondensed, sans-serif';
+                          }
+                          // spiderman3 클래스일 때만 적용되는 스타일
+                          &.spiderman3,
+                          &.homecoming,
+                          &.farfromhome,
+                          &.nowayhome {
+                            &-character-name {
+                              font-size: 16px;
+                              color: #fff;
+                              font-family: 'Homoarakhn', sans-serif;
+                            }
+                            &-acter {
+                              font-size: 14px;
+                              color: #999;
+                              font-family: 'RobotoCondensed, sans-serif';
+                            }
                           }
                         }
                       }

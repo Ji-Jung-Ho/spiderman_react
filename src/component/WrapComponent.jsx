@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainComponent from './MainComponent';
 import HeaderComponent from './HeaderComponent';
 import GoodsComponent from './goodsComponent/GoodsComponent';
-import SpiderManMainComponent from './spidermanComponent/sam-spiderman/SpiderManMainComponent';
+import SamSpiderManMainComponent from './spidermanComponent/sam-spiderman/SamSpiderManMainComponent';
 import AmazingSpiderManMainComponent from './spidermanComponent/amazing-spiderman/AmazingSpiderManMainComponent';
-import Spiderman3Component from './spidermanComponent/tom-spiderman/Spiderman3Component';
+import TomSpiderManMainComponent from './spidermanComponent/tom-spiderman/TomSpiderManMainComponent';
 import Spiderman4Component from './spidermanComponent/miles/MilesComponent';
 import VenomComponent from './spidermanComponent/venom/VenomComponent';
 import SignUpComponent from './memberComponent/SignUpComponent';
@@ -19,9 +19,9 @@ export default function WrapComponent () {
       <Routes>
         <Route path="/" element={<MainComponent />}></Route>
         <Route path="/goods" element={<HeaderFooterLayout component={<GoodsComponent />} />} />
-        <Route path="/sam" element={<HeaderFooterLayout component={<SpiderManMainComponent />} />} />
+        <Route path="/sam" element={<HeaderFooterLayout component={<SamSpiderManMainComponent />} />} />
         <Route path="/amazing" element={<HeaderFooterLayout component={<AmazingSpiderManMainComponent />} />} />
-        <Route path="/tom" element={<HeaderFooterLayout component={<Spiderman3Component />} />} />
+        <Route path="/tom" element={<HeaderFooterLayout component={<TomSpiderManMainComponent />} />} />
         <Route path="/miles" element={<HeaderFooterLayout component={<Spiderman4Component />} />} />
         <Route path="/venom" element={<HeaderFooterLayout component={<VenomComponent />} />} />
         <Route path="/signup" element={<HeaderFooterLayout component={<SignUpComponent />} />} />
