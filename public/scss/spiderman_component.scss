@@ -443,7 +443,8 @@
             width: 100%;
             height: 355px;
             position: relative;
-            &.nowayhome {
+            &.nowayhome,
+            &.miles1 {
               height: 710px;
             }
             .character-ul {
@@ -451,9 +452,6 @@
               display: flex;
               justify-content: flex-start;
               position: absolute;
-              &.nowayhome {
-                justify-content: flex-start;
-              }
               li {
                 background: #000;
                 width: 250px;
@@ -464,7 +462,8 @@
                 &.farfromhome {
                   width: 230px;
                 }
-                &.nowayhome {
+                &.nowayhome,
+                &.miles1 {
                   width: 230px;
                 }
                 &:hover .img-box img {
@@ -488,7 +487,7 @@
                     position: absolute;
                     right: 0;
                     top: auto;
-                    z-index: 40;
+                    z-index: 1;
                   }
                   .img-box {
                     height: 210px;
@@ -545,15 +544,18 @@
                         align-items: center;
                         flex-direction: column;
                         span {
+                          display: block;
+                          height: 24px;
                           position: relative;
                           z-index: 1;
                           text-transform: uppercase;
-                          text-decoration: underline;
+                          
                           font-weight: bold;
                           &.character-name {
                             font-size: 17px;
                             color: #fff;
-                            font-family: 'Homoarakhn', sans-serif;
+                            text-decoration: underline;
+                            text-underline-offset: 7px;
                           }
                           &.acter {
                             font-size: 15px;
@@ -563,11 +565,13 @@
                           &.spiderman3,
                           &.homecoming,
                           &.farfromhome,
-                          &.nowayhome {
+                          &.nowayhome,
+                          &.miles1 {
                             &-character-name {
                               font-size: 16px;
                               color: #fff;
-                              font-family: 'Homoarakhn', sans-serif;
+                              text-decoration: underline;
+                              text-underline-offset: 7px;
                             }
                             &-acter {
                               font-size: 14px;
@@ -585,18 +589,22 @@
             .villain {
               width: 100%;
               display: flex;
-              justify-content: space-between;
+              justify-content: flex-start;
               position: absolute;
               bottom: -35px;
               li {
                 background: #000;
                 width: 250px;
                 overflow: hidden;
+                margin-right: 2px;
                 &.spiderman3,
                 &.homecoming,
                 &.farfromhome,
                 &.nowayhome {
                   width: 230px;
+                }
+                &.miles1 {
+                  width: 191px;
                 }
                 &:hover .img-box img {
                   transform: scale(1.1);
@@ -619,7 +627,7 @@
                     position: absolute;
                     right: 0;
                     top: auto;
-                    z-index: 40;
+                    z-index: 1;
                   }
                   .img-box {
                     height: 210px;
@@ -676,15 +684,17 @@
                         align-items: center;
                         flex-direction: column;
                         span {
+                          display: block;
+                          height: 24px;
                           position: relative;
                           z-index: 1;
                           text-transform: uppercase;
-                          text-decoration: underline;
                           font-weight: bold;
                           &.character-name {
                             font-size: 17px;
                             color: #fff;
-                            font-family: 'Homoarakhn', sans-serif;
+                            text-decoration: underline;
+                            text-underline-offset: 7px;
                           }
                           &.acter {
                             font-size: 15px;
@@ -695,11 +705,13 @@
                           &.spiderman3,
                           &.homecoming,
                           &.farfromhome,
-                          &.nowayhome {
+                          &.nowayhome,
+                          &.miles1 {
                             &-character-name {
                               font-size: 16px;
                               color: #fff;
-                              font-family: 'Homoarakhn', sans-serif;
+                              text-decoration: underline;
+                              text-underline-offset: 7px;
                             }
                             &-acter {
                               font-size: 14px;

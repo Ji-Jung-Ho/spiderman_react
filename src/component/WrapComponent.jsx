@@ -6,7 +6,7 @@ import GoodsComponent from './goodsComponent/GoodsComponent';
 import SamSpiderManMainComponent from './spidermanComponent/sam-spiderman/SamSpiderManMainComponent';
 import AmazingSpiderManMainComponent from './spidermanComponent/amazing-spiderman/AmazingSpiderManMainComponent';
 import TomSpiderManMainComponent from './spidermanComponent/tom-spiderman/TomSpiderManMainComponent';
-import Spiderman4Component from './spidermanComponent/miles/MilesComponent';
+import MilesMainComponent from './spidermanComponent/miles/MilesMainComponent';
 import VenomComponent from './spidermanComponent/venom/VenomComponent';
 import SignUpComponent from './memberComponent/SignUpComponent';
 import FooterComponent from './FooterComponent';
@@ -22,7 +22,7 @@ export default function WrapComponent () {
         <Route path="/sam" element={<HeaderFooterLayout component={<SamSpiderManMainComponent />} />} />
         <Route path="/amazing" element={<HeaderFooterLayout component={<AmazingSpiderManMainComponent />} />} />
         <Route path="/tom" element={<HeaderFooterLayout component={<TomSpiderManMainComponent />} />} />
-        <Route path="/miles" element={<HeaderFooterLayout component={<Spiderman4Component />} />} />
+        <Route path="/miles" element={<HeaderFooterLayout component={<MilesMainComponent />} />} />
         <Route path="/venom" element={<HeaderFooterLayout component={<VenomComponent />} />} />
         <Route path="/signup" element={<HeaderFooterLayout component={<SignUpComponent />} />} />
       </Routes>
