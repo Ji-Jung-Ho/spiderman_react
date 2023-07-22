@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 
 export default function NewSpiderVerseComponent () {
@@ -95,21 +94,29 @@ export default function NewSpiderVerseComponent () {
               </div>
               <div className="movie-story">
                 <p>
-                  For the first time in the cinematic history of Spider-Man, our friendly neighborhood hero's identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk. When he enlists Doctor Strange's help to restore his secret, the spell tears a hole in their world, releasing the most powerful villains who've ever fought a Spider-Man in any universe. Now, Peter will have to overcome his greatest challenge yet, which will not only forever alter his own future but the future of the Multiverse.
+                  Bitten by a radioactive spider in the subway, Brooklyn teenager Miles Morales suddenly develops mysterious powers that transform him into the one and only Spider-Man. When he meets Peter Parker, he soon realizes that there are many others who share his special, high-flying talents. Miles must now use his newfound skills to battle the evil Kingpin, a hulking madman who can open portals to other universes and pull different versions of Spider-Man into our world.
                 </p>
               </div>
               <div className="movie-info">
                 <div className="movie-info-container">
                   <div className="label">director</div>
-                  <div className='content'>Jon Watts</div>
+                  <div className='content'>
+                    <span>Bob Persichetti</span>
+                    <span>Peter Ramsey</span>
+                    <span>Rodney Rothman</span>
+                  </div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">cast</div>
-                  <div className='content'>Tom Holland, Zendaya, Jacob Batalon</div>
+                  <div className='content'>
+                    <span>Shameik Moore</span>
+                    <span>Jake Johnson</span>
+                    <span>Hailee Steinfeld</span>
+                    </div>
                 </div>
                 <div className="movie-info-container">
                   <div className="label">release date</div>
-                  <div className='content'><span>Dec 17, 2021</span></div>
+                  <div className='content'><span>Dec 14, 2018</span></div>
                 </div>
               </div>
               <div className="movie-poster">

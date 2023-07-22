@@ -358,14 +358,12 @@
           .movie-story {
             width: 800px;
             padding: 25px;
-
             p {
               font-size: 16px;
               line-height: 150%;
               color: #151515;
             }
           }
-
           .movie-info {
             width: 800px;
             height: 163px;
@@ -374,7 +372,7 @@
             padding-top: 60px;
             .movie-info-container {
               width: 30%;
-              margin: 0 3% 35px 0;
+              margin-bottom: 35px;
               text-transform: uppercase;
               text-align: center;
               color: #151515;
@@ -385,12 +383,12 @@
                 font-weight: bold;
                 padding-top: 10px;
                 span {
-                  text-transform: none;
+                  display: block;
+                  margin-top: 5px;
                 }
               }
             }
           }
-
           .movie-poster {
             width: 280px;
             height: 400px;
@@ -444,7 +442,8 @@
             height: 355px;
             position: relative;
             &.nowayhome,
-            &.miles1 {
+            &.miles1,
+            &.miles2 {
               height: 710px;
             }
             .character-ul {
@@ -463,7 +462,8 @@
                   width: 230px;
                 }
                 &.nowayhome,
-                &.miles1 {
+                &.miles1,
+                &.miles2 {
                   width: 230px;
                 }
                 &:hover .img-box img {
@@ -566,7 +566,8 @@
                           &.homecoming,
                           &.farfromhome,
                           &.nowayhome,
-                          &.miles1 {
+                          &.miles1,
+                          &.miles2 {
                             &-character-name {
                               font-size: 16px;
                               color: #fff;
@@ -603,7 +604,8 @@
                 &.nowayhome {
                   width: 230px;
                 }
-                &.miles1 {
+                &.miles1,
+                &.miles2 {
                   width: 191px;
                 }
                 &:hover .img-box img {
@@ -706,7 +708,8 @@
                           &.homecoming,
                           &.farfromhome,
                           &.nowayhome,
-                          &.miles1 {
+                          &.miles1,
+                          &.miles2 {
                             &-character-name {
                               font-size: 16px;
                               color: #fff;

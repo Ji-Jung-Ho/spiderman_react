@@ -34,7 +34,7 @@ export default function MilesMainComponent () {
 
   return (
     <main id="main" className="spiderman-movie-1">
-      <section className={`section1 ${isMiles1 ? 'sec1-show' : 'sec1-hide'}`}>
+      <section className={`section1 ${isMiles2 ? 'sec1-show' : 'sec1-hide'}`}>
         <div className="sec1-container">
           <Link to={`${isMiles1 ? milesLink.miles_Disney.url : ''}`} target="_blink">
             <div className="sec1-content">
@@ -71,9 +71,9 @@ export default function MilesMainComponent () {
       {
         isMiles1 && <NewSpiderVerseComponent/>
       }
-      {/* {
+      {
         isMiles2 && <AcrossTheSpiderVerseComponent/>
-      } */}
+      }
       <section className='section7'>
         <div className="sec7-container">
           <div className="related-movie-title">

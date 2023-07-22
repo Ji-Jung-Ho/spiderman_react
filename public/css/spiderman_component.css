@@ -349,7 +349,7 @@
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .movie-info .movie-info-container {
   width: 30%;
-  margin: 0 3% 35px 0;
+  margin-bottom: 35px;
   text-transform: uppercase;
   text-align: center;
   color: #151515;
@@ -362,7 +362,8 @@
   padding-top: 10px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .movie-info .movie-info-container .content span {
-  text-transform: none;
+  display: block;
+  margin-top: 5px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .movie-poster {
   width: 280px;
@@ -416,7 +417,7 @@
   height: 355px;
   position: relative;
 }
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content.nowayhome, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content.miles1 {
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content.nowayhome, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content.miles1, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content.miles2 {
   height: 710px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul {
@@ -434,7 +435,7 @@
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.spiderman3, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.homecoming, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.farfromhome {
   width: 230px;
 }
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.nowayhome, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.miles1 {
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.nowayhome, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.miles1, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.miles2 {
   width: 230px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li:hover .img-box img {
@@ -532,13 +533,13 @@
   color: #999;
   font-family: "RobotoCondensed, sans-serif";
 }
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.spiderman3-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.homecoming-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.farfromhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.nowayhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.miles1-character-name {
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.spiderman3-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.homecoming-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.farfromhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.nowayhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.miles1-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.miles2-character-name {
   font-size: 16px;
   color: #fff;
   text-decoration: underline;
   text-underline-offset: 7px;
 }
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.spiderman3-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.homecoming-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.farfromhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.nowayhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.miles1-acter {
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.spiderman3-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.homecoming-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.farfromhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.nowayhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.miles1-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box .caption-ul li span.miles2-acter {
   font-size: 14px;
   color: #999;
   font-family: "RobotoCondensed, sans-serif";
@@ -559,7 +560,7 @@
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li.spiderman3, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li.homecoming, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li.farfromhome, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li.nowayhome {
   width: 230px;
 }
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li.miles1 {
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li.miles1, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li.miles2 {
   width: 191px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li:hover .img-box img {
@@ -657,13 +658,13 @@
   color: #999;
   font-family: "RobotoCondensed, sans-serif";
 }
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.spiderman3-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.homecoming-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.farfromhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.nowayhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.miles1-character-name {
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.spiderman3-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.homecoming-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.farfromhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.nowayhome-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.miles1-character-name, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.miles2-character-name {
   font-size: 16px;
   color: #fff;
   text-decoration: underline;
   text-underline-offset: 7px;
 }
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.spiderman3-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.homecoming-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.farfromhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.nowayhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.miles1-acter {
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.spiderman3-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.homecoming-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.farfromhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.nowayhome-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.miles1-acter, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box .caption-ul li span.miles2-acter {
   font-size: 14px;
   color: #999;
   font-family: "RobotoCondensed, sans-serif";
