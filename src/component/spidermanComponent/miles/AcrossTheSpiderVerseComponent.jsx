@@ -58,7 +58,6 @@ export default function AcrossTheSpiderVerseComponent () {
   const spiderman5Class = isSpiderman5Hovered ? 'spider-man5 miles2' : 'peter-porker miles2';
   const spiderman6Class = isSpiderman6Hovered ? 'spider-man6 miles2' : 'peter-porker miles2';
   const villain1Class = isVillain1Hovered ? 'prowler miles2' : 'aaron-davis miles2';
-  const villain2Class = isVillain2Hovered ? 'dr-octopus miles2' : 'olivia miles2';
 
   const miles2ImgSrc = "./img/spiderman_movie_img/miles/across_the_spider_verse/"
   const commonImgSrc = "./img/spiderman_movie_img/miles/"
