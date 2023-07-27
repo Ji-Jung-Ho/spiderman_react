@@ -467,7 +467,7 @@
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .img-box::after {
   height: 4px;
   content: "";
-  background-color: #e62429;
+  background: #88191c;
   width: 100%;
   position: absolute;
   left: 0;
@@ -487,7 +487,7 @@
   justify-content: space-evenly;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li a .caption-box::before {
-  background: #e62429;
+  background: #88191c;
   top: 0;
   content: "";
   height: 100%;
@@ -592,7 +592,7 @@
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .img-box::after {
   height: 4px;
   content: "";
-  background-color: #e62429;
+  background: #88191c;
   width: 100%;
   position: absolute;
   left: 0;
@@ -612,7 +612,7 @@
   justify-content: space-evenly;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .villain li a .caption-box::before {
-  background: #e62429;
+  background: #88191c;
   top: 0;
   content: "";
   height: 100%;

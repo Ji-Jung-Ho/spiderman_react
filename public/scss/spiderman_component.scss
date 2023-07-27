@@ -496,7 +496,8 @@
                     &::after {
                       height: 4px;
                       content: "";
-                      background-color: #e62429;
+                      // background-color: #e62429;
+                      background: #88191c;
                       width: 100%;
                       position: absolute;
                       left: 0;
@@ -517,7 +518,8 @@
                     flex-direction: column;
                     justify-content: space-evenly;
                     &::before {
-                      background: #e62429;
+                      // background: #e62429;
+                      background: #88191c;
                       top: 0;
                       content: "";
                       height: 100%;
@@ -638,7 +640,8 @@
                     &::after {
                       height: 4px;
                       content: "";
-                      background-color: #e62429;
+                      // background-color: #e62429;
+                      background: #88191c;
                       width: 100%;
                       position: absolute;
                       left: 0;
@@ -659,7 +662,8 @@
                     flex-direction: column;
                     justify-content: space-evenly;
                     &::before {
-                      background: #e62429;
+                      // background: #e62429;
+                      background: #88191c;
                       top: 0;
                       content: "";
                       height: 100%;

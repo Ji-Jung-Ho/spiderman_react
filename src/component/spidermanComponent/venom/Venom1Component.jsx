@@ -1,9 +1,37 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 export default function Venom1Component () {
 
+  const [isVenom1Hovered, setIsVenom1Hovered] = useState(false);
+  const [isVenom2Hovered, setIsVenom2Hovered] = useState(false);
+  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
 
-  const venom1ImgSrc = "./img/spiderman_movie_img/venom/venom1/"
+
+  const onHoverEnter = (character) => {
+    if (character === 'venom1') {
+      setIsVenom1Hovered(true);
+    } else if (character === 'venom2') {
+      setIsVenom2Hovered(true);
+    } else if (character === 'villain1') {
+      setIsVillain1Hovered(true);
+    } 
+  };
+
+  const onHoverLeave = (character) => {
+    if (character === 'venom1') {
+      setIsVenom1Hovered(false);
+    } else if (character === 'venom2') {
+      setIsVenom2Hovered(false);
+    } else if (character === 'villain1') {
+      setIsVillain1Hovered(false);
+    } 
+  };
+
+  const venom1Class = isVenom1Hovered ? 'venom ' : 'eddie-brock ';
+  const venom2Class = isVenom2Hovered ? 'she_venom ' : 'anne-weying ';
+  const villain1Class = isVillain1Hovered ? 'riot ' : 'carlton-drake ';
+
+  const venom1ImgSrc = "./img/spiderman_movie_img/venom/venom_1/"
   const commonImgSrc = "./img/spiderman_movie_img/venom/"
 
   return (
@@ -62,6 +90,61 @@ export default function Venom1Component () {
               </div>
               <div className="movie-poster">
                 <img src={`${commonImgSrc}/venom_1_poster.jpg`} alt="" />
+              </div>
+            </div>
+            <div className="character">
+              <div className="character-title">
+                <h2>Character</h2>
+              </div>
+              <div className="character-content">
+                <ul className='character-ul'>
+                  <li className={venom1Class} 
+                    onMouseEnter={() => onHoverEnter('venom1')}
+                    onMouseLeave={() => onHoverLeave('venom1')}>
+                    <a href="#!">
+                      <div className="img-box">
+                        <img src={isVenom1Hovered  ? `${venom1ImgSrc}venom1-eddie_venom.jpg` : `${venom1ImgSrc}venom1-eddie.jpg`} alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul className='caption-ul'>
+                          <li><span className='-character-name'>{isVenom1Hovered  ? 'venom' : 'eddie-brock'}</span></li>
+                          <li><span className='-acter'>Tom Hardy</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li className={venom2Class}
+                  onMouseEnter={() => onHoverEnter('venom2')}
+                  onMouseLeave={() => onHoverLeave('venom2')}>
+                    <a href="#!">
+                      <div className="img-box">
+                      <img src={isVenom2Hovered  ? `${venom1ImgSrc}venom1-anne_venom.jpg` : `${venom1ImgSrc}venom1-anne.jpg`} alt="" />
+                      </div>
+                      <div className="caption-box">
+                        <ul className='caption-ul'>
+                        <li><span className='-character-name'>{isVenom2Hovered  ? 'she-venom' : 'anne-weying'}</span></li>
+                          <li><span className='-acter'>Michelle Williams</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </li>
+                  <li className={villain1Class} 
+                    onMouseEnter={() => onHoverEnter('villain1')}
+                    onMouseLeave={() => onHoverLeave('villain1')}
+                    >
+                      <a href="#!">
+                        <div className="img-box">
+                          <img src={isVillain1Hovered  ? `${venom1ImgSrc}venom1-drake_riot.jpg` : `${venom1ImgSrc}venom-carlton_drake.jpg`} alt="" />
+                        </div>
+                        <div className="caption-box">
+                          <ul className='caption-ul'>
+                            <li><span className='-character-name'>{isVillain1Hovered  ? 'riot' : 'carlton-drake'}</span></li>
+                            <li><span className='-acter'>Riz Ahmed</span></li>
+                          </ul>
+                        </div>
+                      </a>
+                  </li>
+                </ul>
               </div>
             </div>
             <div className="movie-review">
