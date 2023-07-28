@@ -3,26 +3,26 @@ import React, {useState} from 'react';
 export default function FarFromHomeComponent () {
 
   const [isSpidermanHovered, setIsSpidermanHovered] = useState(false);
-  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
+  const [isMysterioHovered, setIsMysterioHovered] = useState(false);
 
   const onHoverEnter = (character) => {
     if (character === 'spiderman') {
       setIsSpidermanHovered(true);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(true);
+    } else if (character === 'mysterio') {
+      setIsMysterioHovered(true);
     } 
   };
 
   const onHoverLeave = (character) => {
     if (character === 'spiderman') {
       setIsSpidermanHovered(false);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(false);
+    } else if (character === 'mysterio') {
+      setIsMysterioHovered(false);
     }
   };
 
   const spidermanClass = isSpidermanHovered ? 'spiderman farfromhome' : 'peter-parker farfromhome';
-  const villainClass = isVillain1Hovered ? 'mysterio farfromhome' : 'quentin-beck farfromhome';
+  const mysterioClass = isMysterioHovered ? 'mysterio farfromhome' : 'quentin-beck farfromhome';
 
   const farFromHomeImgSrc = "./img/spiderman_movie_img/tom-spiderman/far_from_home/"
   const commonImgSrc = "./img/spiderman_movie_img/tom-spiderman/"
@@ -96,33 +96,33 @@ export default function FarFromHomeComponent () {
                     onMouseLeave={() => onHoverLeave('spiderman')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isSpidermanHovered  ? `${farFromHomeImgSrc}farfromhome_spiderman.jpg` : `${farFromHomeImgSrc}farfromhome_peter-parker.jpg`} alt="" />
+                        <img src={isSpidermanHovered  ? `${farFromHomeImgSrc}farfromhome-spiderman.jpg` : `${farFromHomeImgSrc}farfromhome-peter_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='farfromhome-character-name'>{isSpidermanHovered  ? 'spider-man' : 'peter-parker'}</span></li>
-                          <li><span className='farfromhome-acter'>Tom Holland</span></li>
+                          <li><span className='farfromhome-acter'>Tom-Holland</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className='farfromhome'>
+                  <li className='nick-fury farfromhome'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${farFromHomeImgSrc}farfromhome_nick-fury.jpg`} alt="" />
+                        <img src={`${farFromHomeImgSrc}farfromhome-nick_fury.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='farfromhome-character-name'>Nick Fury</span></li>
-                          <li><span className='farfromhome-acter'>Samuel L Jackson</span></li>
+                          <li><span className='farfromhome-acter'>Samuel-L-Jackson</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className='farfromhome'>
+                  <li className='michelle-jones farfromhome'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${farFromHomeImgSrc}farfromhome_michelle-jones-watson.jpg`} alt="" />
+                        <img src={`${farFromHomeImgSrc}farfromhome-michelle_jones_watson.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
@@ -132,31 +132,31 @@ export default function FarFromHomeComponent () {
                       </div>
                     </a>
                   </li>
-                  <li className='farfromhome'>
+                  <li className='ned farfromhome'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${farFromHomeImgSrc}farfromhome_ned.jpg`} alt="" />
+                        <img src={`${farFromHomeImgSrc}farfromhome-ned.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='farfromhome-character-name'>Ned-Leeds</span></li>
-                          <li><span className='farfromhome-acter'>Jacob Batalon</span></li>
+                          <li><span className='farfromhome-acter'>Jacob-Batalon</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={villainClass} 
-                  onMouseEnter={() => onHoverEnter('villain1')}
-                  onMouseLeave={() => onHoverLeave('villain1')}
+                  <li className={mysterioClass} 
+                  onMouseEnter={() => onHoverEnter('mysterio')}
+                  onMouseLeave={() => onHoverLeave('mysterio')}
                   >
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVillain1Hovered  ? `${farFromHomeImgSrc}farfromhome_mysterio.jpg` : `${farFromHomeImgSrc}farfromhome_quentin-beck.jpg`} alt="" />
+                        <img src={isMysterioHovered  ? `${farFromHomeImgSrc}farfromhome-mysterio.jpg` : `${farFromHomeImgSrc}farfromhome-quentin_beck.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='farfromhome-character-name'>{isVillain1Hovered  ? 'mysterio' : 'quentin-beck'}</span></li>
-                          <li><span className='farfromhome-acter'>Jake Gyllenhaal</span></li>
+                          <li><span className='farfromhome-character-name'>{isMysterioHovered  ? 'mysterio' : 'quentin-beck'}</span></li>
+                          <li><span className='farfromhome-acter'>Jake-Gyllenhaal</span></li>
                         </ul>
                       </div>
                     </a>

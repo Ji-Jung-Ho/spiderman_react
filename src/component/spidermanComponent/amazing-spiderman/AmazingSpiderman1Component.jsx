@@ -2,24 +2,27 @@ import React, {useState} from 'react';
 
 export default function Amazingamazing1Component () {
 
-  const [isAmazingHovered, setisAmazingHovered] = useState(false);
-  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
+  const [isAmazingSpidermanHovered, setIsAmazingSpidermanHovered] = useState(false);
+  const [isLizardHovered, setIsLizardHovered] = useState(false);
 
   const onHoverEnter = (character) => {
-    if (character === 'spiderman') {
-      setisAmazingHovered(true);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(true);
+    if (character === 'spider-man') {
+      setIsAmazingSpidermanHovered(true);
+    } else if (character === 'lizard') {
+      setIsLizardHovered(true);
     }
   };
 
   const onHoverLeave = (character) => {
-    if (character === 'spiderman') {
-      setisAmazingHovered(false);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(false);
+    if (character === 'spider-man') {
+      setIsAmazingSpidermanHovered(false);
+    } else if (character === 'lizard') {
+      setIsLizardHovered(false);
     }
   };
+
+  const amazingSpiderman1Class = isAmazingSpidermanHovered ? 'amazing-spider-man' : 'peter-parker';
+  const amazingSpiderman1villainClass = isLizardHovered ? 'lizard' : 'curt-connors';
 
   const amazing1ImgSrc = "./img/spiderman_movie_img/amazing/amazing_spiderman_1/"
   const CommonImgSrc = "./img/spiderman_movie_img/amazing/"
@@ -89,59 +92,59 @@ export default function Amazingamazing1Component () {
               </div>
               <div className="character-content">
                 <ul className='character-ul'>
-                  <li className={isAmazingHovered  ? 'spiderman' : 'peter-parker'} 
-                    onMouseEnter={() => onHoverEnter('spiderman')}
-                    onMouseLeave={() => onHoverLeave('spiderman')}>
+                  <li className= {amazingSpiderman1Class}
+                    onMouseEnter={() => onHoverEnter('spider-man')}
+                    onMouseLeave={() => onHoverLeave('spider-man')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isAmazingHovered  ? `${amazing1ImgSrc}amazing1_spiderman.jpg` : `${amazing1ImgSrc}amazing1_peter-parker.jpg`} alt="" />
+                        <img src={isAmazingSpidermanHovered  ? `${amazing1ImgSrc}amazing1-spider_man.jpg` : `${amazing1ImgSrc}amazing1-peter_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='character-name'>{isAmazingHovered  ? 'spider-man' : 'peter-parker'}</span></li>
-                          <li><span className='acter'>Andrew Garfield</span></li>
+                          <li><span className='character-name'>{isAmazingSpidermanHovered  ? 'spider-man' : 'peter-parker'}</span></li>
+                          <li><span className='acter'>Andrew-Garfield</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li>
+                  <li className='gwen-stacy'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${amazing1ImgSrc}amazing1_gwen-stacy.jpg`} alt="" />
+                        <img src={`${amazing1ImgSrc}amazing1-gwen_stacy.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='character-name'>gwen-stacy</span></li>
-                          <li><span className='acter'>Emma Stone</span></li>
+                          <li><span className='acter'>Emma-Stone</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={isVillain1Hovered  ? 'lizard' : 'curt-connors'} 
-                  onMouseEnter={() => onHoverEnter('villain1')}
-                  onMouseLeave={() => onHoverLeave('villain1')}
+                  <li className={amazingSpiderman1villainClass}
+                  onMouseEnter={() => onHoverEnter('lizard')}
+                  onMouseLeave={() => onHoverLeave('lizard')}
                   >
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVillain1Hovered  ? `${amazing1ImgSrc}amazing1_lizard.jpg` : `${amazing1ImgSrc}amazing1_curt-connors.jpg`} alt="" />
+                        <img src={isLizardHovered  ? `${amazing1ImgSrc}amazing1-lizard.jpg` : `${amazing1ImgSrc}amazing1-curt_connors.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='character-name'>{isVillain1Hovered  ? 'lizard' : 'curt-connors'}</span></li>
-                          <li><span className='acter'>Rhys Ifans</span></li>
+                          <li><span className='character-name'>{isLizardHovered  ? 'lizard' : 'curt-connors'}</span></li>
+                          <li><span className='acter'>Rhys-Ifans</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li>
+                  <li className='ben-parker'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${amazing1ImgSrc}amazing1_ben-paker.jpg`} alt="" />
+                        <img src={`${amazing1ImgSrc}amazing1-ben_paker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='character-name'>ben-parker</span></li>
-                          <li><span className='acter'>Martin Sheen</span></li>
+                          <li><span className='acter'>Martin-Sheen</span></li>
                         </ul>
                       </div>
                     </a>

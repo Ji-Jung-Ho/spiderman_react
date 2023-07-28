@@ -3,28 +3,32 @@ import React, {useState} from 'react';
 export default function AmazingSpiderman2Component () {
 
   const [isAmazingHovered, setisAmazingHovered] = useState(false);
-  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
-  const [isVillain2Hovered, setIsVillain2Hovered] = useState(false);
+  const [isGreenGoblinHovered, setIsGreenGoblinHovered] = useState(false);
+  const [isElectorHovered, setIsElectorHovered] = useState(false);
 
   const onHoverEnter = (character) => {
-    if (character === 'spiderman') {
+    if (character === 'spider-man') {
       setisAmazingHovered(true);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(true);
-    } else if (character === 'villain2') {
-      setIsVillain2Hovered(true);
+    } else if (character === 'green-goblin') {
+      setIsGreenGoblinHovered(true);
+    } else if (character === 'elector') {
+      setIsElectorHovered(true);
     }
   };
 
   const onHoverLeave = (character) => {
-    if (character === 'spiderman') {
+    if (character === 'spider-man') {
       setisAmazingHovered(false);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(false);
-    } else if (character === 'villain2') {
-      setIsVillain2Hovered(false);
+    } else if (character === 'green-goblin') {
+      setIsGreenGoblinHovered(false);
+    } else if (character === 'elector') {
+      setIsElectorHovered(false);
     }
   };
+
+  const amazingSpiderman2SpidermanClass = isAmazingHovered ? 'amazing-spider-man' : 'peter-parker';
+  const amazingspiderman2Villanin1Class = isGreenGoblinHovered ? 'green-goblin' : 'harry-osborn';
+  const amazingspiderman2Villanin2Class = isElectorHovered ? 'elector' : 'max-dillon';
 
   const amazing2ImgSrc = "./img/spiderman_movie_img/amazing/amazing_spiderman_2/"
   const commonImgSrc = "./img/spiderman_movie_img/amazing/"
@@ -94,62 +98,62 @@ export default function AmazingSpiderman2Component () {
               </div>
               <div className="character-content">
                 <ul className='character-ul'>
-                  <li className={isAmazingHovered  ? 'spiderman' : 'peter-parker'} 
-                    onMouseEnter={() => onHoverEnter('spiderman')}
-                    onMouseLeave={() => onHoverLeave('spiderman')}>
+                  <li className={amazingSpiderman2SpidermanClass} 
+                    onMouseEnter={() => onHoverEnter('spider-man')}
+                    onMouseLeave={() => onHoverLeave('spider-man')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isAmazingHovered  ? `${amazing2ImgSrc}amazing2_spiderman.jpg` : `${amazing2ImgSrc}amazing2_peter-parker.jpg`} alt="" />
+                        <img src={isAmazingHovered  ? `${amazing2ImgSrc}amazing2-spider_man.jpg` : `${amazing2ImgSrc}amazing2-peter_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='character-name'>{isAmazingHovered  ? 'spider-man' : 'peter-parker'}</span></li>
-                          <li><span className='acter'>Andrew Garfield</span></li>
+                          <li><span className='acter'>Andrew-Garfield</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li>
+                  <li className='gwen-stacy'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${amazing2ImgSrc}amazing2_gwen-stacy.jpg`} alt="" />
+                        <img src={`${amazing2ImgSrc}amazing2-gwen_stacy.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='character-name'>gwen-stacy</span></li>
-                          <li><span className='acter'>Emma Stone</span></li>
+                          <li><span className='acter'>Emma-Stone</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={isVillain1Hovered  ? 'green-goblin' : 'harry-osborn'} 
-                  onMouseEnter={() => onHoverEnter('villain1')}
-                  onMouseLeave={() => onHoverLeave('villain1')}
+                  <li className={amazingspiderman2Villanin1Class} 
+                  onMouseEnter={() => onHoverEnter('green-goblin')}
+                  onMouseLeave={() => onHoverLeave('green-goblin')}
                   >
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVillain1Hovered  ? `${amazing2ImgSrc}amazing2_green-goblin.jpg` : `${amazing2ImgSrc}amazing2_harry-osborn.jpg`} alt="" />
+                        <img src={isGreenGoblinHovered  ? `${amazing2ImgSrc}amazing2-green_goblin.jpg` : `${amazing2ImgSrc}amazing2-harry_osborn.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='character-name'>{isVillain1Hovered  ? 'green-goblin' : 'harry-osborn'}</span></li>
-                          <li><span className='acter'>Dane DeHaan</span></li>
+                          <li><span className='character-name'>{isGreenGoblinHovered  ? 'green-goblin' : 'harry-osborn'}</span></li>
+                          <li><span className='acter'>Dane-DeHaan</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={isVillain2Hovered  ? 'electro' : 'Max-Dillon'} 
-                  onMouseEnter={() => onHoverEnter('villain2')}
-                  onMouseLeave={() => onHoverLeave('villain2')}
+                  <li className={amazingspiderman2Villanin2Class} 
+                  onMouseEnter={() => onHoverEnter('elector')}
+                  onMouseLeave={() => onHoverLeave('elector')}
                   >
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVillain2Hovered  ? `${amazing2ImgSrc}amazing2_electro.jpg` : `${amazing2ImgSrc}amazing2_max-dillon.jpg`} alt="" />
+                        <img src={isElectorHovered  ? `${amazing2ImgSrc}amazing2-electro.jpg` : `${amazing2ImgSrc}amazing2-max_dillon.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='character-name'>{isVillain2Hovered  ? 'electro' : 'Max-Dillon'}</span></li>
-                          <li><span className='acter'>Jamie Foxx</span></li>
+                          <li><span className='character-name'>{isElectorHovered  ? 'electro' : 'max-dillon'}</span></li>
+                          <li><span className='acter'>Jamie-Foxx</span></li>
                         </ul>
                       </div>
                     </a>

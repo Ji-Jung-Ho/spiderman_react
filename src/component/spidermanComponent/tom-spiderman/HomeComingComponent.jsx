@@ -4,14 +4,14 @@ export default function HomeComingComponent () {
 
   const [isSpidermanHovered, setIsSpidermanHovered] = useState(false);
   const [isIronManHovered, setIsIronManHovered] = useState(false);
-  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
+  const [isVultureHovered, setIsVultureHovered] = useState(false);
 
   const onHoverEnter = (character) => {
     if (character === 'spiderman') {
       setIsSpidermanHovered(true);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(true);
-    } else if (character === 'nickfury') {
+    } else if (character === 'vulture') {
+      setIsVultureHovered(true);
+    } else if (character === 'ironman') {
       setIsIronManHovered(true)
     }
   };
@@ -19,16 +19,16 @@ export default function HomeComingComponent () {
   const onHoverLeave = (character) => {
     if (character === 'spiderman') {
       setIsSpidermanHovered(false);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(false);
-    } else if (character === 'nickfury') {
+    } else if (character === 'vulture') {
+      setIsVultureHovered(false);
+    } else if (character === 'ironman') {
       setIsIronManHovered(false)
     }
   };
 
   const spidermanClass = isSpidermanHovered ? 'spiderman homecoming' : 'peter-parker homecoming';
   const ironmanClass = isIronManHovered ? 'ironman homecoming' : 'tony-stark homecoming';
-  const villain1Class = isVillain1Hovered ? 'vulture homecoming' : 'drian-toomes homecoming';
+  const vultureClass = isVultureHovered ? 'vulture homecoming' : 'drian-toomes homecoming';
 
 
   const homeComingImgSrc = "./img/spiderman_movie_img/tom-spiderman/home_coming/"
@@ -103,12 +103,12 @@ export default function HomeComingComponent () {
                     onMouseLeave={() => onHoverLeave('spiderman')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isSpidermanHovered  ? `${homeComingImgSrc}homecoming_spiderman.jpg` : `${homeComingImgSrc}homecoming_peter-parker.jpg`} alt="" />
+                        <img src={isSpidermanHovered  ? `${homeComingImgSrc}homecoming-spiderman.jpg` : `${homeComingImgSrc}homecoming-peter_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='homecoming-character-name'>{isSpidermanHovered  ? 'spider-man' : 'peter-parker'}</span></li>
-                          <li><span className='homecoming-acter'>Tom Holland</span></li>
+                          <li><span className='homecoming-acter'>Tom-Holland</span></li>
                         </ul>
                       </div>
                     </a>
@@ -118,20 +118,20 @@ export default function HomeComingComponent () {
                     onMouseLeave={() => onHoverLeave('ironman')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isIronManHovered  ? `${homeComingImgSrc}homecoming_ironman.jpg` : `${homeComingImgSrc}homecoming_tony-stark.jpg`} alt="" />
+                        <img src={isIronManHovered  ? `${homeComingImgSrc}homecoming-ironman.jpg` : `${homeComingImgSrc}homecoming-tony_stark.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='homecoming-character-name'>{isIronManHovered  ? 'iron-man' : 'tony-stark'}</span></li>
-                          <li><span className='homecoming-acter'>Robert Downey Jr.</span></li>
+                          <li><span className='homecoming-acter'>Robert-Downey-Jr</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className='homecoming'>
+                  <li className='michelle-jones homecoming'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${homeComingImgSrc}homecoming_michelle-jones-watson.jpg`} alt="" />
+                        <img src={`${homeComingImgSrc}homecoming-michelle_jones_watson.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
@@ -141,31 +141,31 @@ export default function HomeComingComponent () {
                       </div>
                     </a>
                   </li>
-                  <li className='homecoming'>
+                  <li className='ned homecoming'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${homeComingImgSrc}homecoming_ned.jpg`} alt="" />
+                        <img src={`${homeComingImgSrc}homecoming-ned.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='homecoming-character-name'>Ned-Leeds</span></li>
-                          <li><span className='homecoming-acter'>Jacob Batalon</span></li>
+                          <li><span className='homecoming-acter'>Jacob-Batalon</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={villain1Class} 
-                  onMouseEnter={() => onHoverEnter('villain1')}
-                  onMouseLeave={() => onHoverLeave('villain1')}
+                  <li className={vultureClass} 
+                  onMouseEnter={() => onHoverEnter('vulture')}
+                  onMouseLeave={() => onHoverLeave('vulture')}
                   >
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVillain1Hovered  ? `${homeComingImgSrc}homecoming_vulture.jpg` : `${homeComingImgSrc}homecoming_adrian-toomes.jpg`} alt="" />
+                        <img src={isVultureHovered  ? `${homeComingImgSrc}homecoming-vulture.jpg` : `${homeComingImgSrc}homecoming-adrian_toomes.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='homecoming-character-name'>{isVillain1Hovered  ? 'vulture' : 'drian-toomes'}</span></li>
-                          <li><span className='homecoming-acter'>Michael Keaton</span></li>
+                          <li><span className='homecoming-character-name'>{isVultureHovered  ? 'vulture' : 'drian-toomes'}</span></li>
+                          <li><span className='homecoming-acter'>Michael-Keaton</span></li>
                         </ul>
                       </div>
                     </a>

@@ -2,62 +2,57 @@ import React, {useState} from 'react';
 
 export default function AcrossTheSpiderVerseComponent () {
 
-  const [isSpiderman1Hovered, setIsSpiderman1Hovered] = useState(false);
-  const [isSpiderman2Hovered, setIsSpiderman2Hovered] = useState(false);
-  const [isSpiderman3Hovered, setIsSpiderman3Hovered] = useState(false);
-  const [isSpiderman4Hovered, setIsSpiderman4Hovered] = useState(false);
-  const [isSpiderman5Hovered, setIsSpiderman5Hovered] = useState(false);
-  const [isSpiderman6Hovered, setIsSpiderman6Hovered] = useState(false);
-  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
-  const [isVillain2Hovered, setIsVillain2Hovered] = useState(false);
+  const [isMilseHovered, setIsMilseHovered] = useState(false);
+  const [isGwenStacyHovered, setIsGwenStacyHovered] = useState(false);
+  const [isPeterBParkerHovered, setIsPeterBParkerHovered] = useState(false);
+  const [isSpiderWomanHovered, setIsSpiderWomanHovered] = useState(false);
+  const [isSpiderManIndiaHovered, setIsSpiderManIndiaHovered] = useState(false);
+  const [isSpiderPunkHovered, setIsSpiderPunkHovered] = useState(false);
+  const [isSpiderMan2099Hovered, setIsSpiderMan2099Hovered] = useState(false);
 
   const onHoverEnter = (character) => {
-    if (character === 'spiderman1') {
-      setIsSpiderman1Hovered(true);
-    } else if (character === 'spiderman2') {
-      setIsSpiderman2Hovered(true);
-    } else if (character === 'spiderman3') {
-      setIsSpiderman3Hovered(true);
-    } else if (character === 'spiderman4') {
-      setIsSpiderman4Hovered(true);
-    } else if (character === 'spiderman5') {
-      setIsSpiderman5Hovered(true);
-    } else if (character === 'spiderman6') {
-      setIsSpiderman6Hovered(true);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(true);
-    } else if (character === 'villain2') {
-      setIsVillain2Hovered(true);
+    if (character === 'miles-spider-man') {
+      setIsMilseHovered(true);
+    } else if (character === 'spider-gwen') {
+      setIsGwenStacyHovered(true);
+    } else if (character === 'peter-b-parker-spider-man') {
+      setIsPeterBParkerHovered(true);
+    } else if (character === 'spider-woman') {
+      setIsSpiderWomanHovered(true);
+    } else if (character === 'spider-man-india') {
+      setIsSpiderManIndiaHovered(true);
+    } else if (character === 'spider-punk') {
+      setIsSpiderPunkHovered(true);
+    } else if (character === 'spider-man-2099') {
+      setIsSpiderMan2099Hovered(true);
     }
   };
 
   const onHoverLeave = (character) => {
-    if (character === 'spiderman1') {
-      setIsSpiderman1Hovered(false);
-    } else if (character === 'spiderman2') {
-      setIsSpiderman2Hovered(false);
-    } else if (character === 'spiderman3') {
-      setIsSpiderman3Hovered(false);
-    } else if (character === 'spiderman4') {
-      setIsSpiderman4Hovered(false);
-    } else if (character === 'spiderman5') {
-      setIsSpiderman5Hovered(false);
-    } else if (character === 'spiderman6') {
-      setIsSpiderman6Hovered(false);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(false);
-    } else if (character === 'villain2') {
-      setIsVillain2Hovered(false);
+    if (character === 'miles-spider-man') {
+      setIsMilseHovered(false);
+    } else if (character === 'spider-gwen') {
+      setIsGwenStacyHovered(false);
+    } else if (character === 'peter-b-parker-spider-man') {
+      setIsPeterBParkerHovered(false);
+    } else if (character === 'spider-woman') {
+      setIsSpiderWomanHovered(false);
+    } else if (character === 'spider-man-india') {
+      setIsSpiderManIndiaHovered(false);
+    } else if (character === 'spider-punk') {
+      setIsSpiderPunkHovered(false);
+    } else if (character === 'spider-man-2099') {
+      setIsSpiderMan2099Hovered(false);
     }
   };
 
-  const spiderman1Class = isSpiderman1Hovered ? 'spider-man1 miles2' : 'miles-morales miles2';
-  const spiderman2Class = isSpiderman3Hovered ? 'spider-man3 miles2' : 'gwen-stacy miles2';
-  const spiderman3Class = isSpiderman2Hovered ? 'spider-man2 miles2' : 'peter-b-parker miles2';
-  const spiderman4Class = isSpiderman4Hovered ? 'spider-man4 miles2' : 'peter-b-parker miles2';
-  const spiderman5Class = isSpiderman5Hovered ? 'spider-man5 miles2' : 'peter-porker miles2';
-  const spiderman6Class = isSpiderman6Hovered ? 'spider-man6 miles2' : 'peter-porker miles2';
-  const villain1Class = isVillain1Hovered ? 'prowler miles2' : 'aaron-davis miles2';
+  const milesSpiderManClass = isMilseHovered ? 'miles-spider-man miles1' : 'miles-morales miles1';
+  const gwenSpiderManClass = isGwenStacyHovered ? 'spider-gwen miles1' : 'gwen-stacy miles1';
+  const peterBParkerSpiderManClass = isPeterBParkerHovered ? 'peter-b-paker-spider-man miles1' : 'peter-b-parker miles1';
+  const spiderWomanClass = isSpiderWomanHovered ? 'spider-woman miles2' : 'jessica_drew miles2';
+  const spiderManIndiaClass = isSpiderManIndiaHovered ? 'spider-man-india miles2' : 'pavitr-prabhakar miles2';
+  const spiderPunkClass = isSpiderPunkHovered ? 'spider-punk miles2' : 'hobie-brown miles2';
+  const spiderMan2099Class = isSpiderMan2099Hovered ? 'spider-man-2099 miles2' : 'miguel-o-hara miles2';
 
   const miles2ImgSrc = "./img/spiderman_movie_img/miles/across_the_spider_verse/"
   const commonImgSrc = "./img/spiderman_movie_img/miles/"
@@ -133,123 +128,123 @@ export default function AcrossTheSpiderVerseComponent () {
               </div>
               <div className="character-content miles2">
                 <ul className='character-ul miles2'>
-                  <li className={spiderman1Class} 
-                    onMouseEnter={() => onHoverEnter('spiderman1')}
-                    onMouseLeave={() => onHoverLeave('spiderman1')}>
+                  <li className={milesSpiderManClass} 
+                    onMouseEnter={() => onHoverEnter('miles-spider-man')}
+                    onMouseLeave={() => onHoverLeave('miles-spider-man')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isSpiderman1Hovered  ? `${miles2ImgSrc}atsv-miles_spider_man.jpg` : `${miles2ImgSrc}atsv-miles.jpg`} alt="" />
+                        <img src={isMilseHovered  ? `${miles2ImgSrc}atsv-miles_spider_man.jpg` : `${miles2ImgSrc}atsv-miles.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='miles2-character-name'>{isSpiderman1Hovered  ? 'spider-man' : 'miles-morales'}</span></li>
-                          <li><span className='miles2-acter'>Shameik Moore</span></li>
+                          <li><span className='miles2-character-name'>{isMilseHovered  ? 'spider-man' : 'miles-morales'}</span></li>
+                          <li><span className='miles2-acter'>Shameik-Moore</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={spiderman2Class}
-                  onMouseEnter={() => onHoverEnter('spiderman2')}
-                  onMouseLeave={() => onHoverLeave('spiderman2')}>
+                  <li className={gwenSpiderManClass}
+                  onMouseEnter={() => onHoverEnter('spider-gwen')}
+                  onMouseLeave={() => onHoverLeave('spider-gwen')}>
                     <a href="#!">
                       <div className="img-box">
-                      <img src={isSpiderman2Hovered  ? `${miles2ImgSrc}atsv-spider_gwen_stacy.jpg` : `${miles2ImgSrc}atsv-gwen_stacy.jpg`} alt="" />
+                      <img src={isGwenStacyHovered  ? `${miles2ImgSrc}atsv-spider_gwen_stacy.jpg` : `${miles2ImgSrc}atsv-gwen_stacy.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                        <li><span className='miles2-character-name'>{isSpiderman2Hovered  ? 'spider-gwin' : 'gwen-stacy'}</span></li>
-                          <li><span className='miles2-acter'>Hailee Steinfeld</span></li>
+                        <li><span className='miles2-character-name'>{isGwenStacyHovered  ? 'spider-gwin' : 'gwen-stacy'}</span></li>
+                          <li><span className='miles2-acter'>Hailee-Steinfeld</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={spiderman3Class}
-                  onMouseEnter={() => onHoverEnter('spiderman3')}
-                  onMouseLeave={() => onHoverLeave('spiderman3')}>
+                  <li className={peterBParkerSpiderManClass}
+                  onMouseEnter={() => onHoverEnter('peter-b-parker-spider-man')}
+                  onMouseLeave={() => onHoverLeave('peter-b-parker-spider-man')}>
                     <a href="#!">
                       <div className="img-box">
-                      <img src={isSpiderman3Hovered  ? `${miles2ImgSrc}atsv-peter_b_parker_spider_man.jpg` : `${miles2ImgSrc}atsv-peter_b_parker.jpg`} alt="" />
+                      <img src={isPeterBParkerHovered  ? `${miles2ImgSrc}atsv-peter_b_parker_spider_man.jpg` : `${miles2ImgSrc}atsv-peter_b_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                        <li><span className='miles2-character-name'>{isSpiderman3Hovered  ? 'spider-man' : 'peter-b-parker'}</span></li>
-                          <li><span className='miles2-acter'>Jake Johnson</span></li>
+                        <li><span className='miles2-character-name'>{isPeterBParkerHovered  ? 'spider-man' : 'peter-b-parker'}</span></li>
+                          <li><span className='miles2-acter'>Jake-Johnson</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={spiderman4Class}
-                  onMouseEnter={() => onHoverEnter('spiderman4')}
-                  onMouseLeave={() => onHoverLeave('spiderman4')}>
+                  <li className={spiderWomanClass}
+                  onMouseEnter={() => onHoverEnter('spider-woman')}
+                  onMouseLeave={() => onHoverLeave('spider-woman')}>
                     <a href="#!">
                       <div className="img-box">
-                      <img src={isSpiderman4Hovered  ? `${miles2ImgSrc}atsv-spider_woman.jpg` : `${miles2ImgSrc}atsv-jessica_drew.jpg`} alt="" />
+                      <img src={isSpiderWomanHovered  ? `${miles2ImgSrc}atsv-spider_woman.jpg` : `${miles2ImgSrc}atsv-jessica_drew.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                        <li><span className='miles2-character-name'>{isSpiderman4Hovered  ? 'spider-woman' : 'jessica-drew'}</span></li>
-                          <li><span className='miles2-acter'>Issa Rae</span></li>
+                        <li><span className='miles2-character-name'>{isSpiderWomanHovered  ? 'spider-woman' : 'jessica-drew'}</span></li>
+                          <li><span className='miles2-acter'>Issa-Rae</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={spiderman5Class}
-                  onMouseEnter={() => onHoverEnter('spiderman5')}
-                  onMouseLeave={() => onHoverLeave('spiderman5')}>
+                  <li className={spiderManIndiaClass}
+                  onMouseEnter={() => onHoverEnter('spider-man-india')}
+                  onMouseLeave={() => onHoverLeave('spider-man-india')}>
                     <a href="#!">
                       <div className="img-box">
-                      <img src={isSpiderman5Hovered  ? `${miles2ImgSrc}atsv-spider_man_india.jpg` : `${miles2ImgSrc}atsv-pavitr_prabhakar.jpg`} alt="" />
+                      <img src={isSpiderManIndiaHovered  ? `${miles2ImgSrc}atsv-spider_man_india.jpg` : `${miles2ImgSrc}atsv-pavitr_prabhakar.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                        <li><span className='miles2-character-name'>{isSpiderman5Hovered  ? 'spider-man-india' : 'pavitr-prabhakar'}</span></li>
-                          <li><span className='miles2-acter'>Karan Soni</span></li>
+                        <li><span className='miles2-character-name'>{isSpiderManIndiaHovered  ? 'spider-man-india' : 'pavitr-prabhakar'}</span></li>
+                          <li><span className='miles2-acter'>Karan-Soni</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={spiderman6Class}
-                  onMouseEnter={() => onHoverEnter('spiderman6')}
-                  onMouseLeave={() => onHoverLeave('spiderman6')}>
+                  <li className={spiderPunkClass}
+                  onMouseEnter={() => onHoverEnter('spider-punk')}
+                  onMouseLeave={() => onHoverLeave('spider-punk')}>
                     <a href="#!">
                       <div className="img-box">
-                      <img src={isSpiderman6Hovered  ? `${miles2ImgSrc}atsv-spider_punk.jpg` : `${miles2ImgSrc}atsv-hobie_brown.jpg`} alt="" />
+                      <img src={isSpiderPunkHovered  ? `${miles2ImgSrc}atsv-spider_punk.jpg` : `${miles2ImgSrc}atsv-hobie_brown.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                        <li><span className='miles2-character-name'>{isSpiderman6Hovered  ? 'spider-punk' : 'hobie-brown'}</span></li>
-                          <li><span className='miles2-acter'>Daniel Kaluuya</span></li>
+                        <li><span className='miles2-character-name'>{isSpiderPunkHovered  ? 'spider-punk' : 'hobie-brown'}</span></li>
+                          <li><span className='miles2-acter'>Daniel-Kaluuya</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
                 </ul>
                 <ul className='villain'>
-                <li className={villain1Class} 
-                    onMouseEnter={() => onHoverEnter('villain1')}
-                    onMouseLeave={() => onHoverLeave('villain1')}
+                <li className={spiderMan2099Class} 
+                    onMouseEnter={() => onHoverEnter('spider-man-2099')}
+                    onMouseLeave={() => onHoverLeave('spider-man-2099')}
                     >
                       <a href="#!">
                         <div className="img-box">
-                          <img src={isVillain1Hovered  ? `${miles2ImgSrc}atsv-spider_man_2099.jpg` : `${miles2ImgSrc}atsv-miguel_o_hara.jpg`} alt="" />
+                          <img src={isSpiderMan2099Hovered  ? `${miles2ImgSrc}atsv-spider_man_2099.jpg` : `${miles2ImgSrc}atsv-miguel_o_hara.jpg`} alt="across-the-spider-spider-man-2099" />
                         </div>
                         <div className="caption-box">
                           <ul className='caption-ul'>
-                            <li><span className='miles2-character-name'>{isVillain1Hovered  ? 'spider-man-2099' : 'miguel-o-hara'}</span></li>
-                            <li><span className='miles2-acter'>Oscar Isaac</span></li>
+                            <li><span className='miles2-character-name'>{isSpiderMan2099Hovered  ? 'spider-man-2099' : 'miguel-o-hara'}</span></li>
+                            <li><span className='miles2-acter'>Oscar-Isaac</span></li>
                           </ul>
                         </div>
                       </a>
                   </li>
-                  <li className='villanin miles2'>
+                  <li className='spot miles2'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${miles2ImgSrc}atsv-the_spot.jpg`} alt="" />
+                        <img src={`${miles2ImgSrc}atsv-the_spot.jpg`} alt="across-the-spider-verse-spot-img" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='miles2-character-name'>the-spot</span></li>
-                          <li><span className='miles2-acter'>Jason Schwartzman</span></li>
+                          <li><span className='miles2-acter'>Jason-Schwartzman</span></li>
                         </ul>
                       </div>
                     </a>

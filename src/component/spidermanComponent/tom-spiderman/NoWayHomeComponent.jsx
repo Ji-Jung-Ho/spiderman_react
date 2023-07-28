@@ -3,50 +3,50 @@ import React, {useState} from 'react';
 export default function NoWayHomeComponent () {
 
   const [isSamHovered, setIsSamHovered] = useState(false);
-  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
-  const [isVillain2Hovered, setIsVillain2Hovered] = useState(false);
-  const [isVillain3Hovered, setIsVillain3Hovered] = useState(false);
-  const [isVillain4Hovered, setIsVillain4Hovered] = useState(false);
-  const [isVillain5Hovered, setIsVillain5Hovered] = useState(false);
+  const [isOctopusHovered, setIsOctopusHovered] = useState(false);
+  const [isElectroHovered, setIsElectroHovered] = useState(false);
+  const [isGreeGoblinHovered, setIsGreeGoblinHovered] = useState(false);
+  const [isSandManHovered, setIsSandManHovered] = useState(false);
+  const [isLizardHovered, setIsLizardHovered] = useState(false);
 
   const onHoverEnter = (character) => {
     if (character === 'spiderman') {
       setIsSamHovered(true);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(true);
-    } else if (character === 'villain2') {
-      setIsVillain2Hovered(true);
-    } else if (character === 'villain3') {
-      setIsVillain3Hovered(true);
-    } else if (character === 'villain4') {
-      setIsVillain4Hovered(true);
-    } else if (character === 'villain5') {
-      setIsVillain5Hovered(true);
+    } else if (character === 'octopus') {
+      setIsOctopusHovered(true);
+    } else if (character === 'electro') {
+      setIsElectroHovered(true);
+    } else if (character === 'green-goblin') {
+      setIsGreeGoblinHovered(true);
+    } else if (character === 'sand-man') {
+      setIsSandManHovered(true);
+    } else if (character === 'lizard') {
+      setIsLizardHovered(true);
     } 
   };
 
   const onHoverLeave = (character) => {
     if (character === 'spiderman') {
       setIsSamHovered(false);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(false);
-    } else if (character === 'villain2') {
-      setIsVillain2Hovered(false);
-    } else if (character === 'villain3') {
-      setIsVillain3Hovered(false);
-    } else if (character === 'villain4') {
-      setIsVillain4Hovered(false);
-    } else if (character === 'villain5') {
-      setIsVillain5Hovered(false);
+    } else if (character === 'octopus') {
+      setIsOctopusHovered(false);
+    } else if (character === 'electro') {
+      setIsElectroHovered(false);
+    } else if (character === 'green-goblin') {
+      setIsGreeGoblinHovered(false);
+    } else if (character === 'sand-man') {
+      setIsSandManHovered(false);
+    } else if (character === 'lizard') {
+      setIsLizardHovered(false);
     }
   };
 
   const spidermanClass = isSamHovered ? 'spiderman nowayhome' : 'peter-parker nowayhome';
-  const villain1Class = isVillain1Hovered ? 'dr-otto nowayhome' : 'octavius nowayhome';
-  const villain2Class = isVillain2Hovered ? 'electro nowayhome' : 'max-dillon nowayhome';
-  const villain3Class = isVillain3Hovered ? 'mysterio nowayhome' : 'quentin-beck nowayhome';
-  const villain4Class = isVillain4Hovered ? 'mysterio nowayhome' : 'quentin-beck nowayhome';
-  const villain5Class = isVillain5Hovered ? 'mysterio nowayhome' : 'quentin-beck nowayhome';
+  const octopusClass = isOctopusHovered ? 'dr-otto nowayhome' : 'octavius nowayhome';
+  const electroClass = isElectroHovered ? 'electro nowayhome' : 'max-dillon nowayhome';
+  const greenGoblinClass = isGreeGoblinHovered ? 'green-goblin nowayhome' : 'noman-osborn nowayhome';
+  const sandManClass = isSandManHovered ? 'sand-man nowayhome' : 'flint-marko nowayhome';
+  const lizardClass = isLizardHovered ? 'lizard nowayhome' : 'curt-connors nowayhome';
 
   const noWayHomeImgSrc = "./img/spiderman_movie_img/tom-spiderman/no_way_home/"
   const commonImgSrc = "./img/spiderman_movie_img/tom-spiderman/"
@@ -119,20 +119,20 @@ export default function NoWayHomeComponent () {
                     onMouseLeave={() => onHoverLeave('spiderman')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isSamHovered  ? `${noWayHomeImgSrc}nowayhome_spiderman.jpg` : `${noWayHomeImgSrc}nowayhome_peter-parker.jpg`} alt="" />
+                        <img src={isSamHovered  ? `${noWayHomeImgSrc}nowayhome-spider_man.jpg` : `${noWayHomeImgSrc}nowayhome-peter_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='nowayhome-character-name'>{isSamHovered  ? 'spider-man' : 'peter-parker'}</span></li>
-                          <li><span className='nowayhome-acter'>Tom Holland</span></li>
+                          <li><span className='nowayhome-acter'>Tom-Holland</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className='nowayhome'>
+                  <li className='michelle-jones nowayhome'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${noWayHomeImgSrc}nowayhome_michelle-jones-watson.jpg`} alt="" />
+                        <img src={`${noWayHomeImgSrc}nowayhome-michelle_jones_watson.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
@@ -142,123 +142,123 @@ export default function NoWayHomeComponent () {
                       </div>
                     </a>
                   </li>
-                  <li className='nowayhome'>
+                  <li className='may-parker nowayhome'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${noWayHomeImgSrc}nowayhome_may-parker.jpg`} alt="" />
+                        <img src={`${noWayHomeImgSrc}nowayhome-may_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='nowayhome-character-name'>may-parker</span></li>
-                          <li><span className='nowayhome-acter'>Marisa Tomei</span></li>
+                          <li><span className='nowayhome-acter'>Marisa-Tomei</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className='nowayhome'>
+                  <li className='ned nowayhome'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${noWayHomeImgSrc}nowayhome_ned.jpg`} alt="" />
+                        <img src={`${noWayHomeImgSrc}nowayhome-ned.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='nowayhome-character-name'>Ned-Leeds</span></li>
-                          <li><span className='nowayhome-acter'>Jacob Batalon</span></li>
+                          <li><span className='nowayhome-acter'>Jacob-Batalon</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className='nowayhome'>
+                  <li className='dr-strange nowayhome'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${noWayHomeImgSrc}nowayhome_dr-strange.jpg`} alt="" />
+                        <img src={`${noWayHomeImgSrc}nowayhome-dr_strange.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='nowayhome-character-name'>dr-strange</span></li>
-                          <li><span className='nowayhome-acter'>Benedict Cumberbatch</span></li>
+                          <li><span className='nowayhome-acter'>Benedict-Cumberbatch</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
                 </ul>
                 <ul className='villain'>
-                <li className={villain1Class} 
-                    onMouseEnter={() => onHoverEnter('villain1')}
-                    onMouseLeave={() => onHoverLeave('villain1')}
+                <li className={octopusClass} 
+                    onMouseEnter={() => onHoverEnter('octopus')}
+                    onMouseLeave={() => onHoverLeave('octopus')}
                     >
                       <a href="#!">
                         <div className="img-box">
-                          <img src={isVillain1Hovered  ? `${noWayHomeImgSrc}nowayhome_dr-otto.jpg` : `${noWayHomeImgSrc}nowayhome_octavius.jpg`} alt="" />
+                          <img src={isOctopusHovered  ? `${noWayHomeImgSrc}nowayhome-dr_octopus.jpg` : `${noWayHomeImgSrc}nowayhome-octavius.jpg`} alt="" />
                         </div>
                         <div className="caption-box">
                           <ul className='caption-ul'>
-                            <li><span className='nowayhome-character-name'>{isVillain1Hovered  ? 'dr-otto' : 'octavius'}</span></li>
-                            <li><span className='nowayhome-acter'>Alfred Molina</span></li>
+                            <li><span className='nowayhome-character-name'>{isOctopusHovered  ? 'dr-octopus' : 'octavius'}</span></li>
+                            <li><span className='nowayhome-acter'>Alfred-Molina</span></li>
                           </ul>
                         </div>
                       </a>
                   </li>
-                  <li className={villain2Class} 
-                    onMouseEnter={() => onHoverEnter('villain2')}
-                    onMouseLeave={() => onHoverLeave('villain2')}
+                  <li className={electroClass} 
+                    onMouseEnter={() => onHoverEnter('electro')}
+                    onMouseLeave={() => onHoverLeave('electro')}
                     >
                       <a href="#!">
                         <div className="img-box">
-                          <img src={isVillain2Hovered  ? `${noWayHomeImgSrc}nowayhome_electro.jpg` : `${noWayHomeImgSrc}nowayhome_max-dillon.jpg`} alt="" />
+                          <img src={isElectroHovered  ? `${noWayHomeImgSrc}nowayhome-electro.jpg` : `${noWayHomeImgSrc}nowayhome-max_dillon.jpg`} alt="" />
                         </div>
                         <div className="caption-box">
                           <ul className='caption-ul'>
-                            <li><span className='nowayhome-character-name'>{isVillain2Hovered  ? 'electro' : 'max-dillon'}</span></li>
-                            <li><span className='nowayhome-acter'>Jamie Foxx</span></li>
+                            <li><span className='nowayhome-character-name'>{isElectroHovered  ? 'electro' : 'max-dillon'}</span></li>
+                            <li><span className='nowayhome-acter'>Jamie-Foxx</span></li>
                           </ul>
                         </div>
                       </a>
                   </li>
-                  <li className={villain3Class} 
-                    onMouseEnter={() => onHoverEnter('villain3')}
-                    onMouseLeave={() => onHoverLeave('villain3')}
+                  <li className={greenGoblinClass} 
+                    onMouseEnter={() => onHoverEnter('green-goblin')}
+                    onMouseLeave={() => onHoverLeave('green-goblin')}
                     >
                       <a href="#!">
                         <div className="img-box">
-                          <img src={isVillain3Hovered  ? `${noWayHomeImgSrc}nowayhome_green-goblin.jpg` : `${noWayHomeImgSrc}nowayhome_norman-osborn.jpg`} alt="" />
+                          <img src={isGreeGoblinHovered  ? `${noWayHomeImgSrc}nowayhome-green_goblin.jpg` : `${noWayHomeImgSrc}nowayhome-norman_osborn.jpg`} alt="" />
                         </div>
                         <div className="caption-box">
                           <ul className='caption-ul'>
-                            <li><span className='nowayhome-character-name'>{isVillain3Hovered  ? 'green-goblin' : 'norman-osborn'}</span></li>
-                            <li><span className='nowayhome-acter'>Willem Dafoe</span></li>
+                            <li><span className='nowayhome-character-name'>{isGreeGoblinHovered  ? 'green-goblin' : 'norman-osborn'}</span></li>
+                            <li><span className='nowayhome-acter'>Willem-Dafoe</span></li>
                           </ul>
                         </div>
                       </a>
                   </li>
-                  <li className={villain4Class} 
-                    onMouseEnter={() => onHoverEnter('villain4')}
-                    onMouseLeave={() => onHoverLeave('villain4')}
+                  <li className={sandManClass} 
+                    onMouseEnter={() => onHoverEnter('sand-man')}
+                    onMouseLeave={() => onHoverLeave('sand-man')}
                     >
                       <a href="#!">
                         <div className="img-box">
-                          <img src={isVillain4Hovered  ? `${noWayHomeImgSrc}nowayhome_sandman.jpg` : `${noWayHomeImgSrc}nowayhom_flint-marko.jpg`} alt="" />
+                          <img src={isSandManHovered  ? `${noWayHomeImgSrc}nowayhome-sand_man.jpg` : `${noWayHomeImgSrc}nowayhom-flint_marko.jpg`} alt="" />
                         </div>
                         <div className="caption-box">
                           <ul className='caption-ul'>
-                            <li><span className='nowayhome-character-name'>{isVillain4Hovered  ? 'sandman' : 'flint-marko'}</span></li>
-                            <li><span className='nowayhome-acter'>Thomas Haden Church</span></li>
+                            <li><span className='nowayhome-character-name'>{isSandManHovered  ? 'sandman' : 'flint-marko'}</span></li>
+                            <li><span className='nowayhome-acter'>Thomas-Haden-Church</span></li>
                           </ul>
                         </div>
                       </a>
                   </li>
-                  <li className={villain5Class} 
-                    onMouseEnter={() => onHoverEnter('villain5')}
-                    onMouseLeave={() => onHoverLeave('villain5')}
+                  <li className={lizardClass} 
+                    onMouseEnter={() => onHoverEnter('lizard')}
+                    onMouseLeave={() => onHoverLeave('lizard')}
                     >
                       <a href="#!">
                         <div className="img-box">
-                          <img src={isVillain5Hovered  ? `${noWayHomeImgSrc}nowayhome_lizard.jpg` : `${noWayHomeImgSrc}nowayhome_curt-connors.jpg`} alt="" />
+                          <img src={isLizardHovered  ? `${noWayHomeImgSrc}nowayhome-lizard.jpg` : `${noWayHomeImgSrc}nowayhome-curt_connors.jpg`} alt="" />
                         </div>
                         <div className="caption-box">
                           <ul className='caption-ul'>
-                            <li><span className='nowayhome-character-name'>{isVillain5Hovered  ? 'lizard' : 'curt-connors'}</span></li>
-                            <li><span className='nowayhome-acter'>Rhys Ifans</span></li>
+                            <li><span className='nowayhome-character-name'>{isLizardHovered  ? 'lizard' : 'curt-connors'}</span></li>
+                            <li><span className='nowayhome-acter'>Rhys-Ifans</span></li>
                           </ul>
                         </div>
                       </a>

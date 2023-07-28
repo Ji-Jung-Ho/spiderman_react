@@ -2,23 +2,26 @@ import React, {useState} from 'react';
 
 export default function Spiderman2Component () {
   const [isSpidermanHovered, setIsSpidermanHovered] = useState(false);
-  const [isVillain1Hovered, setIsVillain1Hovered] = useState(false);
+  const [isOctopusHovered, setIsOctopusHovered] = useState(false);
 
   const onHoverEnter = (character) => {
-    if (character === 'spiderman') {
+    if (character === 'spider-man') {
       setIsSpidermanHovered(true);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(true);
+    } else if (character === 'octopus') {
+      setIsOctopusHovered(true);
     }
   };
 
   const onHoverLeave = (character) => {
-    if (character === 'spiderman') {
+    if (character === 'spider-man') {
       setIsSpidermanHovered(false);
-    } else if (character === 'villain1') {
-      setIsVillain1Hovered(false);
+    } else if (character === 'octopus') {
+      setIsOctopusHovered(false);
     }
   };
+
+  const spiderman2Class = isSpidermanHovered ? 'spider-man' : 'peter-parker';
+  const octopusClass = isOctopusHovered ? 'dr-octopus' : 'octavius';
 
   const spiderman2ImgSrc = "./img/spiderman_movie_img/sam-spiderman/spiderman_2/";
   const commonImgSrc = "./img/spiderman_movie_img/sam-spiderman/";
@@ -87,59 +90,59 @@ export default function Spiderman2Component () {
               </div>
               <div className="character-content">
                 <ul className='character-ul'>
-                  <li className={isSpidermanHovered  ? 'spiderman' : 'peter-parker'} 
-                    onMouseEnter={() => onHoverEnter('spiderman')}
-                    onMouseLeave={() => onHoverLeave('spiderman')}>
+                  <li className={spiderman2Class} 
+                    onMouseEnter={() => onHoverEnter('spider-man')}
+                    onMouseLeave={() => onHoverLeave('spider-man')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isSpidermanHovered  ? `${spiderman2ImgSrc}spiderman2_spiderman.jpg` : `${spiderman2ImgSrc}spiderman2_peter-parker.jpg`} alt="" />
+                        <img src={isSpidermanHovered  ? `${spiderman2ImgSrc}spiderman2-spider_man.jpg` : `${spiderman2ImgSrc}spiderman2-peter_parker.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='character-name'>{isSpidermanHovered  ? 'spider-man' : 'peter-parker'}</span></li>
-                          <li><span className='acter'>Tobey Maguire</span></li>
+                          <li><span className='acter'>Tobey-Maguire</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li>
+                  <li className='mary-jane'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${spiderman2ImgSrc}spiderman2_mary-jane-watson.jpg`} alt="" />
+                        <img src={`${spiderman2ImgSrc}spiderman2-mary_jane_watson.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='character-name'>mary-jane</span></li>
-                          <li><span className='acter'>kirsten dunst</span></li>
+                          <li><span className='acter'>kirsten-dunst</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li className={isVillain1Hovered  ? 'green-goblin' : 'norman-osborn'} 
-                  onMouseEnter={() => onHoverEnter('villain1')}
-                  onMouseLeave={() => onHoverLeave('villain1')}
+                  <li className={octopusClass} 
+                  onMouseEnter={() => onHoverEnter('octopus')}
+                  onMouseLeave={() => onHoverLeave('octopus')}
                   >
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVillain1Hovered  ? `${spiderman2ImgSrc}spiderman2_dr.otto.jpg` : `${spiderman2ImgSrc}spiderman2_octavius.jpg`} alt="" />
+                        <img src={isOctopusHovered  ? `${spiderman2ImgSrc}spiderman2-dr_octopus.jpg` : `${spiderman2ImgSrc}spiderman2-octavius.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
-                          <li><span className='character-name'>{isVillain1Hovered  ? 'green-goblin' : 'norman-osborn'}</span></li>
-                          <li><span className='acter'>Willem Dafoe</span></li>
+                          <li><span className='character-name'>{isOctopusHovered  ? 'dr-octopus' : 'octavius'}</span></li>
+                          <li><span className='acter'>Alfred-Molina</span></li>
                         </ul>
                       </div>
                     </a>
                   </li>
-                  <li>
+                  <li className='harry-osborn'>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={`${spiderman2ImgSrc}spiderman2_harry-osborn.jpg`} alt="" />
+                        <img src={`${spiderman2ImgSrc}spiderman2-harry_osborn.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
                           <li><span className='character-name'>harry-osborn</span></li>
-                          <li><span className='acter'>James Franco</span></li>
+                          <li><span className='acter'>James-Franco</span></li>
                         </ul>
                       </div>
                     </a>
