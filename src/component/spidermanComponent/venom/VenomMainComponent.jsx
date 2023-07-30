@@ -29,7 +29,7 @@ export default function Spiderman4Component () {
   };
 
   const onClickLinkClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
   };
 
   return (

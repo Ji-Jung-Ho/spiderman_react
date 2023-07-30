@@ -57,13 +57,12 @@
             background: none;
             cursor: pointer;
             margin: 0 8px;
-  
             span {
               position: relative;
               font-size: 30px;
+              font-weight: bold;
               color: #fff;
               font-family: 'Homoarakhn', sans-serif;
-  
               &::after {
                 content: "";
                 position: absolute;
@@ -76,11 +75,9 @@
                 transform: scaleX(0);
                 transition: all 0.3s ease;
               }
-  
               &:hover,
               &.active {
                 color: #b42222;
-  
                 &::after {
                   opacity: 1;
                   transform: scaleX(1);
@@ -326,7 +323,7 @@
           border-bottom: 1px solid #000;
           .title {
             width: 100%;
-            padding-bottom: 50px;
+            padding-bottom: 30px;
             h2 {
               font-size: 26px;
               font-weight: 800;
@@ -354,14 +351,17 @@
               transform-origin: right top;
             }
           }
-
           .movie-story {
             width: 800px;
             padding: 25px;
             p {
-              font-size: 16px;
-              line-height: 150%;
+              font-size: 18px;
+              line-height: 180%;
               color: #151515;
+              span {
+                font-size: 24px;
+                font-weight: bold;
+              }
             }
           }
           .movie-info {
@@ -441,6 +441,7 @@
             width: 100%;
             height: 355px;
             position: relative;
+            // 캐릭터가 2줄로 나뉘어져 있는 영화
             &.nowayhome,
             &.miles1,
             &.miles2 {
@@ -456,16 +457,6 @@
                 width: 250px;
                 overflow: hidden;
                 margin-right: 2px;
-                &.spiderman3,
-                &.homecoming,
-                &.farfromhome {
-                  width: 230px;
-                }
-                &.nowayhome,
-                &.miles1,
-                &.miles2 {
-                  width: 230px;
-                }
                 &:hover .img-box img {
                   transform: scale(1.1);
                   transition: all 0.5s;

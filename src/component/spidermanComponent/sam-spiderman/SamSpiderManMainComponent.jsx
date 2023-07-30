@@ -50,7 +50,7 @@ export default function SamSpiderManMainComponent() {
   const imgSrc = "./img/spiderman_movie_img/";
 
   const onClickLinkClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
   };
 
   return (

@@ -8,21 +8,21 @@ export default function Venom1Component () {
 
 
   const onHoverEnter = (character) => {
-    if (character === 'venom1') {
+    if (character === 'venom') {
       setIsVenom1Hovered(true);
-    } else if (character === 'venom2') {
+    } else if (character === 'she-venom') {
       setIsVenom2Hovered(true);
-    } else if (character === 'villain1') {
+    } else if (character === 'riot') {
       setIsRiotHovered(true);
     } 
   };
 
   const onHoverLeave = (character) => {
-    if (character === 'venom1') {
+    if (character === 'venom') {
       setIsVenom1Hovered(false);
-    } else if (character === 'venom2') {
+    } else if (character === 'she-venom') {
       setIsVenom2Hovered(false);
-    } else if (character === 'villain1') {
+    } else if (character === 'riot') {
       setIsRiotHovered(false);
     } 
   };
@@ -99,11 +99,11 @@ export default function Venom1Component () {
               <div className="character-content">
                 <ul className='character-ul'>
                   <li className={venom1Class} 
-                    onMouseEnter={() => onHoverEnter('venom1')}
-                    onMouseLeave={() => onHoverLeave('venom1')}>
+                    onMouseEnter={() => onHoverEnter('venom')}
+                    onMouseLeave={() => onHoverLeave('venom')}>
                     <a href="#!">
                       <div className="img-box">
-                        <img src={isVenom1Hovered  ? `${venom1ImgSrc}venom1-eddie_venom.jpg` : `${venom1ImgSrc}venom1-eddie.jpg`} alt="" />
+                        <img src={isVenom1Hovered  ? `${venom1ImgSrc}venom1-eddie_venom1.jpg` : `${venom1ImgSrc}venom1-eddie.jpg`} alt="" />
                       </div>
                       <div className="caption-box">
                         <ul className='caption-ul'>
@@ -114,8 +114,8 @@ export default function Venom1Component () {
                     </a>
                   </li>
                   <li className={venom2Class}
-                  onMouseEnter={() => onHoverEnter('venom2')}
-                  onMouseLeave={() => onHoverLeave('venom2')}>
+                  onMouseEnter={() => onHoverEnter('she-venom')}
+                  onMouseLeave={() => onHoverLeave('she-venom')}>
                     <a href="#!">
                       <div className="img-box">
                       <img src={isVenom2Hovered  ? `${venom1ImgSrc}venom1-anne_venom.jpg` : `${venom1ImgSrc}venom1-anne.jpg`} alt="" />
@@ -129,8 +129,8 @@ export default function Venom1Component () {
                     </a>
                   </li>
                   <li className={riotClass} 
-                    onMouseEnter={() => onHoverEnter('villain1')}
-                    onMouseLeave={() => onHoverLeave('villain1')}
+                    onMouseEnter={() => onHoverEnter('riot')}
+                    onMouseLeave={() => onHoverLeave('riot')}
                     >
                       <a href="#!">
                         <div className="img-box">

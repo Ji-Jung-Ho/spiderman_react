@@ -65,6 +65,7 @@
 #main.spiderman-movie-1 .section2 .sub-title > ul > li button span {
   position: relative;
   font-size: 30px;
+  font-weight: bold;
   color: #fff;
   font-family: "Homoarakhn", sans-serif;
 }
@@ -304,7 +305,7 @@
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .title {
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .title h2 {
   font-size: 26px;
@@ -336,9 +337,13 @@
   padding: 25px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .movie-story p {
-  font-size: 16px;
-  line-height: 150%;
+  font-size: 18px;
+  line-height: 180%;
   color: #151515;
+}
+#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .movie-story p span {
+  font-size: 24px;
+  font-weight: bold;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .movie-intro .movie-info {
   width: 800px;
@@ -431,12 +436,6 @@
   width: 250px;
   overflow: hidden;
   margin-right: 2px;
-}
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.spiderman3, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.homecoming, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.farfromhome {
-  width: 230px;
-}
-#main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.nowayhome, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.miles1, #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li.miles2 {
-  width: 230px;
 }
 #main.spiderman-movie-1 .section6 .sec6-container .spiderman-movie-info .character .character-content .character-ul li:hover .img-box img {
   transform: scale(1.1);
