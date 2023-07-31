@@ -107,7 +107,7 @@ export default function SignUpComponent() {
                     <div class="right-wrap">
                       <input type="text" class="addr-hide" maxLength="11" name="input-addr1" id="inputAddr1" placeholder="카카오 주소 검색 API"/>
                       <button disabled type="button" class="addr-re-btn addr-hide"><img src="./img/ico_search.svg" alt=""/>재검색</button>
-                      <button type="button" class="addr-api-btn"><img src="./img/ico_1search.svg" alt=""/>주소검색</button>
+                      <button type="button" class="addr-api-btn"><img src="./img/search_btn.png" alt=""/>주소검색</button>
                       <p class="addr-info addr-info1">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
                     </div>
                   </div>
@@ -137,7 +137,7 @@ export default function SignUpComponent() {
                     </div>
                   </div>
                 </li>
-                {/* <li>
+                <li>
                   <div class="left">
                     <div class="left-wrap">
                         <label for=""><strong>성별</strong></label>
@@ -145,12 +145,12 @@ export default function SignUpComponent() {
                   </div>
                   <div class="right">
                     <div class="right-wrap gender">
-                      <label for="male"><input type="radio" name="gender" id="male" value="남자">남자</label>
-                      <label for="female"><input type="radio" name="gender" id="female" value="여자">여자</label>
-                      <label for="unselect"><input type="radio" name="gender" id="unselect" value="선택안함" checked>선택안함</label>
+                      <label for="male"><input type="radio" name="gender" id="male" value="남자"/>남자</label>
+                      <label for="female"><input type="radio" name="gender" id="female" value="여자"/>여자</label>
+                      <label for="unselect"><input type="radio" name="gender" id="unselect" value="선택안함" checked/>선택안함</label>
                     </div>
                   </div>
-                </li> */}
+                </li>
                 <li>
                   <div class="left">
                     <div class="left-wrap">
@@ -171,20 +171,7 @@ export default function SignUpComponent() {
                     </div>
                   </div>
                 </li>
-                {/* <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for=""><strong>추가입력 사항</strong></label>
-                    </div>
-                  </div>
-                  <div class="right">
-                    <div class="right-wrap add-input-box1">
-                      <label for="addInput1"><input type="radio" name="add_input" id="addInput1" value="친구초대 추천인 아이디"/>친구초대 추천인 아이디</label>
-                      <label for="addInput2"><input type="radio" name="add_input" id="addInput2" value="참여 이벤트명"/>참여 이벤트명</label>
-                    </div>
-                  </div>
-                </li> */}
-                {/* <li class="add-input-box-list">
+                <li class="add-input-box-list">
                   <div class="left">
                     <div class="left-wrap">
                     </div>
@@ -195,7 +182,7 @@ export default function SignUpComponent() {
                       <p class="add-input-guid-text">가입 후 7일 내 첫 주문 배송완료 시, 친구초대 이벤트 적립금이 지급됩니다.</p>
                     </div>
                   </div>
-                </li> */}
+                </li>
                 <li class="hor-line">
                   <hr/>
                 </li>

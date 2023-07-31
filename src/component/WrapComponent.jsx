@@ -9,6 +9,7 @@ import TomSpiderManMainComponent from './spidermanComponent/tom-spiderman/TomSpi
 import MilesMainComponent from './spidermanComponent/miles/MilesMainComponent';
 import VenomMainComponent from './spidermanComponent/venom/VenomMainComponent';
 import SignUpComponent from './memberComponent/SignUpComponent';
+import SignInComponent from './memberComponent/SignInComponent';
 import FooterComponent from './FooterComponent';
 import AmazingSpiderman2Component from './spidermanComponent/amazing-spiderman/AmazingSpiderman2Component';
 
@@ -27,6 +28,7 @@ export default function WrapComponent () {
         <Route path="/miles" element={<HeaderFooterLayout component={<MilesMainComponent />} />} />
         <Route path="/venom" element={<HeaderFooterLayout component={<VenomMainComponent />} />} />
         <Route path="/signup" element={<HeaderFooterLayout component={<SignUpComponent />} />} />
+        <Route path="/signin" element={<HeaderFooterLayout component={<SignInComponent />} />} />
       </Routes>
     </BrowserRouter>
   </div>
