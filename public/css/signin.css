@@ -7,80 +7,81 @@
 @import url(../../../../css/go_top.css);
 #wrap {
   width: 100%;
-  background-color: #333;
+  background-color: #18212b;
 }
-#wrap #main {
+#wrap #signInMain {
   width: 100%;
   z-index: 2;
   position: relative;
-  padding: 60px 0 90px 0;
+  padding: 140px 0 0 0;
 }
-#wrap #main #signIn {
+#wrap #signInMain #signIn {
   width: 100%;
-  padding-top: 100px;
+  padding-bottom: 103px;
 }
-#wrap #main #signIn .container {
+#wrap #signInMain #signIn .container {
   width: 350px;
   margin: 0 auto;
 }
-#wrap #main #signIn .container .title {
+#wrap #signInMain #signIn .container .title {
   width: 100%;
   text-align: center;
 }
-#wrap #main #signIn .container .title h2 {
+#wrap #signInMain #signIn .container .title h2 {
   color: #fff;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 50px;
   font-family: "Homoarakhn", sans-serif;
+  letter-spacing: 15px;
 }
-#wrap #main #signIn .container .content {
+#wrap #signInMain #signIn .container .content {
   width: 100%;
 }
-#wrap #main #signIn .container .content form {
+#wrap #signInMain #signIn .container .content form {
   width: 100%;
-  padding: 50px 0;
+  padding-top: 50px;
 }
-#wrap #main #signIn .container .content form ul {
+#wrap #signInMain #signIn .container .content form ul {
   width: 100%;
 }
-#wrap #main #signIn .container .content form ul li {
+#wrap #signInMain #signIn .container .content form ul li {
   width: 100%;
   padding-bottom: 10px;
 }
-#wrap #main #signIn .container .content form ul li:nth-child(3) {
+#wrap #signInMain #signIn .container .content form ul li:nth-child(3) {
   height: 54px;
   text-align: right;
   font-size: 12px;
   padding-top: 5px;
 }
-#wrap #main #signIn .container .content form ul li input {
+#wrap #signInMain #signIn .container .content form ul li input {
   width: 100%;
   height: 54px;
   border: 1px solid #ddd;
   padding: 0 15px;
 }
-#wrap #main #signIn .container .content form ul li a {
+#wrap #signInMain #signIn .container .content form ul li a {
   color: #fff;
 }
-#wrap #main #signIn .container .content form ul li i {
+#wrap #signInMain #signIn .container .content form ul li i {
   color: #ccc;
   margin: 0 5px;
 }
-#wrap #main #signIn .container .content form ul li button {
+#wrap #signInMain #signIn .container .content form ul li button {
   width: 100%;
   height: 54px;
   cursor: pointer;
   font-size: 15px;
   font-weight: 500;
 }
-#wrap #main #signIn .container .content form ul li button[type=submit] {
+#wrap #signInMain #signIn .container .content form ul li button[type=submit] {
   background: #f00;
   color: #fff;
 }
-#wrap #main #signIn .container .content form ul li button[type=button] {
+#wrap #signInMain #signIn .container .content form ul li button[type=button] {
   background: #fff;
   color: #000;
 }
-#wrap #main #signIn .container .content form ul li button a {
+#wrap #signInMain #signIn .container .content form ul li button a {
   color: #000;
 }

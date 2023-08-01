@@ -9,15 +9,15 @@
 
 #wrap {
   width:100%;
-  background-color: #333;
-  #main {
+  background-color: #18212b;
+  #signInMain {
     width:100%;
     z-index: 2;
     position: relative;
-    padding: 60px 0 90px 0;
+    padding: 140px 0 0 0;
     #signIn {
       width:100%;
-      padding-top:100px;
+      padding-bottom: 103px;
       .container {
         width:350px;
         margin:0 auto;
@@ -26,16 +26,17 @@
           text-align: center;
           h2 {
             color:#fff;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 50px;
             font-family: 'Homoarakhn', sans-serif;
+            letter-spacing: 15px;
           }
         }
         .content {
           width:100%;
           form {
             width:100%;
-            padding: 50px 0;
+            padding-top: 50px;
             ul {
               width:100%;
               li {

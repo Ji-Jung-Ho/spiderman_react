@@ -2,164 +2,164 @@ import React from 'react';
 
 export default function SignUpComponent() {
   return (
-    <main id="main" className='signup'>
+    <main id="signUpMain" className='signup'>
       <section id="signUp">
-        <div class="container">
-          <div class="title">
-            <div class="main-title">
-              <h2>회원가입</h2>
+        <div className="container">
+          <div className="title">
+            <div className="main-title">
+              <h2>Sign-Up</h2>
             </div>
-            <div class="sub-title">
+            <div className="sub-title">
               <span><i>*</i>필수입력사항</span>
             </div>
           </div>
-          <div class="content">
+          <div className="content">
             <form action="./member_sign_up.php" name="form_sign_up" id="formSignUp" method="post">
               <ul>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for="inputId"><strong>아이디</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor="inputId"><strong>아이디</strong><i>*</i></label>
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
+                  <div className="right">
+                    <div className="right-wrap">
                       <input type="text" maxLength="16" name="input_id" id="inputId" placeholder="아이디를 입력해주세요"/>
-                      <button type="button" class="id-ok-btn">중복확인</button>
-                      <p class="error-message1"></p>
-                      <p class="error-message2"></p>
+                      <button type="button" className="id-ok-btn">중복확인</button>
+                      <p className="error-message1"></p>
+                      <p className="error-message2"></p>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for="inputPw1"><strong>비밀번호</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor="inputPw1"><strong>비밀번호</strong><i>*</i></label>
                     </div>                                
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
-                      <input type="password" maxlength='16' name='input_pw1' id='inputPw1' autocomplete="off" placeholder='비밀번호를 입력해주세요'/>
-                      <p class='error-message'></p>
+                  <div className="right">
+                    <div className="right-wrap">
+                      <input type="password" maxLength='16' name='input_pw1' id='inputPw1' autoComplete="off" placeholder='비밀번호를 입력해주세요'/>
+                      <p className='error-message'></p>
                     </div>
                   </div>
                 </li>                        
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for="inputPw2"><strong>비밀번호확인</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor="inputPw2"><strong>비밀번호확인</strong><i>*</i></label>
                     </div>                                
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
-                      <input type="password" maxlength='16' name='input_pw2' id='inputPw2' autocomplete="off" placeholder='비밀번호를 한번더 입력해주세요'/>
-                      <p class="error-message"></p>
+                  <div className="right">
+                    <div className="right-wrap">
+                      <input type="password" maxLength='16' name='input_pw2' id='inputPw2' autoComplete="off" placeholder='비밀번호를 한번더 입력해주세요'/>
+                      <p className="error-message"></p>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for="inputName"><strong>이름</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor="inputName"><strong>이름</strong><i>*</i></label>
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
+                  <div className="right">
+                    <div className="right-wrap">
                       <input type="text" required maxLength="20" name="input-name" id="inputName" placeholder="이름을 입력해주세요"/>
-                        <p class="error-message"></p>
+                        <p className="error-message"></p>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for=""><strong>이메일</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor=""><strong>이메일</strong><i>*</i></label>
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
+                  <div className="right">
+                    <div className="right-wrap">
                       <input type="text" name="input-email" id="inputEmail" placeholder="예:spiderman@naver.com"/>
-                      <button type="button" class="email-ok-btn">중복확인</button>
-                      <p class="error-message"></p>
+                      <button type="button" className="email-ok-btn">중복확인</button>
+                      <p className="error-message"></p>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for=""><strong>휴대폰</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor=""><strong>휴대폰</strong><i>*</i></label>
                     </div>
                  </div>
-                  <div class="right">
-                    <div class="right-wrap">
+                  <div className="right">
+                    <div className="right-wrap">
                       <input type="text" maxLength="11" name="input-hp" id="inputHp" placeholder="아이디를 입력해주세요."/>
-                      <button disabled type="button" class="hp-num-btn">인증번호 받기</button>
+                      <button disabled type="button" className="hp-num-btn">인증번호 받기</button>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for=""><strong>주소</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor=""><strong>주소</strong><i>*</i></label>
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
-                      <input type="text" class="addr-hide" maxLength="11" name="input-addr1" id="inputAddr1" placeholder="카카오 주소 검색 API"/>
-                      <button disabled type="button" class="addr-re-btn addr-hide"><img src="./img/ico_search.svg" alt=""/>재검색</button>
-                      <button type="button" class="addr-api-btn"><img src="./img/search_btn.png" alt=""/>주소검색</button>
-                      <p class="addr-info addr-info1">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
+                  <div className="right">
+                    <div className="right-wrap">
+                      <input type="text" className="addr-hide" maxLength="11" name="input-addr1" id="inputAddr1" placeholder="카카오 주소 검색 API"/>
+                      <button disabled type="button" className="addr-re-btn addr-hide"><img src="./img/ico_search.svg" alt=""/>재검색</button>
+                      <button type="button" className="addr-api-btn"><img src="./img/search_btn.png" alt=""/>주소검색</button>
+                      <p className="addr-info addr-info1">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
                     </div>
                   </div>
                 </li>
-                <li class="addr-hide">
-                  <div class="left">
-                    <div class="left-wrap">
+                <li className="addr-hide">
+                  <div className="left">
+                    <div className="left-wrap">
                         
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
+                  <div className="right">
+                    <div className="right-wrap">
                       <input type="text" maxLength="11" name="input-addr2" id="inputAddr2" placeholder="나머지 주소를 입력하세요"/>
                     </div>
                   </div>
                 </li>
-                <li class="addr-hide">
-                  <div class="left">
-                    <div class="left-wrap">
+                <li className="addr-hide">
+                  <div className="left">
+                    <div className="left-wrap">
                         
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap">
-                      <em class="addr-map-area">샛별배송</em>
-                      <p class="addr-info addr-info2">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
+                  <div className="right">
+                    <div className="right-wrap">
+                      <em className="addr-map-area">샛별배송</em>
+                      <p className="addr-info addr-info2">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                        <label for=""><strong>성별</strong></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                        <label htmlFor=""><strong>성별</strong></label>
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap gender">
-                      <label for="male"><input type="radio" name="gender" id="male" value="남자"/>남자</label>
-                      <label for="female"><input type="radio" name="gender" id="female" value="여자"/>여자</label>
-                      <label for="unselect"><input type="radio" name="gender" id="unselect" value="선택안함" checked/>선택안함</label>
+                  <div className="right">
+                    <div className="right-wrap gender">
+                      <label htmlFor="male"><input type="radio" name="gender" id="male" value="남자"/>남자</label>
+                      <label htmlFor="female"><input type="radio" name="gender" id="female" value="여자"/>여자</label>
+                      <label htmlFor="unselect"><input type="radio" name="gender" id="unselect" value="선택안함" checked/>선택안함</label>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for=""><strong>생년월일</strong></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor=""><strong>생년월일</strong></label>
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap birth">
-                      <div class="birth-box">
+                  <div className="right">
+                    <div className="right-wrap birth">
+                      <div className="birth-box">
                         <ul>
                           <li><input type="text" name="year" id="year" placeholder="YYYY"/></li>
                           <li><i>/</i></li>
@@ -171,66 +171,66 @@ export default function SignUpComponent() {
                     </div>
                   </div>
                 </li>
-                <li class="add-input-box-list">
-                  <div class="left">
-                    <div class="left-wrap">
+                <li className="add-input-box-list">
+                  <div className="left">
+                    <div className="left-wrap">
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap add-input-box2">
+                  <div className="right">
+                    <div className="right-wrap add-input-box2">
                       <input type="text" name="add-input-text" id="add-input-text" placeholder="추천인 아이디를 입력해주세요"/>
-                      <p class="add-input-guid-text">가입 후 7일 내 첫 주문 배송완료 시, 친구초대 이벤트 적립금이 지급됩니다.</p>
+                      <p className="add-input-guid-text">가입 후 7일 내 첫 주문 배송완료 시, 친구초대 이벤트 적립금이 지급됩니다.</p>
                     </div>
                   </div>
                 </li>
-                <li class="hor-line">
+                <li className="hor-line">
                   <hr/>
                 </li>
                 <li>
-                  <div class="left">
-                    <div class="left-wrap">
-                      <label for=""><strong>이용약관동의</strong><i>*</i></label>
+                  <div className="left">
+                    <div className="left-wrap">
+                      <label htmlFor=""><strong>이용약관동의</strong><i>*</i></label>
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="right-wrap service">
+                  <div className="right">
+                    <div className="right-wrap service">
                       <ul>
                         <li>
-                          <label for="allChk"><input type="checkbox" name="all_chk" id="allChk" class="chk-btn" value=""/>전체 동의합니다.</label>
+                          <label htmlFor="allChk"><input type="checkbox" name="all_chk" id="allChk" className="chk-btn" value=""/>전체 동의합니다.</label>
                           <p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
                         </li>
                         <li>
-                          <label for="chk1"><input type="checkbox" name="chk1" id="chk1" class="chk-btn" value=""/>이용약관 동의</label>(필수)
-                          <button type="button"><span>약관보기</span><img src="./img/arrow_right.png" alt=""/></button>
+                          <label htmlFor="chk1"><input type="checkbox" name="chk1" id="chk1" className="chk-btn" value=""/>이용약관 동의</label>(필수)
+                          <button type="button"><span>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
                         </li>
                         <li>
-                          <label for="chk2"><input type="checkbox" name="chk2" id="chk2" class="chk-btn" value=""/>개인정보 수집∙이용 동의</label>(필수)
-                          <button type="button"><span>약관보기</span><img src="./img/arrow_right.png" alt=""/></button>
+                          <label htmlFor="chk2"><input type="checkbox" name="chk2" id="chk2" className="chk-btn" value=""/>개인정보 수집∙이용 동의</label>(필수)
+                          <button type="button"><span>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
                         </li>
                         <li>
-                          <label for="chk3"><input type="checkbox" name="chk3" id="chk3" class="chk-btn" value=""/>개인정보 수집∙이용 동의</label>(선택)
-                          <button type="button"><span>약관보기</span><img src="./img/arrow_right.png" alt=""/></button>
+                          <label htmlFor="chk3"><input type="checkbox" name="chk3" id="chk3" className="chk-btn" value=""/>개인정보 수집∙이용 동의</label>(선택)
+                          <button type="button"><span>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
                         </li>
                         <li>
-                          <label for="chk4"><input type="checkbox" name="chk4" id="chk4" class="chk-btn" value=""/>무료배송, 할인쿠폰 등 혜택/정보 수신 동의</label>(선택)
+                          <label htmlFor="chk4"><input type="checkbox" name="chk4" id="chk4" className="chk-btn" value=""/>무료배송, 할인쿠폰 등 혜택/정보 수신 동의</label>(선택)
                         </li>
                         <li>
-                          <label for="chk5"><input type="checkbox" name="chk5" id="chk5" class="chk-btn" value="SMS"/>SMS</label>
-                          <label for="chk6"><input type="checkbox" name="chk6" id="chk6" class="chk-btn" value="이메일"/>이메일</label>
+                          <label htmlFor="chk5"><input type="checkbox" name="chk5" id="chk5" className="chk-btn" value="SMS"/>SMS</label>
+                          <label htmlFor="chk6" className='chk6'><input type="checkbox" name="chk6" id="chk6" className="chk-btn" value="이메일"/>이메일</label>
                         </li>
                         <li>
                           <p>동의 시 한 달간 [5%적립] + [2만원 이상 무료배송] 첫 주문 후 안내</p>
                         </li>
                         <li>
-                          <label for="chk7"><input type="checkbox" name="chk7" id="chk7" class="chk-btn" value=""/>본인은 만 14세 이상입니다.</label>(필수)
+                          <label htmlFor="chk7"><input type="checkbox" name="chk7" id="chk7" className="chk-btn" value=""/>본인은 만 14세 이상입니다.</label>(필수)
                         </li>
                       </ul>
                     </div>
                   </div>
                 </li>
               </ul>
-              <div class="button-box">
-                <button type="submit" class="submit-btn">가입하기</button>
+              <div className="button-box">
+                <button type="submit" className="submit-btn">가입하기</button>
               </div>
             </form>
           </div>

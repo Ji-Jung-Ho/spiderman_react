@@ -3,7 +3,7 @@ import {Link}  from 'react-router-dom';
 
 export default function SignInComponent () {
   return (
-    <main id="main">
+    <main id="signInMain">
       <section id="signIn">
         <div class="container">
           <div class="title">
