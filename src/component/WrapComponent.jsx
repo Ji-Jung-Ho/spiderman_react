@@ -8,8 +8,8 @@ import AmazingSpiderManMainComponent from './spidermanComponent/amazing-spiderma
 import TomSpiderManMainComponent from './spidermanComponent/tom-spiderman/TomSpiderManMainComponent';
 import MilesMainComponent from './spidermanComponent/miles/MilesMainComponent';
 import VenomMainComponent from './spidermanComponent/venom/VenomMainComponent';
-import SignUpComponent from './memberComponent/SignUpComponent';
-import SignInComponent from './memberComponent/SignInComponent';
+import SignUpComponent from './memberComponent/signup/SignUpComponent';
+import SignInComponent from './memberComponent/signin/SignInComponent';
 import FooterComponent from './FooterComponent';
 import AmazingSpiderman2Component from './spidermanComponent/amazing-spiderman/AmazingSpiderman2Component';
 

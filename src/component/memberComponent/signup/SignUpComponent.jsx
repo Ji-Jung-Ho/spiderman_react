@@ -1,6 +1,51 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import PropTypes from 'prop-types'; 
 
-export default function SignUpComponent() {
+export default function SignUpComponent({회원}) {
+
+  const [state, setState] = useState(회원); 
+
+  const onChangeId = (e) => {
+    const regExp1 = /[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]/g; // 특수문자
+    const regExp2 = /.{6,16}/g; // 6자 이상 16자 이하
+    const regExp3 = /(?=.*[A-Za-z])+(?=.*[0-9])*/g; // 영문 혹은 영문과 숫자를 조합
+    const regExp4 = /\s/g;
+    const regExp5 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
+
+    let {value} = e.target;
+    let idErrMsg = '';
+    let userId = '';
+    let isUserId = false;
+  
+    userId = (value.replace(regExp1, ""));
+  
+    if (regExp2.test(userId) === false || regExp3.test(userId) === false) {
+      isUserId = true;
+      idErrMsg = '6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합';
+    } else if (regExp5.test(userId) === true) {
+      isUserId = true;
+      idErrMsg = '한글은 입력이 불가능합니다';
+    } else if (regExp4.test(userId) === true) {
+      isUserId = true;
+      idErrMsg = '공백을 제거해주세요';
+    }
+     else {
+      isUserId = false;
+    }
+
+    setState({
+      ...state,
+      userId: userId,
+      isUserId: isUserId,
+      idErrMsg: idErrMsg,
+    });
+  };
+  
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <main id="signUpMain" className='signup'>
       <section id="signUp">
@@ -24,10 +69,16 @@ export default function SignUpComponent() {
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="text" maxLength="16" name="input_id" id="inputId" placeholder="아이디를 입력해주세요"/>
+                      <input type="text"
+                      maxLength="16"
+                      name="input_id"
+                      id="inputId"
+                      onChange={onChangeId} 
+                      value={state.userId}
+                      placeholder="아이디를 입력해주세요"
+                      />
                       <button type="button" className="id-ok-btn">중복확인</button>
-                      <p className="error-message1"></p>
-                      <p className="error-message2"></p>
+                      <p className={`error-message${state.isUserId ? ' on' : ''}`}>{state.idErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -239,3 +290,127 @@ export default function SignUpComponent() {
     </main>
   );
 };
+
+// props의 자료형 선언하기 : PropTypes
+SignUpComponent.propTypes = {
+  회원: PropTypes.shape({
+      // 속성이름: 자료형지정 
+      // 필수입력사항 = isRequired / 선택입력사항 = ''
+      userId: PropTypes.string.isRequired,                // string
+      isUserId: PropTypes.bool,                // boolean
+      idErrMsg: PropTypes.string,
+      idDoubleCheck: PropTypes.bool.isRequired,          // boolean : 타입스크립트 블리언 bool : 프롭 타입스
+
+      userPw: PropTypes.string.isRequired,              // string
+      pwErrMsg : PropTypes.string,                                         // string
+      isUserPw : PropTypes.bool, 
+      pwDoubleCheck: PropTypes.string.isRequired,          // string
+      pwOkErrMsg : PropTypes.string,                                         // string
+      isPwOk : PropTypes.bool, 
+
+      name: PropTypes.string.isRequired,                  // string
+      nameErrMsg: PropTypes.string,
+      isName: PropTypes.bool,
+
+      email: PropTypes.string.isRequired,                // string
+      emailErrMsg: PropTypes.string,
+      isEmail: PropTypes.bool,
+      emailDoubleCheck: PropTypes.bool.isRequired,          // boolean
+
+      phone: PropTypes.string.isRequired,                // number
+      phoneCertified: PropTypes.bool.isRequired,          // boolean
+      isHp: PropTypes.bool, 
+      CertificationNumber: PropTypes.number,
+      CertificationNumberInputBox: PropTypes.string,
+      isHpOkBox: PropTypes.bool,
+      isInputHp: PropTypes.bool,
+      isHpNumBtn: PropTypes.bool,
+      isHpNum2Btn: PropTypes.bool,
+      isHpNumOkBtn: PropTypes.bool,
+      setId: PropTypes.number,
+      minute: PropTypes.number,
+      second: PropTypes.number,
+      hpErrMsg: PropTypes.string,
+
+      address1: PropTypes.string.isRequired,                 // string
+      address2: PropTypes.string.isRequired,                 // string
+      isAddrHide: PropTypes.bool,   
+      isAddrApiBtn: PropTypes.bool,   
+
+      gender: PropTypes.string,                             // string
+
+      birthYear: PropTypes.string,                             // number
+      birthMonth: PropTypes.string,                             // number
+      birthDay: PropTypes.string,                             // number
+      isBirth : PropTypes.bool,
+      text: PropTypes.string,
+
+      AgreetoTermsofUseContent: PropTypes.array,
+      AgreetoTermsofUse: PropTypes.array.isRequired,           // 배열 array
+  })
+}
+
+// 회원관리의 모든 변수 관리
+SignUpComponent.defaultProps = {
+  회원: {
+      userId: "",                     // string
+      isUserId: false,                // boolean
+      idErrMsg: "",
+      idDoubleCheck: false,          // boolean 타입스크립트 블리언 bool 프롭 타입스
+
+      userPw: "",                   // string
+      pwErrMsg: "",
+      isUserPw: false,
+      pwDoubleCheck: "",               // string
+      pwOkErrMsg: "",
+      isPwOk: false,
+
+      name: "",                       // string
+      nameErrMsg: "",
+      isName: false,
+
+      email: "",                     // string
+      emailDoubleCheck: false,          // boolean
+      emailErrMsg: "",
+      isEmail: false,
+
+      phone: "",                     // number
+      phoneCertified: false,          // boolean
+      isHp: false,
+      CertificationNumber: 0,
+      CertificationNumberInputBox:'',
+      isHpOkBox : false,
+      isInputHp : false,
+      isHpNumBtn : false,
+      isHpNum2Btn : false,
+      isHpNumOkBtn: false,
+      setId: 0,
+      minute: 2,
+      second: 59,
+      hpErrMsg: '',
+
+      address1: "",                      // string
+      address2: "",                      // string
+      isAddrHide: false,
+      isAddrApiBtn: false,
+
+      gender: "선택안함",                       // string
+
+      birthYear: "",                       // number
+      birthMonth: "",                       // number
+      birthDay: "",                       // number
+      isBirth: false,
+      text: '',
+
+      AgreetoTermsofUseContent: [
+          `이용약관 동의(필수)`,
+          `개인정보 수집∙이용 동의(필수)`,
+          `개인정보 수집∙이용 동의(선택)`,
+          `무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)`,
+          `SNS`,
+          `이메일`,
+          `본인은 만 14세 이상입니다.(필수)`
+      ],
+      AgreetoTermsofUse: [],               // 배열 array
+  }
+}
