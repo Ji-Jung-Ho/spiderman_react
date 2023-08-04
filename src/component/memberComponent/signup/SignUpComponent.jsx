@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios'
 import PropTypes from 'prop-types'; 
 
-export default function SignUpComponent({회원}) {
+export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
 
   const [state, setState] = useState(회원); 
 
@@ -10,27 +11,34 @@ export default function SignUpComponent({회원}) {
     const regExp2 = /.{6,16}/g; // 6자 이상 16자 이하
     const regExp3 = /(?=.*[A-Za-z])+(?=.*[0-9])*/g; // 영문 혹은 영문과 숫자를 조합
     const regExp4 = /\s/g;
-    const regExp5 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
+    const regExp5 = /[가-힣ㄱ-ㅎㅏ-ㅣ]+/g;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
+    const regExp6 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
 
     let {value} = e.target;
     let idErrMsg = '';
     let userId = '';
-    let isUserId = false;
+    let isUserId = true;
   
     userId = (value.replace(regExp1, ""));
   
     if (regExp2.test(userId) === false || regExp3.test(userId) === false) {
-      isUserId = true;
+      isUserId = false;
       idErrMsg = '6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합';
-    } else if (regExp5.test(userId) === true) {
-      isUserId = true;
-      idErrMsg = '한글은 입력이 불가능합니다';
-    } else if (regExp4.test(userId) === true) {
-      isUserId = true;
-      idErrMsg = '공백을 제거해주세요';
+      if (regExp5.test(userId) === true) {
+        isUserId = false;
+        idErrMsg = '한글은 입력이 불가능합니다.';
+      }
+      else if (regExp4.test(userId) === true) {
+        isUserId = false;
+        idErrMsg = '공백을 사용할 수 없습니다.';
+      }
+    }  
+    else if (regExp6.test(userId) === true) {
+      isUserId = false;
+      idErrMsg = '한글은 입력이 불가능합니다.';
     }
      else {
-      isUserId = false;
+      isUserId = true;
     }
 
     setState({
@@ -40,14 +48,58 @@ export default function SignUpComponent({회원}) {
       idErrMsg: idErrMsg,
     });
   };
-  
+  const onClickIdDoubleCheck = (e) => {
+  e.preventDefault();
+
+  const regExp1 = /.{6,16}/g; // 6자 이상 16자 이하
+  const regExp2 = /(?=.*[A-Za-z])+(?=.*[0-9])*/g; // 영문 혹은 영문과 숫자를 조합
+  const regExp3 = /\s/g;
+  const regExp4 = /[가-힣ㄱ-ㅎㅏ-ㅣ]+/g;
+  const regExp5 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
+  let idDoubleCheck = null;
+
+  if (regExp1.test(state.userId) === false || regExp2.test(state.userId) === false || regExp3.test(state.userId) === true) {
+    isConfirmModalOpenFn('6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합')
+    if (regExp4.test(state.userId) === true) {
+      isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다. 영문 혹은 영문과 숫자를 조합');
+    }
+  }
+  else if (regExp5.test(state.userId) === true) {
+    isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다.')
+  }
+  else {
+    axios({
+      url: 'http://kiik52.dothome.co.kr/spiderman/member_select.php',
+      method: 'GET'
+    })
+      .then((res) => {
+        let result = res.data.map((item) => item.userId === state.userId);
+        if (result.includes(true)) {
+          isConfirmModalOpenFn('사용 불가능한 아이디 입니다.');
+          idDoubleCheck = false;
+        } 
+        else {
+          isConfirmModalOpenFn('사용할 수 있는 아이디입니다.');
+          idDoubleCheck = true;
+        }
+        setState({
+          ...state,
+          idDoubleCheck: idDoubleCheck
+        });
+      })
+      .catch((err) => {
+        console.log('Axios 실패 결과: ', err.data);
+      });
+  }
+  };
+
   
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
 
   return (
-    <main id="signUpMain" className='signup'>
+    <main id="signUpMain">
       <section id="signUp">
         <div className="container">
           <div className="title">
@@ -59,7 +111,7 @@ export default function SignUpComponent({회원}) {
             </div>
           </div>
           <div className="content">
-            <form action="./member_sign_up.php" name="form_sign_up" id="formSignUp" method="post">
+            <form action="./SignUpComponent.jsx" name="form_sign_up" id="formSignUp" method="post">
               <ul>
                 <li>
                   <div className="left">
@@ -77,8 +129,12 @@ export default function SignUpComponent({회원}) {
                       value={state.userId}
                       placeholder="아이디를 입력해주세요"
                       />
-                      <button type="button" className="id-ok-btn">중복확인</button>
-                      <p className={`error-message${state.isUserId ? ' on' : ''}`}>{state.idErrMsg}</p>
+                      <button
+                      type="button"
+                      className="id-ok-btn"
+                      onClick={onClickIdDoubleCheck}
+                      >중복확인</button>
+                      <p className={`error-message${state.isUserId ? '' : ' on'}`}>{state.idErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -185,20 +241,6 @@ export default function SignUpComponent({회원}) {
                     <div className="right-wrap">
                       <em className="addr-map-area">샛별배송</em>
                       <p className="addr-info addr-info2">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="left">
-                    <div className="left-wrap">
-                        <label htmlFor=""><strong>성별</strong></label>
-                    </div>
-                  </div>
-                  <div className="right">
-                    <div className="right-wrap gender">
-                      <label htmlFor="male"><input type="radio" name="gender" id="male" value="남자"/>남자</label>
-                      <label htmlFor="female"><input type="radio" name="gender" id="female" value="여자"/>여자</label>
-                      <label htmlFor="unselect"><input type="radio" name="gender" id="unselect" value="선택안함" checked/>선택안함</label>
                     </div>
                   </div>
                 </li>
@@ -353,28 +395,28 @@ SignUpComponent.propTypes = {
 // 회원관리의 모든 변수 관리
 SignUpComponent.defaultProps = {
   회원: {
-      userId: "",                     // string
+      userId: '',                     // string
       isUserId: false,                // boolean
-      idErrMsg: "",
+      idErrMsg: '',
       idDoubleCheck: false,          // boolean 타입스크립트 블리언 bool 프롭 타입스
 
-      userPw: "",                   // string
-      pwErrMsg: "",
+      userPw: '',                   // string
+      pwErrMsg: '',
       isUserPw: false,
-      pwDoubleCheck: "",               // string
-      pwOkErrMsg: "",
+      pwDoubleCheck: '',               // string
+      pwOkErrMsg: '',
       isPwOk: false,
 
-      name: "",                       // string
-      nameErrMsg: "",
+      name: '',                       // string
+      nameErrMsg: '',
       isName: false,
 
-      email: "",                     // string
+      email: '',                     // string
       emailDoubleCheck: false,          // boolean
-      emailErrMsg: "",
+      emailErrMsg: '',
       isEmail: false,
 
-      phone: "",                     // number
+      phone: '',                     // number
       phoneCertified: false,          // boolean
       isHp: false,
       CertificationNumber: 0,
@@ -389,16 +431,16 @@ SignUpComponent.defaultProps = {
       second: 59,
       hpErrMsg: '',
 
-      address1: "",                      // string
-      address2: "",                      // string
+      address1: '',                      // string
+      address2: '',                      // string
       isAddrHide: false,
       isAddrApiBtn: false,
 
       gender: "선택안함",                       // string
 
-      birthYear: "",                       // number
-      birthMonth: "",                       // number
-      birthDay: "",                       // number
+      birthYear: '',                       // number
+      birthMonth: '',                       // number
+      birthDay: '',                       // number
       isBirth: false,
       text: '',
 

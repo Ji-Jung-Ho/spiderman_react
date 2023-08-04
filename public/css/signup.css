@@ -323,21 +323,21 @@
   cursor: pointer;
 }
 
-#confirmmodal {
-  display: none;
+#confirmModal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 5;
 }
-#confirmmodal .wrap {
+#confirmModal .wrap {
   width: 100%;
   height: 100%;
   display: flex;
 }
-#confirmmodal .wrap .container {
+#confirmModal .wrap .container {
   position: relative;
   width: 360px;
   margin: auto;
@@ -345,23 +345,23 @@
   border-radius: 10px;
   overflow: hidden;
 }
-#confirmmodal .wrap .container .img {
+#confirmModal .wrap .container .img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: url(../img/spider.PNG) no-repeat 50% 50%;
+  background: url(../img/sign_up/spider.PNG) no-repeat 50% 50%;
   background-size: cover;
   opacity: 0.3;
 }
-#confirmmodal .wrap .container .content {
+#confirmModal .wrap .container .content {
   padding: 40px 30px;
   position: relative;
   z-index: 2;
 }
-#confirmmodal .wrap .container .content h2 {
+#confirmModal .wrap .container .content h2 {
   font-size: 16px;
   font-weight: 700;
   color: #333;
@@ -369,12 +369,12 @@
   letter-spacing: -0.5px;
   text-align: center;
 }
-#confirmmodal .wrap .container .button-box {
+#confirmModal .wrap .container .button-box {
   border-top: 1px solid #eee;
   width: 100%;
   height: 55px;
 }
-#confirmmodal .wrap .container .button-box button {
+#confirmModal .wrap .container .button-box button {
   position: relative;
   z-index: 2;
   width: 100%;
