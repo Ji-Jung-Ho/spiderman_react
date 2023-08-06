@@ -6,6 +6,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
 
   const [state, setState] = useState(회원); 
 
+  // 아이디 입력상자 입력 이벤트
   const onChangeId = (e) => {
     const regExp1 = /[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]/g; // 특수문자
     const regExp2 = /.{6,16}/g; // 6자 이상 16자 이하
@@ -48,6 +49,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
       idErrMsg: idErrMsg,
     });
   };
+  // 아이디 중복확인 버튼 클릭 이벤트
   const onClickIdDoubleCheck = (e) => {
   e.preventDefault();
 
@@ -92,6 +94,88 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
       });
   }
   };
+  // 비밀번호 입력상자 입력 이벤트
+  const onChangePw = (e) => {
+    const regExp1 = /.{10,}/g;
+    const regExp2 = /((?=.*[A-Za-z]+)(?=.*[0-9]+))|((?=.*[A-Za-z]+)(?=.*[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]+))|((?=.*[0-9]+)(?=.*[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]+))/g;
+    const regExp3 = /\s/g;
+    const regExp4 = /(\d)\1\1/g; //동일한 숫자 3개 이상 연속 사용 불가
+
+    let {value} = e.target
+    let pwErrMsg = '';
+    let isUserPw = false;
+
+    if (regExp1.test(value) === false) {
+      pwErrMsg = '최소 10자 이상 입력'
+      isUserPw = false;
+    }
+    else if (regExp2.test(value) === false || regExp3.test(value) === true) {
+      pwErrMsg = '영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합'
+      isUserPw = false;
+    }
+    else if (regExp4.test(value) === true) {
+      pwErrMsg = '동일한 글자 3개 이상 연속 사용 불가'
+      isUserPw = false;
+    }
+    else {
+      pwErrMsg = '';
+      isUserPw = true;
+    }
+
+    setState({  
+      ...state,
+      userPw : value,
+      isUserPw : isUserPw,
+      pwErrMsg : pwErrMsg
+    })
+
+  }
+  // 비밀번호 확인 입력상자 입력 이벤트
+  const onChangePwDoubleCheck=(e)=>{
+    const {value} = e.target;
+    let pwDoubleCheckErrMsg = '';
+    let isPwDoubleCheck = false;
+
+    if (state.userPw !== value) {
+      pwDoubleCheckErrMsg = '동일한 비밀번호를 입력해 주세요'
+      isPwDoubleCheck = false
+    }
+    else {
+      isPwDoubleCheck = true;
+    }
+
+    setState({
+      ...state,
+      isPwDoubleCheck: isPwDoubleCheck,
+      pwDoubleCheckErrMsg : pwDoubleCheckErrMsg
+    })
+
+  }
+  // 이름 입력상자 입력 이벤트
+  const onChangeName=(e)=>{
+    const regExp = /[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]/g;
+    const {value} = e.target;
+    let name = '';
+    let nameErrMsg = '';
+    let isName = false;
+
+    name = value.replace(regExp, '');
+
+    if (value === '') {
+      nameErrMsg = '이름을 입력해 주세요';
+      isName = false;
+    }
+    else {
+      nameErrMsg = '';
+      isName = true;
+    }
+    setState({
+      ...state,
+      name : name,
+      nameErrMsg : nameErrMsg,
+      isName : isName
+    })
+  }
 
   
   useEffect(() => {
@@ -146,8 +230,16 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="password" maxLength='16' name='input_pw1' id='inputPw1' autoComplete="off" placeholder='비밀번호를 입력해주세요'/>
-                      <p className='error-message'></p>
+                      <input type="password"
+                      maxLength='16'
+                      name='input_pw1'
+                      id='inputPw1'
+                      autoComplete="off"
+                      placeholder='비밀번호를 입력해주세요'
+                      onChange={onChangePw}
+                      value={state.userPw}
+                      />
+                      <p className={`error-message${state.isUserPw ? '' : ' on'}`}>{state.pwErrMsg}</p>
                     </div>
                   </div>
                 </li>                        
@@ -159,8 +251,15 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="password" maxLength='16' name='input_pw2' id='inputPw2' autoComplete="off" placeholder='비밀번호를 한번더 입력해주세요'/>
-                      <p className="error-message"></p>
+                      <input type="password"
+                      maxLength='16'
+                      name='input_pw2'
+                      id='inputPw2'
+                      autoComplete="off"
+                      placeholder='비밀번호를 한번더 입력해주세요'
+                      onChange={onChangePwDoubleCheck}
+                      />
+                      <p className={`error-message${state.isPwDoubleCheck ? '' : ' on'}`}>{state.pwDoubleCheckErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -172,8 +271,16 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="text" required maxLength="20" name="input-name" id="inputName" placeholder="이름을 입력해주세요"/>
-                        <p className="error-message"></p>
+                      <input type="text"
+                      required
+                      maxLength="20"
+                      name="input-name"
+                      id="inputName"
+                      placeholder="이름을 입력해주세요"
+                      onChange={onChangeName}
+                      value={state.name}
+                      />
+                        <p className={`error-message ${state.isName ? '' : ' on'}`}>{state.nameErrMsg}</p>
                     </div>
                   </div>
                 </li>
