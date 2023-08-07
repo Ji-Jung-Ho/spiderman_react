@@ -58,15 +58,16 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
   const regExp3 = /\s/g;
   const regExp4 = /[가-힣ㄱ-ㅎㅏ-ㅣ]+/g;
   const regExp5 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
+  let {userId} = state;
   let idDoubleCheck = null;
 
-  if (regExp1.test(state.userId) === false || regExp2.test(state.userId) === false || regExp3.test(state.userId) === true) {
+  if (regExp1.test(userId) === false || regExp2.test(userId) === false || regExp3.test(userId) === true) {
     isConfirmModalOpenFn('6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합')
-    if (regExp4.test(state.userId) === true) {
+    if (regExp4.test(userId) === true) {
       isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다. 영문 혹은 영문과 숫자를 조합');
     }
   }
-  else if (regExp5.test(state.userId) === true) {
+  else if (regExp5.test(userId) === true) {
     isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다.')
   }
   else {
@@ -97,7 +98,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
   // 비밀번호 입력상자 입력 이벤트
   const onChangePw = (e) => {
     const regExp1 = /.{10,}/g;
-    const regExp2 = /((?=.*[A-Za-z]+)(?=.*[0-9]+))|((?=.*[A-Za-z]+)(?=.*[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]+))|((?=.*[0-9]+)(?=.*[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]+))/g;
+    const regExp2 = /^(?=.*[A-Za-z])(?=.*[0-9`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?])([A-Za-z0-9`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]+)$/; // 최소한 하나 이상의 영문자(대문자 또는 소문자), 영문자, 숫자, 특수문자의 조합이어야 합니다.
     const regExp3 = /\s/g;
     const regExp4 = /(\d)\1\1/g; //동일한 숫자 3개 이상 연속 사용 불가
 
@@ -114,7 +115,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
       isUserPw = false;
     }
     else if (regExp4.test(value) === true) {
-      pwErrMsg = '동일한 글자 3개 이상 연속 사용 불가'
+      pwErrMsg = '동일한 숫자 3개 이상 연속 사용 불가'
       isUserPw = false;
     }
     else {
@@ -176,6 +177,83 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
       isName : isName
     })
   }
+  // 이메일 입력상자 입력 이벤트
+  const onChangeEmail=(e)=>{
+
+    const regExp1 = /\s/g;
+    const regExp2 =/^[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]+(\.)*[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]*@[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]+(\.)*[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]*\.[A-Za-z]{2,3}$/g;
+    const regExp3 = /[@()\\[\]":;,<>]/g;
+
+    const {value} = e.target;
+    let emailErrMsg = '';
+    let isEmail = false;
+
+    if (value === '') {
+      emailErrMsg = '이메일을 입력해 주세요';
+      isEmail = false;
+    }
+    else if (regExp1.test(value) === true || regExp2.test(value) === false || regExp3.test(value) === false) {
+      emailErrMsg = '이메일 형식으로 입력해 주세요.';
+      isEmail = false;
+    }
+    else {
+      emailErrMsg = '';
+      isEmail = true;
+    }
+
+    setState({
+      ...state,
+      email : value,
+      emailErrMsg : emailErrMsg,
+      isEmail : isEmail
+    })
+
+  }
+  // 이메일 중복확인 버튼 클릭 이벤트
+  const onChangeEmailDoubleCheck=(e)=>{
+    e.preventDefault();
+
+    const regExp1 = /\s/g;
+    const regExp2 =/^[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]+(\.)*[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]*@[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]+(\.)*[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]*\.[A-Za-z]{2,3}$/g;
+    const regExp3 = /[@()\\[\]":;,<>]/g;
+
+    const {email} = state;
+    let emailDoubleCheck = false;
+
+    if (email === '') {
+      isConfirmModalOpenFn('이메일을 입력해주세요');
+    }
+    else if (regExp1.test(email) === true || regExp2.test(email) === false || regExp3.test(email) === false) {
+      isConfirmModalOpenFn('이메일 형식으로 입력해 주세요.');
+    }
+    else {
+      axios({
+        url: 'http://kiik52.dothome.co.kr/spiderman/member_select.php',
+        method: 'GET'
+      })
+      .then((res)=>{
+        let result = res.data.map((item) => item.email === state.email);
+        if (result.includes(true)) {
+          isConfirmModalOpenFn('사용 불가능한 이메일 입니다.');
+          emailDoubleCheck = false;
+        } 
+        else {
+          isConfirmModalOpenFn('사용 가능한 이메일 입니다.');
+          emailDoubleCheck = true;
+        }
+        setState({
+          ...state,
+          emailDoubleCheck: emailDoubleCheck
+        });
+      })
+      .catch((err)=>{
+        console.log('Axios 실패 결과 : ', err.data);
+      })
+    }
+
+
+  }
+  // 핸드폰 입력상자 입력 이벤트
 
   
   useEffect(() => {
@@ -292,9 +370,18 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="text" name="input-email" id="inputEmail" placeholder="예:spiderman@naver.com"/>
-                      <button type="button" className="email-ok-btn">중복확인</button>
-                      <p className="error-message"></p>
+                      <input type="text"
+                       name="input-email"
+                       id="inputEmail"
+                       placeholder="예:spiderman@naver.com"
+                       onChange={onChangeEmail}
+                       value={state.email}
+                       />
+                      <button type="button"
+                       className="email-ok-btn"
+                       onClick={onChangeEmailDoubleCheck}
+                       >중복확인</button>
+                      <p className={`error-message ${state.isEmail ? '' : ' on'}`}>{state.emailErrMsg}</p>
                     </div>
                   </div>
                 </li>
