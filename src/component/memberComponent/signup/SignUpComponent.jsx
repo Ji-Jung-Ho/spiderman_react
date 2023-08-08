@@ -2,25 +2,23 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import PropTypes from 'prop-types'; 
 
-export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
+export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer}) {
 
-  const [state, setState] = useState(회원); 
+  const [state, setState] = useState(회원);
 
   // 아이디 입력상자 입력 이벤트
   const onChangeId = (e) => {
     const regExp1 = /[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]/g; // 특수문자
     const regExp2 = /.{6,16}/g; // 6자 이상 16자 이하
     const regExp3 = /(?=.*[A-Za-z])+(?=.*[0-9])*/g; // 영문 혹은 영문과 숫자를 조합
-    const regExp4 = /\s/g;
+    const regExp4 = /\s/g; // 공백
     const regExp5 = /[가-힣ㄱ-ㅎㅏ-ㅣ]+/g;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
     const regExp6 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
 
     let {value} = e.target;
     let idErrMsg = '';
-    let userId = '';
+    let userId = value.replace(regExp1, '');
     let isUserId = true;
-  
-    userId = (value.replace(regExp1, ""));
   
     if (regExp2.test(userId) === false || regExp3.test(userId) === false) {
       isUserId = false;
@@ -55,16 +53,17 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
 
   const regExp1 = /.{6,16}/g; // 6자 이상 16자 이하
   const regExp2 = /(?=.*[A-Za-z])+(?=.*[0-9])*/g; // 영문 혹은 영문과 숫자를 조합
-  const regExp3 = /\s/g;
-  const regExp4 = /[가-힣ㄱ-ㅎㅏ-ㅣ]+/g;
+  const regExp3 = /\s/g; // 공백
+  const regExp4 = /[가-힣ㄱ-ㅎㅏ-ㅣ]+/g; // 한글 자모음 및 한글
   const regExp5 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
+
   let {userId} = state;
   let idDoubleCheck = null;
 
   if (regExp1.test(userId) === false || regExp2.test(userId) === false || regExp3.test(userId) === true) {
     isConfirmModalOpenFn('6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합')
     if (regExp4.test(userId) === true) {
-      isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다. 영문 혹은 영문과 숫자를 조합');
+      isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다. 영문 혹은 영문, 숫자를 조합');
     }
   }
   else if (regExp5.test(userId) === true) {
@@ -155,12 +154,11 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
   // 이름 입력상자 입력 이벤트
   const onChangeName=(e)=>{
     const regExp = /[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]/g;
+
     const {value} = e.target;
-    let name = '';
+    let name = value.replace(regExp, '');
     let nameErrMsg = '';
     let isName = false;
-
-    name = value.replace(regExp, '');
 
     if (value === '') {
       nameErrMsg = '이름을 입력해 주세요';
@@ -179,7 +177,6 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
   }
   // 이메일 입력상자 입력 이벤트
   const onChangeEmail=(e)=>{
-
     const regExp1 = /\s/g;
     const regExp2 =/^[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]+(\.)*[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]*@[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]+(\.)*[A-Za-z0-9`~!#$%^&*\-_=+|{}'/?]*\.[A-Za-z]{2,3}$/g;
     const regExp3 = /[@()\\[\]":;,<>]/g;
@@ -254,6 +251,173 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
 
   }
   // 핸드폰 입력상자 입력 이벤트
+  const onChangeHp=(e)=>{
+    const regExp1 = /[^\d]/g
+
+    const {value} = e.target;
+    let hp = value.replace(regExp1, '');
+    let hpErrMsg = '';
+    let isHp = false;
+
+    if (value.length === 0) {
+      isHp = false;
+    }
+    else {
+      isHp = true;
+    }
+    if (state.isHpNum2Btn && hp.length === 0) {
+      hpErrMsg = '휴대폰 번호를 입력해주세요';
+    }
+
+    setState({
+      ...state,
+      hp: hp,
+      isHp: isHp,
+      hpErrMsg: hpErrMsg
+    })
+  }
+  // 핸드폰 인증번호 받기 버튼 클릭 이벤트
+  const onClickHpCertified=(e)=>{
+    e.preventDefault();
+
+    const regExp2 = /^01[0|1|2|6|7|8|9]+[0-9]{3,4}[0-9]{4}$/g; // 10~11자리의 01로 시작하는 핸드폰 번호
+
+    let num = Math.floor(Math.random() * 900000 + 100000);;
+    let isHpOkBox = false;
+    let isHp = false;
+    let isInputHp = false;
+    let CertificationNumberInputBox = '';
+
+    if (regExp2.test(state.hp) === false) {
+      isConfirmModalOpenFn('잘못된 휴대폰 번호 입니다. 확인 후 다시 입력해 주세요.');
+      isHpOkBox = false;
+      isHp = false;
+      isInputHp = false;
+    }
+    else {
+      isConfirmModalOpenFn(`인증번호가 발송되었습니다. \n ${num}`);
+      isHpOkBox = true;
+      isHp = true;
+      isInputHp = true;
+      CertificationNumberInputBox = '';
+    }
+
+    setState ({
+      ...state,
+      CertificationNumber: num,
+      CertificationNumberInputBox : CertificationNumberInputBox,
+      isHpOkBox : isHpOkBox,
+      isHp     : isHp,
+      isInputHp : isInputHp
+  })
+
+  }
+  // 10. 인증번호 입력상자 온 체인지(키업) 이벤트 구현
+  const onChangeCertificationNumberInputBox=(e)=>{
+    const {value} = e.target;
+    const regExp1 = /[^\d]/g;
+    let CertificationNumberInputBox = value.replace(regExp1, "");
+    let isHpNumOkBtn = false;
+
+    if (value.length >= 1) {
+        clearInterval(state.setId);
+    }
+
+    // 공백도 1을 포함하기 때문에 1이상이 아니 1보다 커야한다.
+      if (CertificationNumberInputBox.length >= 1) {
+        isHpNumOkBtn = true;
+      } 
+      else {
+        isHpNumOkBtn = false;
+      }
+
+      setState({
+        ...state,
+        CertificationNumberInputBox: CertificationNumberInputBox,
+        isHpNumOkBtn: isHpNumOkBtn
+      })
+  }
+
+  // 11. 인증번호 확인 버튼 클릭 이벤트 구현
+  const onClickHpOkBtn=(e)=>{
+    e.preventDefault();
+    let hpCertified = false;
+    let isHpOkBox  = true;
+    let isHpNum2Btn = false;
+    let isHpNumOkBtn = false;
+    // hp-num-btn, hp-num2-btn은 서로 반대라서 부정문을 사용한다
+
+    if (Number(state.CertificationNumberInputBox) === state.CertificationNumber) {
+    // Number(숫자(문자열)) === 숫자(정수)
+        isConfirmModalOpenFn('인증에 성공 하였습니다.');
+        isHpOkBox = false;
+        hpCertified = true;
+        isHpNum2Btn = true;
+    } else {
+      isConfirmModalOpenFn('잘못된 인증 코드 입니다.');
+        isHpOkBox = true;
+        hpCertified = false;
+        isHpNum2Btn = false;
+    }
+    setState({
+        ...state,
+        isHp: false,
+        isHpNumOkBtn: isHpNumOkBtn,
+        isHpOkBox: isHpOkBox,
+        isHpNum2Btn: isHpNum2Btn,
+        hpCertified: hpCertified
+    })
+  }
+
+  // 12. 다른번호 인증 버튼 클릭 이벤트 구현
+  const onClickHpNum2Btn=(e)=>{
+    e.preventDefault();
+
+    setState ({
+        ...state,
+        isInputHp: false,
+        isHpNum2Btn: false,
+        isHpNumOkBtn: false,
+        isHp: true,
+        hp: '',
+        hpErrMsg: '휴대폰 번호를 입력해주세요.'
+
+    })
+  }
+
+  // 13. 인증번호 타이머카운트 이벤트 구현
+  function hpTimerCount() {
+    let setId  = 0;
+    let minute = 2;
+    let second = 59; //0~59
+
+    setId = setInterval(function () {
+        second--;
+        if (second < 0) {
+        second = 59;
+        minute--;
+        if (minute < 0) {
+          clearInterval(setId);
+          minute = 0;
+          second = 0;
+          isConfirmModalOpenFn('유효 시간이 만료되었습니다. \n 다시 시도해 주세요.');
+          }
+        }
+
+        setState({
+            ...state,
+            setId: setId,
+            minute: minute,
+            second: second
+        })
+    }, 1000);
+  }
+
+  useEffect(() => {
+    if (isTimer) {
+      hpTimerCount(); // isTimer가 true일 때에만 타이머 함수 실행
+    }
+  }, [isTimer]);
 
   
   useEffect(() => {
@@ -393,11 +557,57 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn}) {
                  </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="text" maxLength="11" name="input-hp" id="inputHp" placeholder="아이디를 입력해주세요."/>
-                      <button disabled type="button" className="hp-num-btn">인증번호 받기</button>
+                      <input type="text"
+                      disabled={state.isInputHp}
+                      maxLength="11"
+                      name="input-hp"
+                      id="inputHp"
+                      placeholder="숫자만 입력해 주세요."
+                      onChange={onChangeHp}
+                      value={state.hp}
+                      />
+                      <button 
+                      disabled = {state.isInputHp}
+                      type="button"
+                      className={`hp-num-btn${state.isHp ? '' : ' on'}`}
+                      onClick={onClickHpCertified}
+                      >인증번호 받기</button>
+                      <button 
+                      type="button" 
+                      className={`hp-num2-btn${state.isHpNum2Btn ? ' on' : ''}`}
+                      onClick={onClickHpNum2Btn}
+                      >
+                      다른번호 인증
+                      </button>
+                      <p className={`error-message${state.isHpNum2Btn ? '' : ' on'}`}>{state.hpErrMsg}</p>
                     </div>
                   </div>
                 </li>
+                <li className={`hp-ok-box${state.isHpOkBox ? ' on' : ''}`}>
+                  {/* <li className={'hp-ok-box on'}>  타이머 확인용*/}
+                      <div className="left">
+                          <div className="left-wrap">
+                          </div>                                
+                      </div>
+                      <div className="right">
+                          <div className="right-wrap">
+                              <input type="text" maxLength={6} name='input_hp_ok' id='inputHpOk' placeholder='인증번호를 입력해 주세요.'
+                              onChange={onChangeCertificationNumberInputBox}
+                              value={state.CertificationNumberInputBox}
+                              />
+                              <span className='signup-time-count'>
+                                  {
+                                      `${state.minute < 10 ? `0${state.minute}` : state.minute}:${state.second < 10 ? `0${state.second}` : state.second}`
+                                  }
+                              </span>
+                              
+                              <button type="button" className={`hp-num-ok-btn${state.isHpNumOkBtn ? '' : ' on'}`} onClick={onClickHpOkBtn}>인증번호 확인</button>
+                              <p className='info-message hp-info-message'>
+                                  인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요. (마켓컬리 1644-1107)
+                              </p>
+                          </div>
+                      </div>
+                </li> 
                 <li>
                   <div className="left">
                     <div className="left-wrap">
@@ -553,8 +763,8 @@ SignUpComponent.propTypes = {
       isEmail: PropTypes.bool,
       emailDoubleCheck: PropTypes.bool.isRequired,          // boolean
 
-      phone: PropTypes.string.isRequired,                // number
-      phoneCertified: PropTypes.bool.isRequired,          // boolean
+      hp: PropTypes.string.isRequired,                // number
+      hpCertified: PropTypes.bool.isRequired,          // boolean
       isHp: PropTypes.bool, 
       CertificationNumber: PropTypes.number,
       CertificationNumberInputBox: PropTypes.string,
@@ -610,8 +820,8 @@ SignUpComponent.defaultProps = {
       emailErrMsg: '',
       isEmail: false,
 
-      phone: '',                     // number
-      phoneCertified: false,          // boolean
+      hp: '',                     // number
+      hpCertified: false,          // boolean
       isHp: false,
       CertificationNumber: 0,
       CertificationNumberInputBox:'',
