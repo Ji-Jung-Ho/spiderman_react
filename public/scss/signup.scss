@@ -205,20 +205,16 @@
                       color: #fff;
                       border-radius: 3px;
                       cursor: pointer;
-                      &:disabled {
-                        background-color: #f7b1b1b3;
-                        border-color: #f7b1b1b3;
-                        color: #ddd;
-                        cursor: default;
-                      }
                       &.hp-num-btn{
                         color:#ddd;
-                        border-color:#ddd;
+                        background-color: #f7b1b1b3;
+                        border-color: #f7b1b1b3;
                         cursor: default;
                         &.on{
                           cursor: pointer;
                           color:#ddd; 
                           border-color:#ddd;
+                          background: #ff0000b3;
                         }
                       }
                       &.hp-num2-btn{
@@ -255,6 +251,13 @@
                       color:#f03f40;                                            
                       z-index: 2;
                     }
+                    // 휴대폰 안내 메시지
+                    .info-message {
+                      display: block;
+                      padding: 15px 0 0 0;
+                      font-size:12px; 
+                      line-height: 140%;
+                  }
                     // 공통 에러 메시지
                     p {
                       display: none;
@@ -404,7 +407,7 @@
         z-index: 1;
         background: url(../img/sign_up/spider.PNG) no-repeat 50% 50%;
         background-size: cover;
-        opacity: 0.3;
+        opacity: 0.5;
       }
       .content {
         display: flex;
@@ -416,7 +419,7 @@
         height: 130px;
         h2 {
           font-size: 16px;
-          font-weight: 700;
+          font-weight: bold;
           color: #333;
           line-height: 150%;
           letter-spacing: -0.5px;
@@ -434,7 +437,7 @@
           height: 100%;
           background: none;   
           color: #333;
-          font-weight: 600;
+          font-weight: bold;
           font-size: 16px;
           border: 0;
           cursor: pointer;

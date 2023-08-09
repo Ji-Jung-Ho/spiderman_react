@@ -221,21 +221,17 @@
   border-radius: 3px;
   cursor: pointer;
 }
-#wrap #signUpMain #signUp .container .content form > ul > li .right .right-wrap button:disabled {
-  background-color: rgba(247, 177, 177, 0.7019607843);
-  border-color: rgba(247, 177, 177, 0.7019607843);
-  color: #ddd;
-  cursor: default;
-}
 #wrap #signUpMain #signUp .container .content form > ul > li .right .right-wrap button.hp-num-btn {
   color: #ddd;
-  border-color: #ddd;
+  background-color: rgba(247, 177, 177, 0.7019607843);
+  border-color: rgba(247, 177, 177, 0.7019607843);
   cursor: default;
 }
 #wrap #signUpMain #signUp .container .content form > ul > li .right .right-wrap button.hp-num-btn.on {
   cursor: pointer;
   color: #ddd;
   border-color: #ddd;
+  background: rgba(255, 0, 0, 0.7019607843);
 }
 #wrap #signUpMain #signUp .container .content form > ul > li .right .right-wrap button.hp-num2-btn {
   display: none;
@@ -268,6 +264,12 @@
   font-size: 14px;
   color: #f03f40;
   z-index: 2;
+}
+#wrap #signUpMain #signUp .container .content form > ul > li .right .right-wrap .info-message {
+  display: block;
+  padding: 15px 0 0 0;
+  font-size: 12px;
+  line-height: 140%;
 }
 #wrap #signUpMain #signUp .container .content form > ul > li .right .right-wrap p {
   display: none;
@@ -399,7 +401,7 @@
   z-index: 1;
   background: url(../img/sign_up/spider.PNG) no-repeat 50% 50%;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 #wrap #confirmModal .wrap .container .content {
   display: flex;
@@ -412,7 +414,7 @@
 }
 #wrap #confirmModal .wrap .container .content h2 {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: bold;
   color: #333;
   line-height: 150%;
   letter-spacing: -0.5px;
@@ -430,7 +432,7 @@
   height: 100%;
   background: none;
   color: #333;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 16px;
   border: 0;
   cursor: pointer;

@@ -259,13 +259,13 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
     let hpErrMsg = '';
     let isHp = false;
 
-    if (value.length === 0) {
-      isHp = false;
-    }
-    else {
+    if( value.length > 1 ){
       isHp = true;
     }
-    if (state.isHpNum2Btn && hp.length === 0) {
+    else {
+        isHp = false;
+    }
+    if (state.isAnotherHp && hp.length === 0) {
       hpErrMsg = '휴대폰 번호를 입력해주세요';
     }
 
@@ -273,7 +273,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
       ...state,
       hp: hp,
       isHp: isHp,
-      hpErrMsg: hpErrMsg
+      hpErrMsg: hpErrMsg,
     })
   }
   // 핸드폰 인증번호 받기 버튼 클릭 이벤트
@@ -282,35 +282,34 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
 
     const regExp2 = /^01[0|1|2|6|7|8|9]+[0-9]{3,4}[0-9]{4}$/g; // 10~11자리의 01로 시작하는 핸드폰 번호
 
-    let num = Math.floor(Math.random() * 900000 + 100000);;
-    let isHpOkBox = false;
-    let isHp = false;
+    let num = Math.floor(Math.random() * 900000 + 100000);
+    let isCertificationNumberInputBox = false;
     let isInputHp = false;
+    let isHp = true;
     let CertificationNumberInputBox = '';
 
-    if (regExp2.test(state.hp) === false) {
-      isConfirmModalOpenFn('잘못된 휴대폰 번호 입니다. 확인 후 다시 입력해 주세요.');
-      isHpOkBox = false;
-      isHp = false;
+    if( regExp2.test( state.hp )===false ){
+      isConfirmModalOpenFn('잘못된 휴대폰 번호 입니다. \n 확인 후 다시 시도해 주세요.');
+      isCertificationNumberInputBox = false;
       isInputHp = false;
-    }
-    else {
-      isConfirmModalOpenFn(`인증번호가 발송되었습니다. \n ${num}`);
-      isHpOkBox = true;
       isHp = true;
+  }
+  else {
+      isConfirmModalOpenFn(`인증번호가 발송되었습니다. \n ${num}`);
+      isCertificationNumberInputBox = true;
       isInputHp = true;
+      isHp = false;
       CertificationNumberInputBox = '';
-    }
+  }
 
-    setState ({
+    setState({
       ...state,
       CertificationNumber: num,
-      CertificationNumberInputBox : CertificationNumberInputBox,
-      isHpOkBox : isHpOkBox,
-      isHp     : isHp,
-      isInputHp : isInputHp
-  })
-
+      CertificationNumberInputBox: CertificationNumberInputBox,
+      isCertificationNumberInputBox: isCertificationNumberInputBox,
+      isHp: isHp,
+      isInputHp: isInputHp
+    });
   }
   // 10. 인증번호 입력상자 온 체인지(키업) 이벤트 구현
   const onChangeCertificationNumberInputBox=(e)=>{
@@ -342,41 +341,42 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
   const onClickHpOkBtn=(e)=>{
     e.preventDefault();
     let hpCertified = false;
-    let isHpOkBox  = true;
-    let isHpNum2Btn = false;
+    let isCertificationNumberInputBox  = true;
+    let isAnotherHp = false;
     let isHpNumOkBtn = false;
-    // hp-num-btn, hp-num2-btn은 서로 반대라서 부정문을 사용한다
+    let isHp = false;
 
     if (Number(state.CertificationNumberInputBox) === state.CertificationNumber) {
-    // Number(숫자(문자열)) === 숫자(정수)
         isConfirmModalOpenFn('인증에 성공 하였습니다.');
-        isHpOkBox = false;
+        isCertificationNumberInputBox = false;
         hpCertified = true;
-        isHpNum2Btn = true;
+        isAnotherHp = true;
+        isHp = true;
     } else {
       isConfirmModalOpenFn('잘못된 인증 코드 입니다.');
-        isHpOkBox = true;
+        isCertificationNumberInputBox = true;
         hpCertified = false;
-        isHpNum2Btn = false;
+        isAnotherHp = false;
+        isHp = false;
     }
     setState({
         ...state,
-        isHp: false,
+        isHp: isHp,
         isHpNumOkBtn: isHpNumOkBtn,
-        isHpOkBox: isHpOkBox,
-        isHpNum2Btn: isHpNum2Btn,
+        isCertificationNumberInputBox: isCertificationNumberInputBox,
+        isAnotherHp: isAnotherHp,
         hpCertified: hpCertified
     })
   }
 
   // 12. 다른번호 인증 버튼 클릭 이벤트 구현
-  const onClickHpNum2Btn=(e)=>{
+  const onClickAnotherHpBtn=(e)=>{
     e.preventDefault();
 
     setState ({
         ...state,
         isInputHp: false,
-        isHpNum2Btn: false,
+        isAnotherHp: false,
         isHpNumOkBtn: false,
         isHp: true,
         hp: '',
@@ -412,6 +412,23 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
         })
     }, 1000);
   }
+  // 주소 팝업창을 불러오는 함수
+  const addressSearchFn=()=>{
+    const _fileName = "./address_popup.html";
+    const _winName = "_address_api";
+    const _width = 530;
+    const _height = 569;
+    const _top = (window.innerHeight - _height) / 2; // 769-569=200/2=100
+    const _left = (window.innerWidth - _width) / 2; // 1903-530=1373/2=686.5
+    window.open(_fileName,_winName,`width=${_width},height=${_height},top=${_top},left=${_left}`);
+}
+
+  // 주소 검색 클릭 이벤트
+  const onClickAddressSearchBtn=(e)=>{
+    e.preventDefault();
+    // 팝업창 띄우기(열기)
+    addressSearchFn();
+}
 
   useEffect(() => {
     if (isTimer) {
@@ -557,7 +574,8 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                  </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="text"
+                      <input
+                      type="text"
                       disabled={state.isInputHp}
                       maxLength="11"
                       name="input-hp"
@@ -567,46 +585,51 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                       value={state.hp}
                       />
                       <button 
-                      disabled = {state.isInputHp}
+                      disabled = {!state.isHp}
                       type="button"
-                      className={`hp-num-btn${state.isHp ? '' : ' on'}`}
+                      className={`hp-num-btn${state.isHp ? ' on' : ''}`}
                       onClick={onClickHpCertified}
                       >인증번호 받기</button>
                       <button 
                       type="button" 
-                      className={`hp-num2-btn${state.isHpNum2Btn ? ' on' : ''}`}
-                      onClick={onClickHpNum2Btn}
+                      className={`hp-num2-btn${state.isAnotherHp ? ' on' : ''}`}
+                      onClick={onClickAnotherHpBtn}
                       >
                       다른번호 인증
                       </button>
-                      <p className={`error-message${state.isHpNum2Btn ? '' : ' on'}`}>{state.hpErrMsg}</p>
+                      <p className={`error-message${state.isAnotherHp ? '' : ' on'}`}>{state.hpErrMsg}</p>
                     </div>
                   </div>
                 </li>
-                <li className={`hp-ok-box${state.isHpOkBox ? ' on' : ''}`}>
-                  {/* <li className={'hp-ok-box on'}>  타이머 확인용*/}
-                      <div className="left">
-                          <div className="left-wrap">
-                          </div>                                
-                      </div>
-                      <div className="right">
-                          <div className="right-wrap">
-                              <input type="text" maxLength={6} name='input_hp_ok' id='inputHpOk' placeholder='인증번호를 입력해 주세요.'
-                              onChange={onChangeCertificationNumberInputBox}
-                              value={state.CertificationNumberInputBox}
-                              />
-                              <span className='signup-time-count'>
-                                  {
-                                      `${state.minute < 10 ? `0${state.minute}` : state.minute}:${state.second < 10 ? `0${state.second}` : state.second}`
-                                  }
-                              </span>
-                              
-                              <button type="button" className={`hp-num-ok-btn${state.isHpNumOkBtn ? '' : ' on'}`} onClick={onClickHpOkBtn}>인증번호 확인</button>
-                              <p className='info-message hp-info-message'>
-                                  인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요. (마켓컬리 1644-1107)
-                              </p>
-                          </div>
-                      </div>
+                <li className={`hp-ok-box${state.isCertificationNumberInputBox ? ' on' : ''}`}>
+                  <div className="left">
+                    <div className="left-wrap">
+                    </div>                                
+                  </div>
+                  <div className="right">
+                    <div className="right-wrap">
+                      <input
+                      type="text"
+                      maxLength={6}
+                      name='input_hp_ok'
+                      id='inputHpOk'
+                      placeholder='인증번호를 입력해 주세요.'
+                      onChange={onChangeCertificationNumberInputBox}
+                      value={state.CertificationNumberInputBox}
+                      />
+                      <span className='signup-time-count'>
+                        {`${state.minute < 10 ? `0${state.minute}` : state.minute}:${state.second < 10 ? `0${state.second}` : state.second}`}
+                      </span>
+                      <button
+                      type="button"
+                      className={`hp-num-ok-btn${state.isHpNumOkBtn ? ' on' : ''}`}
+                      onClick={onClickHpOkBtn}
+                      >인증번호 확인</button>
+                      <p className='info-message hp-info-message'>
+                        인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요.
+                      </p>
+                    </div>
+                  </div>
                 </li> 
                 <li>
                   <div className="left">
@@ -618,7 +641,11 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                     <div className="right-wrap">
                       <input type="text" className="addr-hide" maxLength="11" name="input-addr1" id="inputAddr1" placeholder="카카오 주소 검색 API"/>
                       <button disabled type="button" className="addr-re-btn addr-hide"><img src="./img/ico_search.svg" alt=""/>재검색</button>
-                      <button type="button" className="addr-api-btn"><img src="./img/search_btn.png" alt=""/>주소검색</button>
+                      <button
+                      type="button"
+                      className="addr-api-btn"
+                      onClick={onClickAddressSearchBtn}
+                      ><img src="./img/search_btn.png" alt=""/>주소검색</button>
                       <p className="addr-info addr-info1">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
                     </div>
                   </div>
@@ -751,8 +778,7 @@ SignUpComponent.propTypes = {
       pwErrMsg : PropTypes.string,                                         // string
       isUserPw : PropTypes.bool, 
       pwDoubleCheck: PropTypes.string.isRequired,          // string
-      pwOkErrMsg : PropTypes.string,                                         // string
-      isPwOk : PropTypes.bool, 
+      pwDoubleCheckErrMsg : PropTypes.string,                                         // string
 
       name: PropTypes.string.isRequired,                  // string
       nameErrMsg: PropTypes.string,
@@ -768,10 +794,9 @@ SignUpComponent.propTypes = {
       isHp: PropTypes.bool, 
       CertificationNumber: PropTypes.number,
       CertificationNumberInputBox: PropTypes.string,
-      isHpOkBox: PropTypes.bool,
+      isCertificationNumberInputBox: PropTypes.bool,
       isInputHp: PropTypes.bool,
-      isHpNumBtn: PropTypes.bool,
-      isHpNum2Btn: PropTypes.bool,
+      isAnotherHp: PropTypes.bool,
       isHpNumOkBtn: PropTypes.bool,
       setId: PropTypes.number,
       minute: PropTypes.number,
@@ -808,8 +833,7 @@ SignUpComponent.defaultProps = {
       pwErrMsg: '',
       isUserPw: false,
       pwDoubleCheck: '',               // string
-      pwOkErrMsg: '',
-      isPwOk: false,
+      pwDoubleCheckErrMsg: '',
 
       name: '',                       // string
       nameErrMsg: '',
@@ -825,10 +849,9 @@ SignUpComponent.defaultProps = {
       isHp: false,
       CertificationNumber: 0,
       CertificationNumberInputBox:'',
-      isHpOkBox : false,
+      isCertificationNumberInputBox : false,
       isInputHp : false,
-      isHpNumBtn : false,
-      isHpNum2Btn : false,
+      isAnotherHp : false,
       isHpNumOkBtn: false,
       setId: 0,
       minute: 2,
