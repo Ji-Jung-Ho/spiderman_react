@@ -412,7 +412,14 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
         })
     }, 1000);
   }
-  // 주소 팝업창을 불러오는 함수
+
+  useEffect(() => {
+    if (isTimer) {
+      hpTimerCount(); // isTimer가 true일 때에만 타이머 함수 실행
+    }
+  }, [isTimer]);
+
+  // 주소 팝업창 (다음 주소 검색 api)을 불러오는 함수
   const addressSearchFn=()=>{
     const _fileName = "./address_popup.html";
     const _winName = "_address_api";
@@ -421,21 +428,78 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
     const _top = (window.innerHeight - _height) / 2; // 769-569=200/2=100
     const _left = (window.innerWidth - _width) / 2; // 1903-530=1373/2=686.5
     window.open(_fileName,_winName,`width=${_width},height=${_height},top=${_top},left=${_left}`);
-}
+  }
 
   // 주소 검색 클릭 이벤트
   const onClickAddressSearchBtn=(e)=>{
     e.preventDefault();
     // 팝업창 띄우기(열기)
     addressSearchFn();
+  }
+
+// 주소 재검색 버튼 클릭 이벤트 구현
+const onClickAddrReBtn=(e)=>{
+  e.preventDefault();
+  addressSearchFn();
 }
 
-  useEffect(() => {
-    if (isTimer) {
-      hpTimerCount(); // isTimer가 true일 때에만 타이머 함수 실행
-    }
-  }, [isTimer]);
+  const getSessionAddress=()=>{
+    function getPromise(){
+      return new Promise((success, error) => {
+        let address1 = '';
+        let address2 = '';
+        let isAddrHide = false;
+        let isAddrApiBtn = false;
+        
+        if ( sessionStorage.getItem('kurly_search_address') !== null ) {
+            try {
+                address1 = JSON.parse(`${sessionStorage.getItem('kurly_search_address')}`).address1
+                address2 = JSON.parse(`${sessionStorage.getItem('kurly_search_address')}`).address2
+                isAddrHide = true;
+                isAddrApiBtn = true;
 
+                // 주소 객체 생성
+                const Obj = {
+                    address1: address1,
+                    address2: address2,
+                    isAddrHide: isAddrHide,
+                    isAddrApiBtn: isAddrApiBtn
+                }
+                success(Obj);
+            }
+            catch {
+                error('검색 주소가 없습니다.')
+            }
+        }
+        else {
+            address1 = '';
+            address2 = '';
+            isAddrHide = false;
+            isAddrApiBtn = false;
+
+            error('주소가져오기 오류(주소값 없음)');
+        }
+      });
+    }
+    // 세션에서 주소를 가져오고 성공하면 성공 객체 데이터를 가져와서 state에 저장
+    getPromise()
+    .then((res)=>{
+      setState({
+        ...state,
+        address1: res.address1,
+        address2: res.address2,
+        isAddrHide: res.isAddrHide,
+        isAddrApiBtn: res.isAddrApiBtn
+      });
+    })
+    .catch((err)=>{
+      return console.log(err);
+    });
+  }
+
+  React.useEffect(()=>{
+    getSessionAddress();
+  },[state.address1, state.address2])
   
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -639,18 +703,33 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="text" className="addr-hide" maxLength="11" name="input-addr1" id="inputAddr1" placeholder="카카오 주소 검색 API"/>
-                      <button disabled type="button" className="addr-re-btn addr-hide"><img src="./img/ico_search.svg" alt=""/>재검색</button>
+                      <input 
+                      type="text"
+                      className={`addr-hide${state.isAddrHide ? ' on' : ''}`} 
+                      maxLength="11"
+                      name="input-addr1"
+                      id="inputAddr1"
+                      placeholder="카카오 주소 검색 API"
+                      value={state.address1}
+                      />
+                      <button 
+                      disabled 
+                      type="button" 
+                      className={`addr-hide addr-re-btn${state.isAddrHide ? ' on' : ''}`} 
+                      onClick={onClickAddrReBtn}
+                      >
+                      <img src="./img/ico_search.svg" alt=""/>재검색</button>
                       <button
                       type="button"
-                      className="addr-api-btn"
+                      className={`addr-api-btn${state.isAddrApiBtn ? ' on' : ''}`}
                       onClick={onClickAddressSearchBtn}
-                      ><img src="./img/search_btn.png" alt=""/>주소검색</button>
+                      >
+                      <img src="./img/search_btn.png" alt=""/>주소검색</button>
                       <p className="addr-info addr-info1">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
                     </div>
                   </div>
                 </li>
-                <li className="addr-hide">
+                <li className={`addr-hide${state.isAddrHide ? ' on' : ''}`}>
                   <div className="left">
                     <div className="left-wrap">
                         
@@ -658,11 +737,18 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input type="text" maxLength="11" name="input-addr2" id="inputAddr2" placeholder="나머지 주소를 입력하세요"/>
+                      <input
+                      type="text"
+                      maxLength="11"
+                      name="input-addr2"
+                      id="inputAddr2"
+                      placeholder="나머지 주소를 입력하세요"
+                      value={state.address2}
+                      />
                     </div>
                   </div>
                 </li>
-                <li className="addr-hide">
+                <li className={`addr-hide${state.isAddrHide ? ' on' : ''}`}>
                   <div className="left">
                     <div className="left-wrap">
                         

@@ -11,6 +11,8 @@
 }
 #wrap .container .address-form {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 #wrap .container .address-form .title {
   text-align: center;
