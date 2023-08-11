@@ -94,26 +94,6 @@
                     label {
                         color: #fff;
                     }
-                    // 성별
-                    &.gender,           
-                    // 추가입력 사항
-                    &.add-input-box1 {  
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      height: 46px;
-                    }
-                    // 추가입력 사항 - 가이드 텍스트
-                    &.add-input-box2 {  
-                      display: none;
-                      p {
-                        padding-top: 15px;
-                        font-size: 12px;
-                        line-height: 150%;
-                        letter-spacing: -0.3px;
-                        color: #666;
-                      }
-                    }
                     // 생년월일
                     &.birth { //생년월일
                       .birth-box {
@@ -145,6 +125,8 @@
                               text-align: center;
                               background: #18212b;
                               color: #fff;
+                              text-indent: 20px;
+                              font-size: 16px;
                             }
                           }
                         }
@@ -175,22 +157,11 @@
                       }
                       &.addr-hide {
                         display: none;
+                        &.on{
+                          display: block;
+                        }
                       }
                     }     
-                    // 성별, 추가입력 사항
-                    input[type="radio"] {
-                      width: 24px;
-                      height: 24px;
-                      margin-right: 12px;
-                      border: 1px solid #ccc;
-                      border-radius: 50%;
-                      // radio, checkbox의 UI/UX디자인을 하려면 본래의 모습(appearance)을 사용하지 않겠다고 속성 지정을 해야함
-                      appearance: none;
-                      &:checked {     // 선택(checked)된것만 스타일을 변경
-                        border: 7px solid #f00;
-                        border-radius: 50%;
-                      }
-                    }
                     // 버튼 공통 요소
                     button {
                       position: absolute;
@@ -241,6 +212,15 @@
                           display: none;
                         }
                       }
+                      span {
+                        display: flex;
+                        justify-content: center;
+                        img {
+                          width: 20px;
+                          height: 20px;
+                          margin-right: 3px;
+                        }
+                      }
                     }
                     // 휴대폰 타이머 카운트
                     .signup-time-count {
@@ -270,7 +250,7 @@
                     }
                     // 주소
                     em.addr-map-area {
-                      color: #5f0080;
+                      color: #f03f40;
                       font-size: 12px;
                     }
                     p.addr-info {
@@ -278,6 +258,7 @@
                       color: #666;
                       font-size: 12px;
                       &.addr-info1 {
+                        display: block;
                         &.on {
                           display: none;
                         }

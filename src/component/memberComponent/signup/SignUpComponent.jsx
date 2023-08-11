@@ -311,7 +311,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
       isInputHp: isInputHp
     });
   }
-  // 10. 인증번호 입력상자 온 체인지(키업) 이벤트 구현
+  // 인증번호 입력상자 온 체인지(키업) 이벤트 구현
   const onChangeCertificationNumberInputBox=(e)=>{
     const {value} = e.target;
     const regExp1 = /[^\d]/g;
@@ -336,8 +336,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
         isHpNumOkBtn: isHpNumOkBtn
       })
   }
-
-  // 11. 인증번호 확인 버튼 클릭 이벤트 구현
+  // 인증번호 확인 버튼 클릭 이벤트 구현
   const onClickHpOkBtn=(e)=>{
     e.preventDefault();
     let hpCertified = false;
@@ -368,8 +367,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
         hpCertified: hpCertified
     })
   }
-
-  // 12. 다른번호 인증 버튼 클릭 이벤트 구현
+  // 다른번호 인증 버튼 클릭 이벤트 구현
   const onClickAnotherHpBtn=(e)=>{
     e.preventDefault();
 
@@ -384,8 +382,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
 
     })
   }
-
-  // 13. 인증번호 타이머카운트 이벤트 구현
+  // 인증번호 타이머카운트 이벤트 구현
   function hpTimerCount() {
     let setId  = 0;
     let minute = 2;
@@ -412,37 +409,52 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
         })
     }, 1000);
   }
-
   useEffect(() => {
     if (isTimer) {
       hpTimerCount(); // isTimer가 true일 때에만 타이머 함수 실행
     }
   }, [isTimer]);
 
-  // 주소 팝업창 (다음 주소 검색 api)을 불러오는 함수
+  // 카카오 주소검색 api 팝업창
   const addressSearchFn=()=>{
-    const _fileName = "./address_popup.html";
-    const _winName = "_address_api";
-    const _width = 530;
+    const _fileName = './address_popup.html';
+    const _winName = '_address_api';
+    const _width = 550;
     const _height = 569;
-    const _top = (window.innerHeight - _height) / 2; // 769-569=200/2=100
-    const _left = (window.innerWidth - _width) / 2; // 1903-530=1373/2=686.5
-    window.open(_fileName,_winName,`width=${_width},height=${_height},top=${_top},left=${_left}`);
+    const _top =  (window.innerHeight-420)/2;
+    const _left = (window.innerWidth-_width)/2;
+    window.open( _fileName , _winName ,`width=${_width},height=${_height},top=${_top},left=${_left}`);
   }
-
-  // 주소 검색 클릭 이벤트
+  // 주소검색 버튼 클릭 이벤트 구현
   const onClickAddressSearchBtn=(e)=>{
     e.preventDefault();
-    // 팝업창 띄우기(열기)
     addressSearchFn();
   }
+  // address1 입력상자 입력 이벤트 구현
+  const onChangeInputAddr1=(e)=>{
+    // const {value} = e.target;
 
-// 주소 재검색 버튼 클릭 이벤트 구현
-const onClickAddrReBtn=(e)=>{
-  e.preventDefault();
-  addressSearchFn();
-}
+    // setState({
+    //     ...state,
+    //     address1: value
+    // })
+  }
+  // address2 입력상자 입력 이벤트 구현
+  const onChangeInputAddr2=(e)=>{
+    // const {value} = e.target;
 
+    // setState({
+    //     ...state,
+    //     address2: value
+    // })
+  }
+  // 주소 재검색 버튼 클릭 이벤트 구현
+  const onClickAddrReBtn=(e)=>{
+      e.preventDefault();
+      addressSearchFn();
+  }
+  // 로딩시 세션스토리지에 저장된 값(search_address) 불러오고 유지하기
+  // 비동기 방식으로 처리 (Promise)
   const getSessionAddress=()=>{
     function getPromise(){
       return new Promise((success, error) => {
@@ -450,57 +462,112 @@ const onClickAddrReBtn=(e)=>{
         let address2 = '';
         let isAddrHide = false;
         let isAddrApiBtn = false;
-        
-        if ( sessionStorage.getItem('kurly_search_address') !== null ) {
-            try {
-                address1 = JSON.parse(`${sessionStorage.getItem('kurly_search_address')}`).address1
-                address2 = JSON.parse(`${sessionStorage.getItem('kurly_search_address')}`).address2
-                isAddrHide = true;
-                isAddrApiBtn = true;
+            
+        if ( sessionStorage.getItem('search_address') !== null ) {
+          try {
+            address1 = JSON.parse(`${sessionStorage.getItem('search_address')}`).address1
+            address2 = JSON.parse(`${sessionStorage.getItem('search_address')}`).address2
+            isAddrHide = true;
+            isAddrApiBtn = true;
 
-                // 주소 객체 생성
-                const Obj = {
-                    address1: address1,
-                    address2: address2,
-                    isAddrHide: isAddrHide,
-                    isAddrApiBtn: isAddrApiBtn
-                }
-                success(Obj);
+            // 주소 객체 생성
+            const Obj = {
+              address1: address1,
+              address2: address2,
+              isAddrHide: isAddrHide,
+              isAddrApiBtn: isAddrApiBtn
             }
-            catch {
-                error('검색 주소가 없습니다.')
-            }
+            success(Obj);
+          }
+          catch {
+            error('검색 주소가 없습니다.')
+          }
         }
         else {
-            address1 = '';
-            address2 = '';
-            isAddrHide = false;
-            isAddrApiBtn = false;
-
-            error('주소가져오기 오류(주소값 없음)');
+          address1 = '';
+          address2 = '';
+          isAddrHide = false;
+          isAddrApiBtn = false;
+          error('주소가져오기 오류(주소값 없음)');
         }
       });
     }
-    // 세션에서 주소를 가져오고 성공하면 성공 객체 데이터를 가져와서 state에 저장
-    getPromise()
-    .then((res)=>{
-      setState({
-        ...state,
-        address1: res.address1,
-        address2: res.address2,
-        isAddrHide: res.isAddrHide,
-        isAddrApiBtn: res.isAddrApiBtn
+      // 세션에서 주소를 가져오고 성공하면 성공 객체 데이터를 가져와서 state에 저장
+      getPromise()
+      .then((res)=>{
+        setState({
+          ...state,
+          address1: res.address1,
+          address2: res.address2,
+          isAddrHide: res.isAddrHide,
+          isAddrApiBtn: res.isAddrApiBtn
+        });
+      })
+      .catch((err)=>{
+        return console.log(err);
       });
-    })
-    .catch((err)=>{
-      return console.log(err);
-    });
   }
-
   React.useEffect(()=>{
-    getSessionAddress();
+      getSessionAddress();
   },[state.address1, state.address2])
-  
+
+  // 생년 입력상자 입력 이벤트 구현
+  const onChangeYear=(e)=>{
+    const regExp1 = /[^\d]/g;
+    const {value} = e.target;
+    const birthYear = value.replace(regExp1, '');
+
+    setState({
+      ...state,
+      birthYear: birthYear
+    })
+  }
+  // 생월 입력상자 입력 이벤트 구현
+  const onChangeMonth=(e)=>{
+    const regExp1 = /[^\d]/g;
+    const {value} = e.target;
+    const birthMonth = value.replace(regExp1, '');
+
+    setState({
+      ...state,
+      birthMonth: birthMonth
+    })
+  }
+  // 생일 입력상자 입력 이벤트 구현
+  const onChangeDate=(e)=>{
+    const regExp1 = /[^\d]/g;
+    const {value} = e.target;
+    const birthDate = value.replace(regExp1, '');
+
+    setState({
+      ...state,
+      birthDate: birthDate
+    })
+  }
+  // 생년월일 전체 입력상자 입력 이벤트 구현
+  useEffect(()=>{
+    const newYear = new Date().getFullYear(); // 현재년도  숫자
+    const regExp2 = /^(?:0?[1-9]|1[0-2])$/g; // 생월 01 ~ 09 또는 1 ~ 9 | 10 11 12
+    const regExp3 = /^(?:0?[1-9]|1[0-9]|2[0-9]|3[0-1])$/g; // 생월 01 ~ 09 또는 1 ~ 9 | 10 ~ 19 | 20~29| 30-31
+    let isBirth = false;
+    let birthErrMsg = '';
+
+    if (state.birthYear === '' &&  state.birthMonth === '' && state.birthDate === '') {
+      isBirth = true;
+      birthErrMsg = '';
+    }
+    else {
+      if (Number(state.birthYear) > newYear) {
+        isBirth = false;
+        birthErrMsg = '생년월일이 미래로 입력 되었습니다.';
+      }
+      else if (Number(state.birthYear) < newYear) {
+
+      }
+    }
+
+  })
+
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
@@ -698,69 +765,67 @@ const onClickAddrReBtn=(e)=>{
                 <li>
                   <div className="left">
                     <div className="left-wrap">
-                      <label htmlFor=""><strong>주소</strong><i>*</i></label>
-                    </div>
+                      <label htmlFor="inputAddr"><strong>주소</strong><i>*</i></label>
+                    </div>                                
                   </div>
                   <div className="right">
                     <div className="right-wrap">
-                      <input 
-                      type="text"
+                      <input type="text" 
                       className={`addr-hide${state.isAddrHide ? ' on' : ''}`} 
-                      maxLength="11"
-                      name="input-addr1"
-                      id="inputAddr1"
-                      placeholder="카카오 주소 검색 API"
+                      name='input_addr1'
+                      id='inputAddr1'
+                      placeholder='카카오 주소 검색 API'
+                      onChange={onChangeInputAddr1}
                       value={state.address1}
+                      disabled={state.isAddrHide}
                       />
-                      <button 
-                      disabled 
-                      type="button" 
+                      <button
+                      type="button"
                       className={`addr-hide addr-re-btn${state.isAddrHide ? ' on' : ''}`} 
                       onClick={onClickAddrReBtn}
                       >
-                      <img src="./img/ico_search.svg" alt=""/>재검색</button>
+                      <span><img src="./img/sign_up/ico_search.svg" alt=""/>재검색</span>
+                      </button>
                       <button
                       type="button"
                       className={`addr-api-btn${state.isAddrApiBtn ? ' on' : ''}`}
                       onClick={onClickAddressSearchBtn}
                       >
-                      <img src="./img/search_btn.png" alt=""/>주소검색</button>
-                      <p className="addr-info addr-info1">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
-                    </div>
-                  </div>
-                </li>
-                <li className={`addr-hide${state.isAddrHide ? ' on' : ''}`}>
+                      <img src="./img/sign_up/ico_search.svg" alt=""/>주소검색</button>                                
+                  </div>                                    
+                </div>
+              </li>                        
+              <li className={`addr-hide${state.isAddrHide ? ' on' : ''}`}>
                   <div className="left">
                     <div className="left-wrap">
-                        
-                    </div>
+                    </div>                                
                   </div>
                   <div className="right">
                     <div className="right-wrap">
                       <input
                       type="text"
-                      maxLength="11"
-                      name="input-addr2"
-                      id="inputAddr2"
-                      placeholder="나머지 주소를 입력하세요"
+                      name='input_addr2'
+                      id='inputAddr2'
+                      placeholder='나머지 주소를 입력해주세요'
+                      onChange={onChangeInputAddr2}
                       value={state.address2}
-                      />
+                      disabled={state.isAddrHide}
+                      />                                        
                     </div>
                   </div>
-                </li>
-                <li className={`addr-hide${state.isAddrHide ? ' on' : ''}`}>
-                  <div className="left">
-                    <div className="left-wrap">
-                        
-                    </div>
+              </li>                        
+              <li className={`addr-hide${state.isAddrHide ? ' on' : ''}`}>
+                <div className="left">
+                  <div className="left-wrap">
+                </div>
+              </div>
+              <div className="right">
+                  <div className="right-wrap">
+                    <em className='addr-map-area'>샛별배송</em>
+                    <p className={`addr-info addr-info2${state.isAddrHide ? ' on' : ''}`}>배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
                   </div>
-                  <div className="right">
-                    <div className="right-wrap">
-                      <em className="addr-map-area">샛별배송</em>
-                      <p className="addr-info addr-info2">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
-                    </div>
-                  </div>
-                </li>
+                </div>
+              </li>  
                 <li>
                   <div className="left">
                     <div className="left-wrap">
@@ -771,25 +836,34 @@ const onClickAddrReBtn=(e)=>{
                     <div className="right-wrap birth">
                       <div className="birth-box">
                         <ul>
-                          <li><input type="text" name="year" id="year" placeholder="YYYY"/></li>
+                          <li><input
+                          type="text"
+                          name="year"
+                          id="year"
+                          placeholder="YYYY"
+                          onChange={onChangeYear}
+                          value={state.birthYear}
+                          /></li>
                           <li><i>/</i></li>
-                          <li><input type="text" name="month" id="month" placeholder="MM"/></li>
+                          <li><input
+                          type="text"
+                          name="month"
+                          id="month"
+                          placeholder="MM"
+                          onChange={onChangeMonth}
+                          value={state.birthMonth}
+                          /></li>
                           <li><i>/</i></li>
-                          <li><input type="text" name="date" id="date" placeholder="DD"/></li>
+                          <li><input
+                          type="text"
+                          name="date"
+                          id="date"
+                          placeholder="DD"
+                          onChange={onChangeDate}
+                          value={state.birthDate}
+                          /></li>
                         </ul>
                       </div>
-                    </div>
-                  </div>
-                </li>
-                <li className="add-input-box-list">
-                  <div className="left">
-                    <div className="left-wrap">
-                    </div>
-                  </div>
-                  <div className="right">
-                    <div className="right-wrap add-input-box2">
-                      <input type="text" name="add-input-text" id="add-input-text" placeholder="추천인 아이디를 입력해주세요"/>
-                      <p className="add-input-guid-text">가입 후 7일 내 첫 주문 배송완료 시, 친구초대 이벤트 적립금이 지급됩니다.</p>
                     </div>
                   </div>
                 </li>
@@ -894,13 +968,11 @@ SignUpComponent.propTypes = {
       isAddrHide: PropTypes.bool,   
       isAddrApiBtn: PropTypes.bool,   
 
-      gender: PropTypes.string,                             // string
-
       birthYear: PropTypes.string,                             // number
       birthMonth: PropTypes.string,                             // number
-      birthDay: PropTypes.string,                             // number
+      birthDate: PropTypes.string,                             // number
       isBirth : PropTypes.bool,
-      text: PropTypes.string,
+      birthErrMsg: PropTypes.string,
 
       AgreetoTermsofUseContent: PropTypes.array,
       AgreetoTermsofUse: PropTypes.array.isRequired,           // 배열 array
@@ -949,13 +1021,11 @@ SignUpComponent.defaultProps = {
       isAddrHide: false,
       isAddrApiBtn: false,
 
-      gender: "선택안함",                       // string
-
       birthYear: '',                       // number
       birthMonth: '',                       // number
-      birthDay: '',                       // number
+      birthDate: '',                       // number
       isBirth: false,
-      text: '',
+      birthErrMsg: '',
 
       AgreetoTermsofUseContent: [
           `이용약관 동의(필수)`,
