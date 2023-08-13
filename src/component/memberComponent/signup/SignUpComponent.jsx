@@ -561,12 +561,34 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
         isBirth = false;
         birthErrMsg = '생년월일이 미래로 입력 되었습니다.';
       }
-      else if (Number(state.birthYear) < newYear) {
-
+      else if (Number(state.birthYear) < newYear-100) {
+        isBirth = false;
+        birthErrMsg = '생년월일을 다시 확인해주세요.';
+      }
+      else if (Number(state.birthYear) >= newYear - 14) {
+        isBirth = false;
+        birthErrMsg = '만 14세 미만은 가입이 불가합니다.'
+      }
+      else {
+        if (regExp2.test(state.birthMonth) === false) {
+          isBirth = false;
+          birthErrMsg = '태어난 월을 정확하게 입력해 주세요.'
+        }
+        else {
+          if (regExp3.test(state.birthDate) === false) {
+            isBirth = false;
+            birthErrMsg = '태어난 일을 정확하게 입력해 주세요.'
+          }
+        }
       }
     }
+    setState({
+      ...state,
+      isBirth: isBirth,
+      birthErrMsg: birthErrMsg
+    });
 
-  })
+  },[state.birthYear, state.birthMonth, state.birthDate])
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -841,6 +863,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                           name="year"
                           id="year"
                           placeholder="YYYY"
+                          maxLength={4}
                           onChange={onChangeYear}
                           value={state.birthYear}
                           /></li>
@@ -850,6 +873,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                           name="month"
                           id="month"
                           placeholder="MM"
+                          maxLength={2}
                           onChange={onChangeMonth}
                           value={state.birthMonth}
                           /></li>
@@ -859,11 +883,13 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                           name="date"
                           id="date"
                           placeholder="DD"
+                          maxLength={2}
                           onChange={onChangeDate}
                           value={state.birthDate}
                           /></li>
                         </ul>
                       </div>
+                      <p className={`error-message${state.isBirth ? '' : ' on'}`}>{state.birthErrMsg}</p>
                     </div>
                   </div>
                 </li>
