@@ -21,7 +21,7 @@ export default function ConfirmModalComponent ({msg, isConfirmModalCloseFn}) {
               className='modal-ok-btn'
               onClick={onClickClose}
             >
-              확인
+              <span className='confirm-modal-btn-span'>확인</span>
             </button>
           </div>
         </div>

@@ -553,7 +553,7 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
     let birthErrMsg = '';
 
     if (state.birthYear === '' &&  state.birthMonth === '' && state.birthDate === '') {
-      isBirth = true;
+      isBirth = false;
       birthErrMsg = '';
     }
     else {
@@ -579,6 +579,10 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
             isBirth = false;
             birthErrMsg = '태어난 일을 정확하게 입력해 주세요.'
           }
+          else {
+            isBirth = true;
+            birthErrMsg = ''
+          }
         }
       }
     }
@@ -589,6 +593,94 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
     });
 
   },[state.birthYear, state.birthMonth, state.birthDate])
+
+  // 이용약관동의 체크박스 전체 클릭 이벤트 구현
+  const onChangeAgreetoTermsofUseAllCheck=(e)=>{
+    const {checked} = e.target;
+    let AgreetoTermsofUse = [];
+
+    if (checked) {
+      AgreetoTermsofUse = state.AgreetoTermsofUseContent;
+    }
+    else {
+      AgreetoTermsofUse = [];
+    }
+
+    setState({
+      ...state,
+      AgreetoTermsofUse: AgreetoTermsofUse
+    })
+  }
+  // 이용약관동의 체크박스 개별 클릭 이벤트 구현
+  const onChangeAgreetoTermsofUseCheck=(e)=>{
+    const {value, checked} = e.target;
+    let filteredAgreements = [];
+
+    if (checked === true) {     // 체크되면 배열안에 값 저장
+      // 무료배송 체크 시 (SMS, 이메일) 상태변수 저장
+      if (value === '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)') {
+        // SMS와 이메일 모두 이용약관동의에 없다면 저장
+        if (state.AgreetoTermsofUse.includes('SMS') === false && state.AgreetoTermsofUse.includes('이메일') === false) {
+          setState({...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value, 'SMS', '이메일']});
+        }
+        else if (state.AgreetoTermsofUse.includes('SMS') === true && state.AgreetoTermsofUse.includes('이메일') === false) {
+          setState({...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value, '이메일']});
+        }
+        else if (state.AgreetoTermsofUse.includes('SMS') === false && state.AgreetoTermsofUse.includes('이메일') === true) {
+          setState({...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value, 'SMS']});
+        }
+        else if (state.AgreetoTermsofUse.includes('SMS') === true && state.AgreetoTermsofUse.includes('이메일') === true) {
+          setState({...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value]});
+        }
+      }
+      // SMS, 이메일이 둘다 체크 되면 무료배송 체크 
+      // SMS === false, 이메일 === true 인 경우
+      // 이메일 체크되있고, SMS은 체크가 안되어 있는 상태
+      else if (value === 'SMS' && state.AgreetoTermsofUse.includes('이메일') === true) {   
+        setState({...state,AgreetoTermsofUse: [...state.AgreetoTermsofUse, '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)', value]})
+      }
+      // SMS === true, 이메일 === false 인 경우
+      // SMS 체크되있고, 이메일은 체크가 안되어 있는 상태
+      else if (value === '이메일' && state.AgreetoTermsofUse.includes('SMS') === true) {
+        setState({...state,AgreetoTermsofUse: [...state.AgreetoTermsofUse, '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)', value]})
+      }
+      // 그외 체크박스
+      else {
+        setState({...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value]});
+      }
+    }
+    else {  // 체크해제되면 배열에서 삭제
+      // 전체 체크 해제
+      if (value === '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)') {
+        // 무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택) 제거
+        // SMS 제거
+        // 이메일 제거
+        // 재배열 저장
+        filteredAgreements = state.AgreetoTermsofUse.filter((item)=>item !== '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)');
+        filteredAgreements = filteredAgreements.filter((item)=>item !== 'SMS')
+        filteredAgreements = filteredAgreements.filter((item)=>item !== '이메일')
+        setState({...state,AgreetoTermsofUse: filteredAgreements});
+      }
+      // SMS, 이메일 둘중 하나만 체크 해제되면 무료배송은 무조건 배열안에서 삭제
+      // SMS, 이메일 둘다 체크되어 있을 때 SMS만 체크 해제했을 경우
+      else if (value === 'SMS' && state.AgreetoTermsofUse.includes('이메일') === true) {
+        filteredAgreements = state.AgreetoTermsofUse.filter((item)=>item !== '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)');
+        filteredAgreements = filteredAgreements.filter((item)=>item !== 'SMS');
+        setState({...state,AgreetoTermsofUse: filteredAgreements});
+      }
+      // 이메일, SMS 둘다 체크되어 있을 때 이메일만 체크 해제했을 경우
+      else if (value === '이메일' && state.AgreetoTermsofUse.includes('SMS') === true) {
+        filteredAgreements = state.AgreetoTermsofUse.filter((item)=>item !== '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)');
+        filteredAgreements = filteredAgreements.filter((item)=>item !== '이메일');
+        setState({...state,AgreetoTermsofUse: filteredAgreements});
+      }
+      else {
+        filteredAgreements = state.AgreetoTermsofUse.filter((item)=>item !== value);
+        setState({...state,AgreetoTermsofUse: filteredAgreements});
+      }
+    }
+  }
+
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -906,33 +998,33 @@ export default function SignUpComponent({회원, isConfirmModalOpenFn, isTimer})
                     <div className="right-wrap service">
                       <ul>
                         <li>
-                          <label htmlFor="allChk"><input type="checkbox" name="all_chk" id="allChk" className="chk-btn" value=""/>전체 동의합니다.</label>
+                          <label htmlFor="allChk"><input type="checkbox" onChange={onChangeAgreetoTermsofUseAllCheck} checked={state.AgreetoTermsofUse.length === 7} name="all_chk" id="allChk" className="chk-btn" value=""/>전체 동의합니다.</label>
                           <p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
                         </li>
                         <li>
-                          <label htmlFor="chk1"><input type="checkbox" name="chk1" id="chk1" className="chk-btn" value=""/>이용약관 동의</label>(필수)
-                          <button type="button"><span>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
+                        <label htmlFor="chk1"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('이용약관 동의(필수)')} name='chk1' id='chk1'  className='chk-btn'  value='이용약관 동의(필수)'/>이용약관 동의(필수)</label>
+                          <button type="button"><span className='viewTerms'>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
                         </li>
                         <li>
-                          <label htmlFor="chk2"><input type="checkbox" name="chk2" id="chk2" className="chk-btn" value=""/>개인정보 수집∙이용 동의</label>(필수)
-                          <button type="button"><span>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
+                          <label htmlFor="chk2"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('개인정보 수집∙이용 동의(필수)')} name="chk2" id="chk2" className="chk-btn" value="개인정보 수집∙이용 동의(필수)"/>개인정보 수집∙이용 동의</label>(필수)
+                          <button type="button"><span className='viewTerms'>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
                         </li>
                         <li>
-                          <label htmlFor="chk3"><input type="checkbox" name="chk3" id="chk3" className="chk-btn" value=""/>개인정보 수집∙이용 동의</label>(선택)
-                          <button type="button"><span>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
+                          <label htmlFor="chk3"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('개인정보 수집∙이용 동의(선택)')} name="chk3" id="chk3" className="chk-btn" value="개인정보 수집∙이용 동의(선택)"/>개인정보 수집∙이용 동의</label>(선택)
+                          <button type="button"><span className='viewTerms'>약관보기</span><img src="./img/sign_up/arrow_right.png" alt=""/></button>
                         </li>
                         <li>
-                          <label htmlFor="chk4"><input type="checkbox" name="chk4" id="chk4" className="chk-btn" value=""/>무료배송, 할인쿠폰 등 혜택/정보 수신 동의</label>(선택)
+                          <label htmlFor="chk4"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)')} name="chk4" id="chk4" className="chk-btn" value="무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)"/>무료배송, 할인쿠폰 등 혜택/정보 수신 동의</label>(선택)
                         </li>
-                        <li>
-                          <label htmlFor="chk5"><input type="checkbox" name="chk5" id="chk5" className="chk-btn" value="SMS"/>SMS</label>
-                          <label htmlFor="chk6" className='chk6'><input type="checkbox" name="chk6" id="chk6" className="chk-btn" value="이메일"/>이메일</label>
+                        <li className='smsEmail'>
+                          <label htmlFor="chk5"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('SMS')} name="chk5" id="chk5" className="chk-btn" value="SMS"/>SMS</label>
+                          <label htmlFor="chk6" className='chk6'><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('이메일')} name="chk6" id="chk6" className="chk-btn" value="이메일"/>이메일</label>
                         </li>
                         <li>
                           <p>동의 시 한 달간 [5%적립] + [2만원 이상 무료배송] 첫 주문 후 안내</p>
                         </li>
                         <li>
-                          <label htmlFor="chk7"><input type="checkbox" name="chk7" id="chk7" className="chk-btn" value=""/>본인은 만 14세 이상입니다.</label>(필수)
+                          <label htmlFor="chk7"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('본인은 만 14세 이상입니다.(필수)')} name="chk7" id="chk7" className="chk-btn" value="본인은 만 14세 이상입니다.(필수)"/>본인은 만 14세 이상입니다.</label>(필수)
                         </li>
                       </ul>
                     </div>
@@ -1058,7 +1150,7 @@ SignUpComponent.defaultProps = {
           `개인정보 수집∙이용 동의(필수)`,
           `개인정보 수집∙이용 동의(선택)`,
           `무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)`,
-          `SNS`,
+          `SMS`,
           `이메일`,
           `본인은 만 14세 이상입니다.(필수)`
       ],
