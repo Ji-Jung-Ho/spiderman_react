@@ -6,26 +6,32 @@
   user-select: none;
   background-color: #202020;
   border-bottom: 1px solid #fff;
+
   .row1 {
     width: 100%;
     height: 100px;
     margin-top: -100px;
     border-bottom: 1px solid #393939;
     transition: all 0.3s;
+
     &.active {
       margin-top: 0px;
     }
+
     .row1-container {
       width: 100%;
       max-width: 1450px;
       margin: 0 auto;
+
       nav {
         display: flex;
         justify-content: space-around;
         align-items: center;
+
         a {
           display: flex;
           align-items: center;
+
           .img-box {
             display: flex;
             height: 100px;
@@ -35,36 +41,42 @@
             justify-content: center;
             border-right: 1px solid #393939;
             border-left: 1px solid #393939;
-            font-family: 'Homoarakhn','sans-serif';
+            font-family: 'Homoarakhn', 'sans-serif';
+
             img {
               width: 50px;
               height: 50px;
               margin-bottom: 10px;
             }
+
             span {
               font-size: 15px;
             }
           }
-          
+
         }
       }
     }
   }
+
   .row2 {
     width: 100%;
-    height: 70px;
+    height: 90px;
     display: flex;
+
     .row2-container {
       width: 100%;
       max-width: 1450px;
       margin: 0 auto;
       display: flex;
+
       .menu-btn {
         width: 500px;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: start;
+
         button {
           display: flex;
           position: relative;
@@ -72,28 +84,37 @@
           align-items: center;
           cursor: pointer;
           border: 0;
-          background:none;
+          background: none;
+
           img {
             width: 100%;
           }
         }
       }
+
       .title {
-        width: 500px;
+        width: 100%;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+
         a {
-        color: #000;
-        font-family: 'Homoarakhn','sans-serif';
-        text-shadow: 2px 5px 5px rgb(255,0,0);
+          // color: #000;
+          font-family: 'Homoarakhn', 'sans-serif';
+          text-shadow: 2px 5px 5px rgb(255, 0, 0);
+
+          .main-title {
+            font-size: 50px;
+          }
+
           img {
             width: 500px;
             height: 50px;
           }
         }
       }
+
       .member {
         width: 500px;
         height: 100%;
@@ -101,27 +122,33 @@
         align-items: center;
         justify-content: end;
         font-size: 15px;
-        > li {
-            position: relative;
-          > a {
+
+        >li {
+          position: relative;
+
+          >a {
             display: block;
             font-weight: 500;
             color: #fff;
-          &:nth-child(1).on {
-            color: #f00;
-          }
-          img {
-            position: relative;
-            top: -2px;
-            width: 20px;
-            height: 10px;
+
+            &:nth-child(1).on {
+              color: #f00;
+            }
+
+            img {
+              position: relative;
+              top: -2px;
+              width: 20px;
+              height: 10px;
             }
           }
+
           i {
             color: #fff;
             margin: 0 10px;
           }
-          > ul.service-center {
+
+          >ul.service-center {
             display: none;
             position: absolute;
             width: 100px;
@@ -131,33 +158,39 @@
             border: 1px solid #eee;
             padding: 5px 0 10px 0;
             z-index: 5;
+
             &::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -1px;
-            width: 100px;
-            height: 20px; 
+              content: '';
+              position: absolute;
+              top: -15px;
+              left: -1px;
+              width: 100px;
+              height: 20px;
             }
-            > li {
-            padding: 5px 9px 0 9px;
-            > a {
-              font-size: 12px;
-              line-height: 140%;
-              color: #fff;
-              &:hover {
-                color: #f47474;
-              }
-              &::after {
-                content: '';
-                width: 1px;
-                height: 10px;
-              }
+
+            >li {
+              padding: 5px 9px 0 9px;
+
+              >a {
+                font-size: 12px;
+                line-height: 140%;
+                color: #fff;
+
+                &:hover {
+                  color: #f47474;
+                }
+
+                &::after {
+                  content: '';
+                  width: 1px;
+                  height: 10px;
+                }
               }
             }
           }
-          &:hover > ul {
-              display: block;
+
+          &:hover>ul {
+            display: block;
           }
         }
       }

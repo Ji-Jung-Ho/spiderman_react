@@ -1,127 +1,167 @@
 #wrap {
-  white-space:pre-wrap;
+  white-space: pre-wrap;
+
   #signUpMain {
     background-color: #18212b;
     width: 100%;
     padding: 100px 0 0 0;
+
     #signUp {
       width: 100%;
       padding: 40px 0 60px 0;
+
       .container {
         width: 100%;
         max-width: 640px;
         margin: 0 auto;
+
         .title {
           width: 100%;
           border-bottom: 2px solid #ff0000b3;
+
           .main-title {
             text-align: center;
             padding: 0 0 40px 0;
-              h2 {
-                font-size: 50px;
-                font-weight: bold;
-                color: #fff;
-                text-transform: uppercase;
-                font-family: 'Homoarakhn', sans-serif;
-                letter-spacing: 5px;
-              }
+
+            h2 {
+              font-size: 50px;
+              font-weight: bold;
+              color: #fff;
+              text-transform: uppercase;
+              font-family: 'Homoarakhn', sans-serif;
+              letter-spacing: 5px;
             }
+          }
+
           .sub-title {
             text-align: right;
             padding: 0 0 10px 0;
+
             span {
               font-size: 12px;
               color: #ccc;
-              i {color: #ee6a7b;}
+
+              i {
+                color: #ee6a7b;
+              }
             }
           }
         }
+
         .content {
           width: 100%;
+
           form {
             width: 100%;
-            > ul {
+
+            >ul {
               width: 100%;
-              > li {
+
+              >li {
                 width: 100%;
                 padding: 10px 20px;
                 display: flex;
-                &.hp-ok-box{
+
+                &.hp-ok-box {
                   display: none;
+
                   &.on {
                     display: flex;
                   }
                 }
-                &.add-input-box-list {  // 추가입력 사항 텍스트 박스의 부모 리스트 박스
-                    display: none;
-                    &.on {
-                        display: flex;
-                    }
+
+                &.add-input-box-list {
+                  // 추가입력 사항 텍스트 박스의 부모 리스트 박스
+                  display: none;
+
+                  &.on {
+                    display: flex;
+                  }
                 }
+
                 &.hor-line {
-                    padding: 20px 0;
-                    hr {
-                        width: 100%;
-                        height: 2px;
-                        border: 0;
-                        background: #ff0000b3;
-                    }
+                  padding: 20px 0;
+
+                  hr {
+                    width: 100%;
+                    height: 2px;
+                    border: 0;
+                    background: #ff0000b3;
+                  }
                 }
+
                 .left {
-                    width: 139px;
-                    .left-wrap {
-                        width: 100%;
-                        height: 46px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        label {
-                            font-size: 14px;
-                            strong {
-                                font-weight: 500;
-                                color: #ccc;
-                            }
-                            i {color: #ee6a7b;}
-                        }
+                  width: 139px;
+
+                  .left-wrap {
+                    width: 100%;
+                    height: 46px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    label {
+                      font-size: 14px;
+
+                      strong {
+                        font-weight: 500;
+                        color: #ccc;
+                      }
+
+                      i {
+                        color: #ee6a7b;
+                      }
                     }
+                  }
                 }
+
                 .right {
                   width: 461px;
+
                   .right-wrap {
                     position: relative;
                     width: 100%;
                     padding: 0 130px 0 0;
+
                     label {
-                        color: #fff;
+                      color: #fff;
                     }
+
                     // 생년월일
-                    &.birth { //생년월일
+                    &.birth {
+
+                      //생년월일
                       .birth-box {
-                        width:100%;
-                        height:46px;
-                        border:1px solid #ccc;
+                        width: 100%;
+                        height: 46px;
+                        border: 1px solid #ccc;
                         border-radius: 3px;
+
                         ul {
-                          width:100%;
+                          width: 100%;
                           display: flex;
-                          li {                                                    
-                            &:nth-child(odd){
-                              width:30%;
+
+                          li {
+                            &:nth-child(odd) {
+                              width: 30%;
                             }
-                            &:nth-child(even){
-                              width:5%;
+
+                            &:nth-child(even) {
+                              width: 5%;
                               display: flex;
                               justify-content: center;
                               align-items: center;
+
                               i {
-                                color:#aaa;     
+                                color: #aaa;
                               }
                             }
+
                             input {
                               width: 100%;
                               height: 44px;
-                              border:0;
-                              outline:0;
+                              border: 0;
+                              outline: 0;
                               // text-align: center;
                               background: #18212b;
                               color: #fff;
@@ -132,9 +172,10 @@
                         }
                       }
                     }
+
                     // 입력상자 공통 요소
                     input[type="text"],
-                      [type='password'] {    
+                    [type='password'] {
                       width: 100%;
                       height: 46px;
                       border: 1px solid #ddd;
@@ -144,24 +185,30 @@
                       outline-offset: -1px;
                       outline: 1px solid transparent;
                       transition: all 0.3s;
+
                       &:focus {
                         outline: 1px solid #444;
                       }
+
                       &::placeholder {
                         color: #777;
                         font-size: 16px;
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
-                        line-height: 1; /* 필요에 따라 조절 */
+                        line-height: 1;
+                        /* 필요에 따라 조절 */
                       }
+
                       &.addr-hide {
                         display: none;
-                        &.on{
+
+                        &.on {
                           display: block;
                         }
                       }
-                    }     
+                    }
+
                     // 버튼 공통 요소
                     button {
                       position: absolute;
@@ -176,45 +223,55 @@
                       color: #fff;
                       border-radius: 3px;
                       cursor: pointer;
-                      &.hp-num-btn{
-                        color:#ddd;
+
+                      &.hp-num-btn {
+                        color: #ddd;
                         background-color: #f7b1b1b3;
                         border-color: #f7b1b1b3;
                         cursor: default;
-                        &.on{
+
+                        &.on {
                           cursor: pointer;
-                          color:#ddd; 
-                          border-color:#ddd;
+                          color: #ddd;
                           background: #ff0000b3;
                         }
                       }
-                      &.hp-num2-btn{
+
+                      &.hp-num2-btn {
                         display: none;
-                        &.on{
-                          display: block;
-                        }
-                      }
-                      &.addr-hide {
-                        display: none;
+
                         &.on {
                           display: block;
                         }
                       }
+
+                      &.addr-hide {
+                        display: none;
+
+                        &.on {
+                          display: block;
+                        }
+                      }
+
                       &.addr-api-btn {
                         position: relative;
                         width: 100%;
+
                         img {
                           margin: -3px 5px 0 0;
                           width: 20px;
                           height: 20px;
                         }
+
                         &.on {
                           display: none;
                         }
                       }
+
                       span {
                         display: flex;
                         justify-content: center;
+
                         img {
                           width: 20px;
                           height: 20px;
@@ -222,67 +279,81 @@
                         }
                       }
                     }
+
                     // 휴대폰 타이머 카운트
                     .signup-time-count {
                       position: absolute;
-                      right:150px;
-                      top:16px;
-                      font-size:14px;
-                      color:#f03f40;                                            
+                      right: 150px;
+                      top: 16px;
+                      font-size: 14px;
+                      color: #f03f40;
                       z-index: 2;
                     }
+
                     // 휴대폰 안내 메시지
                     .info-message {
                       display: block;
                       padding: 15px 0 0 0;
-                      font-size:12px; 
+                      font-size: 12px;
                       line-height: 140%;
-                  }
+                    }
+
                     // 공통 에러 메시지
                     p {
                       display: none;
                       padding: 7px 0 0 0;
                       font-size: 13px;
                       color: #f03f40;
+
                       &.on {
                         display: block;
                       }
                     }
+
                     // 주소
                     em.addr-map-area {
                       color: #f03f40;
                       font-size: 12px;
                     }
+
                     p.addr-info {
                       padding: 10px 0 0 0;
                       color: #666;
                       font-size: 12px;
+
                       &.addr-info1 {
                         display: block;
+
                         &.on {
                           display: none;
                         }
                       }
                     }
+
                     // 이용약관동의
-                    &.service {         
+                    &.service {
                       padding: 0;
+
                       ul {
                         li {
                           width: 100%;
                           margin: 15px 0;
+
                           &:nth-child(2),
                           &:nth-child(3),
                           &:nth-child(4) {
                             position: relative;
                           }
+
                           &.smsEmail {
                             padding-left: 24px;
                           }
+
                           label {
                             &.chk6 {
                               margin-left: 12px;
                             }
+
                             input[type="checkbox"] {
                               appearance: none;
                               margin: 0 12px 0 0;
@@ -291,23 +362,28 @@
                               background: url(../img/sign_up/chkbox_gray.svg) no-repeat 50% 50%;
                               background-size: 24px 24px;
                               border-radius: 50%;
+
                               &:checked {
                                 background: url(../img/sign_up/chkbox_purple.png) no-repeat 50% 50%;
                                 background-size: 24px 24px;
                               }
                             }
                           }
+
                           &:nth-child(1) {
                             label {
                               font-size: 18px;
                               font-weight: 500;
                             }
                           }
-                          p { // 에러메시지
+
+                          p {
+                            // 에러메시지
                             padding: 0 0 0 36px;
                             font-size: 12px;
                             color: #666;
                           }
+
                           button {
                             position: absolute;
                             top: 3px;
@@ -317,11 +393,13 @@
                             border: 0;
                             background-color: transparent;
                             cursor: pointer;
+
                             span.viewTerms {
                               display: inline;
                               font-size: 14px;
                               color: #f00;
                             }
+
                             img {
                               margin: -3px 0 0 3px;
                               width: 15px;
@@ -333,18 +411,22 @@
                     }
                   }
                 }
+
                 &.addr-hide {
                   display: none;
+
                   &.on {
                     display: flex;
                   }
                 }
               }
             }
+
             .button-box {
               text-align: center;
               padding: 40px 0;
               border-top: 2px solid #ff0000b3;
+
               button {
                 width: 240px;
                 height: 56px;
@@ -362,157 +444,300 @@
       }
     }
   }
+
   #confirmModal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 5;
+
     .wrap {
       width: 100%;
       height: 100%;
       display: flex;
-    .container{
-      position: relative;
-      width: 400px;
-      height: 185px;
-      margin: auto;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      .img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background: url(../img/sign_up/spider.PNG) no-repeat 50% 50%;
-        background-size: cover;
-        opacity: 0.5;
-      }
-      .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 40px 30px;
+
+      .container {
         position: relative;
-        z-index: 2;
-        height: 130px;
-        h2 {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: rgba(255,255,255,0.7);
-          border-radius: 25px;
-          font-size: 16px;
-          padding: 5px;
-          font-weight: bold;
-          color: #333;
-          line-height: 150%;
-          letter-spacing: -0.5px;
-          text-align: center;
-        }
-      }
-      .button-box {
-        border-top: 1px solid #000;
-        width: 100%;
-        height: 55px;
-        button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          z-index: 2;
+        width: 400px;
+        height: 185px;
+        margin: auto;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .img {
+          position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
-          background: none;   
-          border: 0;
-          cursor: pointer;
-          span.confirm-modal-btn-span {
+          z-index: 1;
+          background: url(../img/sign_up/spider.PNG) no-repeat 50% 50%;
+          background-size: cover;
+          opacity: 0.5;
+        }
+
+        .content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 40px 30px;
+          position: relative;
+          z-index: 2;
+          height: 130px;
+
+          h2 {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 3px;
-            border-radius: 5px;
-            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 25px;
             font-size: 16px;
+            padding: 5px;
+            font-weight: bold;
             color: #333;
-            background-color: rgba(255,255,255,0.7);
+            line-height: 150%;
+            letter-spacing: -0.5px;
+            text-align: center;
+          }
+        }
+
+        .button-box {
+          border-top: 1px solid #000;
+          width: 100%;
+          height: 55px;
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: 0;
+            cursor: pointer;
+
+            span.confirm-modal-btn-span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 3px;
+              border-radius: 5px;
+              font-weight: bold;
+              font-size: 16px;
+              color: #333;
+              background-color: rgba(255, 255, 255, 0.7);
+            }
           }
         }
       }
     }
-    }
   }
+
   #AgreeToTermsOfUse {
-    z-index:5;
-    // display: none;
+    z-index: 5;
     position: fixed;
-    top:0;
-    left:0;
-    width:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background: rgba(0,0,0,  0.3);
-  .wrap {
-    width:100%;
-    height: 100%;
-    display: flex;
-    .container {
-      margin:auto;
-      width: 440px;
-      background:#fff;
-      border-radius: 12px;
-      h1 {
-        padding: 30px 30px 24px;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.25;
-        letter-spacing: -0.5px;
-        color: #333;
-      }
-      .content {
-        padding: 0 30px;
-        font-size: 14px;
-        line-height: 19px;
-        letter-spacing: -0.5px;
-        color: #666;
-        overflow-y: auto;
-        height: 460px;
-        &::-webkit-scrollbar-thumb {
-          width: 30px;
-        }
-        .main-title {
-          display: block;
-          padding: 16px 0 8px 0;
-          font-size: 16px;
-          line-height: 21px;
-          color: #333;
+    background: rgba(0, 0, 0, 0.3);
+
+    .wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+      .container {
+        margin: auto;
+        width: 440px;
+        background: #fff;
+        border-radius: 12px;
+
+        h1 {
+          padding: 30px 30px 24px;
+          font-size: 20px;
           font-weight: 500;
+          line-height: 1.25;
+          letter-spacing: -0.5px;
+          color: #333;
         }
-      }
-      .button-box {
-        width: 100%;
-        height: 56px;
-        border-top:1px solid #eee;
-        user-select: none;              
-        button {
-          position: relative;
+
+        .content {
+          padding: 0 30px;
+          font-size: 14px;
+          line-height: 19px;
+          letter-spacing: -0.5px;
+          color: #666;
+          overflow-y: auto;
+          height: 460px;
+
+          &::-webkit-scrollbar-thumb {
+            width: 30px;
+          }
+
+          .main-title {
+            display: block;
+            padding: 16px 0 8px 0;
+            font-size: 16px;
+            line-height: 21px;
+            color: #333;
+            font-weight: 500;
+          }
+        }
+
+        .button-box {
           width: 100%;
           height: 56px;
-          text-align: center;
-          background: #fff;
-          color:#5f0080;
-          font-weight: 700;
-          font-size: 16px;
-          border:0; 
-          border-radius: 12px;
-          cursor: pointer;               
+          border-top: 1px solid #eee;
+          user-select: none;
+
+          button {
+            position: relative;
+            width: 100%;
+            height: 56px;
+            text-align: center;
+            background: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            border: 0;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 1px solid #ee6a7b;
+
+            span {
+              color: #333;
+            }
+          }
         }
       }
     }
-  }  
+  }
+
+  #Require {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+
+    .wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+      .container {
+        margin: auto;
+        width: 440px;
+        background: #fff;
+        border-radius: 12px;
+        color: #666;
+
+        h1 {
+          padding: 30px 30px 24px;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.25;
+          letter-spacing: -0.5px;
+          color: #333;
+        }
+
+        .content {
+          padding: 0 30px;
+          overflow-y: auto;
+          max-height: 464px;
+
+          table {
+            width: 100%;
+            table-layout: fixed;
+
+            colgroup {
+              col {
+                &:nth-child(1) {
+                  width: 50%;
+                }
+
+                &:nth-child(2) {
+                  width: 25%;
+                }
+
+                &:nth-child(3) {
+                  width: 25%;
+                }
+              }
+            }
+
+            thead {
+              tr {
+                th {
+                  padding: 10px 5px;
+                  background-color: #f4f4f4;
+                  border: 1px solid #ccc;
+                  text-align: center;
+                }
+              }
+            }
+
+            tbody {
+              tr {
+                td {
+                  padding: 5px;
+                  border: 1px solid #ccc;
+                  text-align: center;
+                  vertical-align: middle;
+                  font-size: 12px;
+                  line-height: 19px;
+
+                  &.bold {
+                    font-weight: 600;
+                    font-size: 15px;
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+
+          p.sub-title {
+            padding: 20px 5px 24px;
+            font-size: 14px;
+            color: #999;
+            line-height: 20px;
+          }
+        }
+
+        .button-box {
+          width: 100%;
+          height: 56px;
+          border-top: 1px solid #eee;
+          user-select: none;
+
+          button {
+            position: relative;
+            width: 100%;
+            height: 56px;
+            text-align: center;
+            background: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            border: 0;
+            border-radius: 12px;
+            cursor: pointer;
+            border-top: 1px solid #000;
+
+            span {
+              color: #333;
+            }
+          }
+        }
+      }
+    }
   }
 }
