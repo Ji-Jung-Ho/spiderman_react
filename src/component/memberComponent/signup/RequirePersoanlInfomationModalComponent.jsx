@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function RequirePersoanlInfomationModalComponent({ isRequiredModalCloseFn }) {
 
-  const RequiredModalCloseFn = (e) => {
+  const requiredModalCloseFn = (e) => {
     e.preventDefault();
     isRequiredModalCloseFn();
   }
@@ -71,7 +71,7 @@ export default function RequirePersoanlInfomationModalComponent({ isRequiredModa
             </p>
           </div>
           <div className="button-box">
-            <button type='button' onClick={RequiredModalCloseFn}>
+            <button type='button' onClick={requiredModalCloseFn}>
               <span>확인</span>
             </button>
           </div>
