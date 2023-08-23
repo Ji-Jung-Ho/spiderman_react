@@ -13,7 +13,6 @@ export default function MemberSignUpComponent() {
     msg: '',
     isTimer: false,
   });
-
   // confirmModal의 상태 변경 (열기) 함수
   const isConfirmModalOpenFn = (msg) => {
     setState({
@@ -41,18 +40,16 @@ export default function MemberSignUpComponent() {
     })
   }
 
-  // 이용약관동의 약관보기 상태 변수 함수
+  // 이용약관동의(필수) 상태 변수 함수
   const [isAgreeToTermsOfUseModal, setIsAgreeToTermsOfUseModal] = useState(false)
-
-  // 이용약관동의 열기 함수
+  // 이용약관동의(필수) 열기 함수
   const isAgreeToTermsOfUseModalOpenFn = () => {
     setIsAgreeToTermsOfUseModal({
       ...isAgreeToTermsOfUseModal,
       isAgreeToTermsOfUseModal: true
     })
   }
-
-  // 이용약관동의 닫기 버튼 클릭 이벤트
+  // 이용약관동의(필수) 닫기 버튼 함수
   const isAgreeToTermsOfUseModalCloseFn = () => {
     setIsAgreeToTermsOfUseModal({
       ...isAgreeToTermsOfUseModal,

@@ -621,8 +621,8 @@
     }
   }
 
-  #Require,
-  Select {
+  #require,
+  #select {
     z-index: 5;
     position: fixed;
     top: 0;
@@ -661,6 +661,7 @@
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+            border-spacing: 0;
 
             colgroup {
               col {
@@ -668,10 +669,7 @@
                   width: 50%;
                 }
 
-                &:nth-child(2) {
-                  width: 25%;
-                }
-
+                &:nth-child(2),
                 &:nth-child(3) {
                   width: 25%;
                 }
@@ -703,6 +701,11 @@
                     font-weight: 600;
                     font-size: 15px;
                     text-decoration: underline;
+                  }
+
+                  strong {
+                    font-weight: 700;
+                    font-size: 11px;
                   }
                 }
               }

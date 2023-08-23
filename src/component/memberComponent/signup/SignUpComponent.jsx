@@ -687,13 +687,14 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     isAgreeToTermsOfUseModalOpenFn();
   }
 
-  // 개인정보 수집(필수) 약관보기 클릭 이벤트 구현
+  // 개인정보수집동의 (필수) 약관보기 클릭 이벤트 구현
   const onClickRequiredModalOpenFn = (e) => {
     e.preventDefault();
     isRequiredModalOpenFn();
   }
 
-  const as = (e) => {
+  // 개인정보수집동의 (선택) 약관보기 클릭 이벤트 구현
+  const onClickSelectModalOpenFn = (e) => {
     e.preventDefault();
     isSelectModalOpenFn();
   }
@@ -1028,7 +1029,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
                         </li>
                         <li>
                           <label htmlFor="chk3"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('개인정보 수집∙이용 동의(선택)')} name="chk3" id="chk3" className="chk-btn" value="개인정보 수집∙이용 동의(선택)" />개인정보 수집∙이용 동의</label>(선택)
-                          <button type="button" onClick={as}><span className='viewTerms'>약관보기</span><img src="./img/sign_up/arrow_right.png" alt="" /></button>
+                          <button type="button" onClick={onClickSelectModalOpenFn}><span className='viewTerms'>약관보기</span><img src="./img/sign_up/arrow_right.png" alt="" /></button>
                         </li>
                         <li>
                           <label htmlFor="chk4"><input type="checkbox" onChange={onChangeAgreetoTermsofUseCheck} checked={state.AgreetoTermsofUse.includes('무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)')} name="chk4" id="chk4" className="chk-btn" value="무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)" />무료배송, 할인쿠폰 등 혜택/정보 수신 동의</label>(선택)
