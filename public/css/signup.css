@@ -463,7 +463,7 @@
 #wrap #AgreeToTermsOfUse .wrap .container {
   margin: auto;
   width: 440px;
-  background: #fff;
+  background: #18212b;
   border-radius: 12px;
 }
 #wrap #AgreeToTermsOfUse .wrap .container h1 {
@@ -472,33 +472,46 @@
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.5px;
-  color: #333;
+  color: #fff;
+  border-bottom: 1px solid #ee6a7b;
 }
 #wrap #AgreeToTermsOfUse .wrap .container .content {
-  padding: 0 30px;
+  padding: 20px 30px;
   font-size: 14px;
   line-height: 19px;
   letter-spacing: -0.5px;
-  color: #666;
-  overflow-y: auto;
+  color: #eee;
   height: 460px;
+  overflow-y: auto;
+  background-color: #18212b;
+}
+#wrap #AgreeToTermsOfUse .wrap .container .content::-webkit-scrollbar {
+  width: 10px;
 }
 #wrap #AgreeToTermsOfUse .wrap .container .content::-webkit-scrollbar-thumb {
-  width: 30px;
+  background: #666;
+  border-radius: 20px;
+}
+#wrap #AgreeToTermsOfUse .wrap .container .content::-webkit-scrollbar-track {
+  background: #18212b;
+  border-radius: 20px;
 }
 #wrap #AgreeToTermsOfUse .wrap .container .content .main-title {
   display: block;
   padding: 16px 0 8px 0;
   font-size: 16px;
   line-height: 21px;
-  color: #333;
+  color: #fff;
   font-weight: 500;
+}
+#wrap #AgreeToTermsOfUse .wrap .container .content .main-title:first-child {
+  padding: 0 0 8px 0;
 }
 #wrap #AgreeToTermsOfUse .wrap .container .button-box {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 28px;
   height: 56px;
   border-top: 1px solid #ee6a7b;
 }
@@ -510,13 +523,14 @@
   width: 100%;
   height: 56px;
   border-radius: 0px;
-  background-color: #fff;
+  background-color: #18212b;
   border: 0px;
-  font-weight: 700;
   cursor: pointer;
 }
 #wrap #AgreeToTermsOfUse .wrap .container .button-box button span {
-  color: #333;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
 }
 #wrap #require,
 #wrap #select {
@@ -538,9 +552,8 @@
 #wrap #select .wrap .container {
   margin: auto;
   width: 440px;
-  background: #fff;
+  background-color: #18212b;
   border-radius: 16px;
-  color: #666;
 }
 #wrap #require .wrap .container h1,
 #wrap #select .wrap .container h1 {
@@ -549,13 +562,29 @@
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.5px;
-  color: #333;
+  color: #fff;
+  border-bottom: 1px solid #ee6a7b;
 }
 #wrap #require .wrap .container .content,
 #wrap #select .wrap .container .content {
-  padding: 0 30px;
+  padding: 30px 30px 0 30px;
   overflow-y: auto;
   max-height: 464px;
+  background-color: #18212b;
+}
+#wrap #require .wrap .container .content::-webkit-scrollbar,
+#wrap #select .wrap .container .content::-webkit-scrollbar {
+  width: 10px;
+}
+#wrap #require .wrap .container .content::-webkit-scrollbar-thumb,
+#wrap #select .wrap .container .content::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+#wrap #require .wrap .container .content::-webkit-scrollbar-track,
+#wrap #select .wrap .container .content::-webkit-scrollbar-track {
+  background: #18212b;
+  border-radius: 20px;
 }
 #wrap #require .wrap .container .content table,
 #wrap #select .wrap .container .content table {
@@ -576,7 +605,7 @@
 #wrap #require .wrap .container .content table thead tr th,
 #wrap #select .wrap .container .content table thead tr th {
   padding: 10px 5px;
-  background-color: #f4f4f4;
+  background-color: #18212b;
   border: 1px solid #ccc;
   text-align: center;
 }
@@ -625,12 +654,13 @@
   width: 100%;
   height: 56px;
   border-radius: 0px;
-  background-color: #fff;
+  background-color: #18212b;
   border: 0px;
-  font-weight: 700;
   cursor: pointer;
 }
 #wrap #require .wrap .container .button-box button span,
 #wrap #select .wrap .container .button-box button span {
-  color: #333;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
 }

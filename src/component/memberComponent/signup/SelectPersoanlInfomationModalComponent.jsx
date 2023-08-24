@@ -30,8 +30,11 @@ export default function SelectPersoanlInfomationModalComponent({ isSelectModalCl
                 <tr>
                   <td>맞춤형 회원 서비스 제공</td>
                   <td><strong>성별*, 생년월일*</strong></td>
-                  <td className='bold'>회원 탈퇴</td>
-                  <td className='bold'>즉시 파기</td>
+                  <td className='bold'>
+                    회원 탈퇴
+                    <br />
+                    즉시 파기
+                  </td>
                 </tr>
               </tbody>
             </table>

@@ -40,7 +40,11 @@ export default function RequirePersoanlInfomationModalComponent({ isRequiredModa
                     이름, 아이디, 비밀번호, 휴대폰번호, 이메일, <strong>주소*</strong>
                   </td>
                   <td className='bold'>
-                    회원 탈퇴 <br /> 즉시 파기 <br /><br /> 부정이용 방지를 위하여
+                    회원 탈퇴
+                    <br />
+                    즉시 파기
+                    <br /><br />
+                    부정이용 방지를 위하여
                     3개월 동안 보관 (아이디, 휴대폰 번호) 후 파기
                   </td>
                 </tr>
