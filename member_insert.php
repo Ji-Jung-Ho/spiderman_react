@@ -24,7 +24,7 @@
     $irum           = $_POST['irum'];
     $email          = $_POST['email'];
     $hp             = $_POST['hp'];
-    $addr        = $_POST['addr'];     // 주소1 + 주소2
+    $addr           = $_POST['addr'];     // 주소1 + 주소2
     $birth          = $_POST['birth'];    // 년 + 월 + 일
     $service        = $_POST['service'];
     $joinDate       = $_POST['joinDate'];

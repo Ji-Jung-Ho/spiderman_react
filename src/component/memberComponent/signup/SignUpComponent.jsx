@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import PropTypes from 'prop-types';
 
 export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer, isAgreeToTermsOfUseModalOpenFn, isRequiredModalOpenFn, isSelectModalOpenFn }) {
 
   const [state, setState] = useState(회원);
+  const navigate = useNavigate();
 
   // 아이디 입력상자 입력 이벤트
   const onChangeId = (e) => {
@@ -17,33 +19,33 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
 
     let { value } = e.target;
     let idErrMsg = '';
-    let userId = value.replace(regExp1, '');
-    let isUserId = true;
+    let id = value.replace(regExp1, '');
+    let isId = true;
 
-    if (regExp2.test(userId) === false || regExp3.test(userId) === false) {
-      isUserId = false;
+    if (regExp2.test(id) === false || regExp3.test(id) === false) {
+      isId = false;
       idErrMsg = '6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합';
-      if (regExp5.test(userId) === true) {
-        isUserId = false;
+      if (regExp5.test(id) === true) {
+        isId = false;
         idErrMsg = '한글은 입력이 불가능합니다.';
       }
-      else if (regExp4.test(userId) === true) {
-        isUserId = false;
+      else if (regExp4.test(id) === true) {
+        isId = false;
         idErrMsg = '공백을 사용할 수 없습니다.';
       }
     }
-    else if (regExp6.test(userId) === true) {
-      isUserId = false;
+    else if (regExp6.test(id) === true) {
+      isId = false;
       idErrMsg = '한글은 입력이 불가능합니다.';
     }
     else {
-      isUserId = true;
+      isId = true;
     }
 
     setState({
       ...state,
-      userId: userId,
-      isUserId: isUserId,
+      id: id,
+      isId: isId,
       idErrMsg: idErrMsg,
     });
   };
@@ -57,25 +59,26 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     const regExp4 = /[가-힣ㄱ-ㅎㅏ-ㅣ]+/g; // 한글 자모음 및 한글
     const regExp5 = /([a-zA-Z0-9])+([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])|([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+([a-zA-Z0-9])/;  // 영문/숫자 앞에 한글이 한글자 이상, 한글 뒤에 영문/숫자가 한글자 이상
 
-    let { userId } = state;
-    let idDoubleCheck = null;
+    let { id } = state;
+    let result = [];
+    let idDoubleCheck = false;
 
-    if (regExp1.test(userId) === false || regExp2.test(userId) === false || regExp3.test(userId) === true) {
+    if (regExp1.test(id) === false || regExp2.test(id) === false || regExp3.test(id) === true) {
       isConfirmModalOpenFn('6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합')
-      if (regExp4.test(userId) === true) {
+      if (regExp4.test(id) === true) {
         isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다. 영문 혹은 영문, 숫자를 조합');
       }
     }
-    else if (regExp5.test(userId) === true) {
+    else if (regExp5.test(id) === true) {
       isConfirmModalOpenFn('아이디에 한글을 사용할 수 없습니다.')
     }
     else {
-      axios({
-        url: 'http://kiik52.dothome.co.kr/spiderman/member_select.php',
+      axios({ // CORS API
+        url: 'https://kiik52.com/spiderman/member_select.php',
         method: 'GET'
       })
         .then((res) => {
-          let result = res.data.map((item) => item.userId === state.userId);
+          result = res.data.map((item) => item.id === state.id);
           if (result.includes(true)) {
             isConfirmModalOpenFn('사용 불가능한 아이디 입니다.');
             idDoubleCheck = false;
@@ -87,10 +90,10 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
           setState({
             ...state,
             idDoubleCheck: idDoubleCheck
-          });
+          })
         })
         .catch((err) => {
-          console.log('Axios 실패 결과: ', err.data);
+          console.log('axios 실패', err);
         });
     }
   };
@@ -103,29 +106,29 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
 
     let { value } = e.target
     let pwErrMsg = '';
-    let isUserPw = false;
+    let ispw = false;
 
     if (regExp1.test(value) === false) {
       pwErrMsg = '최소 10자 이상 입력'
-      isUserPw = false;
+      ispw = false;
     }
     else if (regExp2.test(value) === false || regExp3.test(value) === true) {
       pwErrMsg = '영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합'
-      isUserPw = false;
+      ispw = false;
     }
     else if (regExp4.test(value) === true) {
       pwErrMsg = '동일한 숫자 3개 이상 연속 사용 불가'
-      isUserPw = false;
+      ispw = false;
     }
     else {
       pwErrMsg = '';
-      isUserPw = true;
+      ispw = true;
     }
 
     setState({
       ...state,
-      userPw: value,
-      isUserPw: isUserPw,
+      pw: value,
+      ispw: ispw,
       pwErrMsg: pwErrMsg
     })
 
@@ -136,7 +139,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     let pwDoubleCheckErrMsg = '';
     let isPwDoubleCheck = false;
 
-    if (state.userPw !== value) {
+    if (state.pw !== value) {
       pwDoubleCheckErrMsg = '동일한 비밀번호를 입력해 주세요'
       isPwDoubleCheck = false
     }
@@ -146,6 +149,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
 
     setState({
       ...state,
+      pwDoubleCheck: value,
       isPwDoubleCheck: isPwDoubleCheck,
       pwDoubleCheckErrMsg: pwDoubleCheckErrMsg
     })
@@ -225,7 +229,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     }
     else {
       axios({
-        url: 'http://kiik52.dothome.co.kr/spiderman/member_select.php',
+        url: 'https://kiik52.com/spiderman/member_select.php',
         method: 'GET'
       })
         .then((res) => {
@@ -233,10 +237,12 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
           if (result.includes(true)) {
             isConfirmModalOpenFn('사용 불가능한 이메일 입니다.');
             emailDoubleCheck = false;
+            console.log(res);
           }
           else {
             isConfirmModalOpenFn('사용 가능한 이메일 입니다.');
             emailDoubleCheck = true;
+            console.log(res);
           }
           setState({
             ...state,
@@ -277,7 +283,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     })
   }
   // 핸드폰 인증번호 받기 버튼 클릭 이벤트
-  const onClickHpCertified = (e) => {
+  const onClickisHpCertified = (e) => {
     e.preventDefault();
 
     const regExp2 = /^01[0|1|2|6|7|8|9]+[0-9]{3,4}[0-9]{4}$/g; // 10~11자리의 01로 시작하는 핸드폰 번호
@@ -339,7 +345,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
   // 인증번호 확인 버튼 클릭 이벤트 구현
   const onClickHpOkBtn = (e) => {
     e.preventDefault();
-    let hpCertified = false;
+    let isHpCertified = false;
     let isCertificationNumberInputBox = true;
     let isAnotherHp = false;
     let isHpNumOkBtn = false;
@@ -348,13 +354,13 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     if (Number(state.CertificationNumberInputBox) === state.CertificationNumber) {
       isConfirmModalOpenFn('인증에 성공 하였습니다.');
       isCertificationNumberInputBox = false;
-      hpCertified = true;
+      isHpCertified = true;
       isAnotherHp = true;
       isHp = true;
     } else {
       isConfirmModalOpenFn('잘못된 인증 코드 입니다.');
       isCertificationNumberInputBox = true;
-      hpCertified = false;
+      isHpCertified = false;
       isAnotherHp = false;
       isHp = false;
     }
@@ -364,7 +370,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
       isHpNumOkBtn: isHpNumOkBtn,
       isCertificationNumberInputBox: isCertificationNumberInputBox,
       isAnotherHp: isAnotherHp,
-      hpCertified: hpCertified
+      isHpCertified: isHpCertified
     })
   }
   // 다른번호 인증 버튼 클릭 이벤트 구현
@@ -616,10 +622,9 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     const { value, checked } = e.target;
     let filteredAgreements = [];
 
-    if (checked === true) {     // 체크되면 배열안에 값 저장
-      // 무료배송 체크 시 (SMS, 이메일) 상태변수 저장
+    // 체크되면 배열안에 모든 체크값 저장
+    if (checked === true) {
       if (value === '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)') {
-        // SMS와 이메일 모두 이용약관동의에 없다면 저장
         if (state.AgreetoTermsofUse.includes('SMS') === false && state.AgreetoTermsofUse.includes('이메일') === false) {
           setState({ ...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value, 'SMS', '이메일'] });
         }
@@ -633,42 +638,29 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
           setState({ ...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value] });
         }
       }
-      // SMS, 이메일이 둘다 체크 되면 무료배송 체크 
-      // SMS === false, 이메일 === true 인 경우
-      // 이메일 체크되있고, SMS은 체크가 안되어 있는 상태
       else if (value === 'SMS' && state.AgreetoTermsofUse.includes('이메일') === true) {
         setState({ ...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)', value] })
       }
-      // SMS === true, 이메일 === false 인 경우
-      // SMS 체크되있고, 이메일은 체크가 안되어 있는 상태
       else if (value === '이메일' && state.AgreetoTermsofUse.includes('SMS') === true) {
         setState({ ...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)', value] })
       }
-      // 그외 체크박스
       else {
         setState({ ...state, AgreetoTermsofUse: [...state.AgreetoTermsofUse, value] });
       }
     }
-    else {  // 체크해제되면 배열에서 삭제
-      // 전체 체크 해제
+    // 체크해제되면 배열에서 삭제
+    else {
       if (value === '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)') {
-        // 무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택) 제거
-        // SMS 제거
-        // 이메일 제거
-        // 재배열 저장
         filteredAgreements = state.AgreetoTermsofUse.filter((item) => item !== '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)');
         filteredAgreements = filteredAgreements.filter((item) => item !== 'SMS')
         filteredAgreements = filteredAgreements.filter((item) => item !== '이메일')
         setState({ ...state, AgreetoTermsofUse: filteredAgreements });
       }
-      // SMS, 이메일 둘중 하나만 체크 해제되면 무료배송은 무조건 배열안에서 삭제
-      // SMS, 이메일 둘다 체크되어 있을 때 SMS만 체크 해제했을 경우
       else if (value === 'SMS' && state.AgreetoTermsofUse.includes('이메일') === true) {
         filteredAgreements = state.AgreetoTermsofUse.filter((item) => item !== '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)');
         filteredAgreements = filteredAgreements.filter((item) => item !== 'SMS');
         setState({ ...state, AgreetoTermsofUse: filteredAgreements });
       }
-      // 이메일, SMS 둘다 체크되어 있을 때 이메일만 체크 해제했을 경우
       else if (value === '이메일' && state.AgreetoTermsofUse.includes('SMS') === true) {
         filteredAgreements = state.AgreetoTermsofUse.filter((item) => item !== '무료배송, 할인쿠폰 등 혜택/정보 수신 동의(선택)');
         filteredAgreements = filteredAgreements.filter((item) => item !== '이메일');
@@ -699,6 +691,82 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     isSelectModalOpenFn();
   }
 
+  // 가입하기 버튼 클릭 이벤트
+  const onSubmitJoin = (e) => {
+    e.preventDefault();
+    let count = 0;
+
+    state.AgreetoTermsofUse.map((item) => {
+      if (item.indexOf('필수') !== -1) {
+        count++;
+      }
+    });
+    if (state.id === '') {
+      isConfirmModalOpenFn('아이디를 입력 해주세요.')
+    }
+    else if (state.idDoubleCheck === false) {
+      isConfirmModalOpenFn('아이디 중복 체크를 해주세요.')
+    }
+    else if (state.pw === '') {
+      isConfirmModalOpenFn('비밀번호를 입력 해주세요.')
+    }
+    else if (state.pwDoubleCheck === '') {
+      isConfirmModalOpenFn('한번더 비밀번호를 입력 해주세요.')
+    }
+    else if (state.name === '') {
+      isConfirmModalOpenFn('이름을 입력 해주세요.')
+    }
+    else if (state.email === '') {
+      isConfirmModalOpenFn('이메일을 입력 해주세요.')
+    }
+    else if (state.emailDoubleCheck === false) {
+      isConfirmModalOpenFn('이메일 중복 체크를 해주세요.')
+    }
+    else if (state.hp === '') {
+      isConfirmModalOpenFn('휴대폰 번호를 입력 해주세요.')
+    }
+    else if (state.isHpCertified === false) {
+      isConfirmModalOpenFn('휴대폰 인증을 진행 해주세요')
+    }
+    else if (state.address1 === '') {
+      isConfirmModalOpenFn('주소를 입력 해주세요.')
+    }
+    else if (state.address2 === '') {
+      isConfirmModalOpenFn('나머지 주소를 입력 해주세요.')
+    }
+    else if (count !== 3) {
+      isConfirmModalOpenFn('이용약관동의 필수 항목을 체크해 주세요.')
+    }
+    else {
+      const regExp = /^(\d{3})(\d{3,4})(\d{4})$/g;
+
+      const newFormData = new FormData();
+      newFormData.append('id', state.id);
+      newFormData.append('pw', state.pw);
+      newFormData.append('irum', state.name);
+      newFormData.append('email', state.email);
+      newFormData.append('hp', state.hp.replace(regExp, '$1-$2-$3'));
+      newFormData.append('addr', `${state.address1} ${state.address2}`);
+      newFormData.append('birth', `${state.birthYear}-${state.birthMonth}-${state.birthDate}`);
+      newFormData.append('service', state.AgreetoTermsofUse);
+      newFormData.append('joinData', `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
+
+      axios({
+        url: 'https://kiik52.com/spiderman/member_insert.php',
+        method: 'POST',
+        data: newFormData
+      })
+        .then((res) => {
+          if (res.data.indexOf('성공')) {
+            navigate("/");
+          }
+        })
+        .catch((err) => {
+          console.log('AXOIS 실패', err);
+        })
+    }
+  }
+
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -717,7 +785,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
             </div>
           </div>
           <div className="content">
-            <form action="./SignUpComponent.jsx" name="form_sign_up" id="formSignUp" method="post">
+            <form action="./SignUpComponent.jsx" onSubmit={onSubmitJoin} name="form_sign_up" id="formSignUp" method="post">
               <ul>
                 <li>
                   <div className="left">
@@ -732,7 +800,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
                         name="input_id"
                         id="inputId"
                         onChange={onChangeId}
-                        value={state.userId}
+                        value={state.id}
                         placeholder="아이디를 입력해주세요"
                       />
                       <button
@@ -740,7 +808,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
                         className="id-ok-btn"
                         onClick={onClickIdDoubleCheck}
                       >중복확인</button>
-                      <p className={`error-message${state.isUserId ? '' : ' on'}`}>{state.idErrMsg}</p>
+                      <p className={`error-message${state.isId ? '' : ' on'}`}>{state.idErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -759,9 +827,9 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
                         autoComplete="off"
                         placeholder='비밀번호를 입력해주세요'
                         onChange={onChangePw}
-                        value={state.userPw}
+                        value={state.pw}
                       />
-                      <p className={`error-message${state.isUserPw ? '' : ' on'}`}>{state.pwErrMsg}</p>
+                      <p className={`error-message${state.ispw ? '' : ' on'}`}>{state.pwErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -794,7 +862,6 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
                   <div className="right">
                     <div className="right-wrap">
                       <input type="text"
-                        required
                         maxLength="20"
                         name="input-name"
                         id="inputName"
@@ -851,7 +918,7 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
                         disabled={!state.isHp}
                         type="button"
                         className={`hp-num-btn${state.isHp ? ' on' : ''}`}
-                        onClick={onClickHpCertified}
+                        onClick={onClickisHpCertified}
                       >인증번호 받기</button>
                       <button
                         type="button"
@@ -1065,16 +1132,17 @@ SignUpComponent.propTypes = {
   회원: PropTypes.shape({
     // 속성이름: 자료형지정 
     // 필수입력사항 = isRequired / 선택입력사항 = ''
-    userId: PropTypes.string.isRequired,                // string
-    isUserId: PropTypes.bool,                // boolean
+    id: PropTypes.string.isRequired,                // string
+    isId: PropTypes.bool,                // boolean
     idErrMsg: PropTypes.string,
     idDoubleCheck: PropTypes.bool.isRequired,          // boolean : 타입스크립트 블리언 bool : 프롭 타입스
 
-    userPw: PropTypes.string.isRequired,              // string
+    pw: PropTypes.string.isRequired,              // string
     pwErrMsg: PropTypes.string,                                         // string
-    isUserPw: PropTypes.bool,
+    ispw: PropTypes.bool,
     pwDoubleCheck: PropTypes.string.isRequired,          // string
     pwDoubleCheckErrMsg: PropTypes.string,                                         // string
+    isPwDoubleCheck: PropTypes.bool,
 
     name: PropTypes.string.isRequired,                  // string
     nameErrMsg: PropTypes.string,
@@ -1086,7 +1154,7 @@ SignUpComponent.propTypes = {
     emailDoubleCheck: PropTypes.bool.isRequired,          // boolean
 
     hp: PropTypes.string.isRequired,                // number
-    hpCertified: PropTypes.bool.isRequired,          // boolean
+    isHpCertified: PropTypes.bool.isRequired,          // boolean
     isHp: PropTypes.bool,
     CertificationNumber: PropTypes.number,
     CertificationNumberInputBox: PropTypes.string,
@@ -1118,16 +1186,17 @@ SignUpComponent.propTypes = {
 // 회원관리의 모든 변수 관리
 SignUpComponent.defaultProps = {
   회원: {
-    userId: '',                     // string
-    isUserId: false,                // boolean
+    id: '',                     // string
+    isId: false,                // boolean
     idErrMsg: '',
     idDoubleCheck: false,          // boolean 타입스크립트 블리언 bool 프롭 타입스
 
-    userPw: '',                   // string
+    pw: '',                   // string
     pwErrMsg: '',
-    isUserPw: false,
+    ispw: false,
     pwDoubleCheck: '',               // string
     pwDoubleCheckErrMsg: '',
+    isPwDoubleCheck: false,
 
     name: '',                       // string
     nameErrMsg: '',
@@ -1139,7 +1208,7 @@ SignUpComponent.defaultProps = {
     isEmail: false,
 
     hp: '',                     // number
-    hpCertified: false,          // boolean
+    isHpCertified: false,          // boolean
     isHp: false,
     CertificationNumber: 0,
     CertificationNumberInputBox: '',
