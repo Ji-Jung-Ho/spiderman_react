@@ -74,13 +74,14 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
     }
     else {
       axios({ // CORS API
-        url: 'https://kiik52.com/spiderman/member_select.php',
+        url: 'http://kiik52.dothome.co.kr/spiderman/member_select.php',
         method: 'GET'
       })
         .then((res) => {
           result = res.data.map((item) => item.id === state.id);
+
           if (result.includes(true)) {
-            isConfirmModalOpenFn('사용 불가능한 아이디 입니다.');
+            isConfirmModalOpenFn('이미 등록된 아이디 입니다.');
             idDoubleCheck = false;
           }
           else {
@@ -235,19 +236,18 @@ export default function SignUpComponent({ 회원, isConfirmModalOpenFn, isTimer,
         .then((res) => {
           let result = res.data.map((item) => item.email === state.email);
           if (result.includes(true)) {
-            isConfirmModalOpenFn('사용 불가능한 이메일 입니다.');
+            isConfirmModalOpenFn('이미 등록된 이메일 입니다.');
             emailDoubleCheck = false;
-            console.log(res);
           }
           else {
             isConfirmModalOpenFn('사용 가능한 이메일 입니다.');
             emailDoubleCheck = true;
-            console.log(res);
           }
           setState({
             ...state,
             emailDoubleCheck: emailDoubleCheck
           });
+
         })
         .catch((err) => {
           console.log('Axios 실패 결과 : ', err.data);

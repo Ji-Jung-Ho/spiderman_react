@@ -6,7 +6,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
 
   // 1. 데이터베이스 인증 정보 (열기 = 접속)
-  // http://kiik52.dothome.co.kr/kurly_study/member_select.php
+  // http://kiik52.dothome.co.kr/spiderman/member_select.php
 
   $db_sever     = 'localhost';
   $db_uesr_name = 'kiik52';
@@ -28,8 +28,8 @@ header('Access-Control-Allow-Headers: *');
     while ($row = mysqli_fetch_array($result)) {
       // 배열에 데이터를 넣기 (push)
       array_push($imsi, array(
-        '아이디'=> $row['id'],
-        '이메일'=> $row['email']  // 배열객체 처리중
+        'id'=> $row['id'],
+        'email'=> $row['email']  // 배열객체 처리중
       ));
     }
   }
